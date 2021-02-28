@@ -2,6 +2,9 @@ export default {
   telemetry: false,
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  router: {
+    base: '/vivid-pool/',
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
