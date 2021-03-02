@@ -10,15 +10,14 @@
       >
       <v-spacer></v-spacer>
 
-      <v-btn text class="mr-4"
-        ><span class="font-weight-bold">OUR MISSION</span></v-btn
-      >
-      <v-btn text class="mr-4"
-        ><span class="font-weight-bold">ABOUT US</span></v-btn
-      >
-      <v-btn text class="mr-4"
-        ><span class="font-weight-bold">CONTACT</span></v-btn
-      >
+      <nuxt-link
+        v-for="(desitnation, i) in destinations"
+        :key="`nav_${i}`"
+        :to="desitnation.href"
+        ><v-btn text class="mr-4"
+          ><span class="font-weight-bold">{{ desitnation.text }}</span></v-btn
+        >
+      </nuxt-link>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute temporary>
@@ -52,6 +51,24 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
+    destinations: [
+      {
+        text: 'Home',
+        href: '/',
+      },
+      {
+        text: 'Our mission',
+        href: '/mission',
+      },
+      {
+        text: 'About us',
+        href: '/about',
+      },
+      {
+        text: 'Contact',
+        href: '/contact',
+      },
+    ],
   }),
 }
 </script>

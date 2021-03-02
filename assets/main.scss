@@ -1,0 +1,17 @@
+.v-application--wrap {
+  color: white;
+  background: linear-gradient(
+    130deg,
+    rgba(65, 27, 143, 1) 0%,
+    rgba(66, 46, 199, 1) 100%
+  );
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}

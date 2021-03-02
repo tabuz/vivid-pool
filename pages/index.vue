@@ -47,14 +47,6 @@ export default {
 </script>
 
 <style lang="scss">
-main {
-  color: white;
-  background: linear-gradient(
-    130deg,
-    rgba(65, 27, 143, 1) 0%,
-    rgba(66, 46, 199, 1) 100%
-  );
-}
 .home {
   height: 100%;
 }
