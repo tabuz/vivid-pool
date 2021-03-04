@@ -4,11 +4,12 @@
       :aspect-ratio="1 / 1"
       class="mb-3"
       contain
-      max-height="200px"
+      max-height="130px"
+      min-height="130px"
       max-width="200px"
       :src="require(`@/static/${image}`)"
     />
-    <h2>{{ name }} Pools</h2>
+    <h2 class="font-weight-thin">{{ name }} Pools</h2>
   </div>
 </template>
 
@@ -35,10 +36,13 @@ export default {
 <style lang="scss">
 .pool {
   cursor: pointer;
-  border-radius: 16px;
   transition: 0.125s ease-in-out;
+  border-bottom: 1px solid transparent;
+  filter: grayscale(0.9);
+
   &:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    filter: grayscale(0);
+    border-bottom-color: white;
   }
 }
 </style>

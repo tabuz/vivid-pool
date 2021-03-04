@@ -1,20 +1,15 @@
 <template>
   <nav>
-    <v-app-bar flat>
+    <v-app-bar flat color="transparent">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-
-      <v-toolbar-title
-        ><span class="font-weight-bold"
-          >Vivid Stake Pools</span
-        ></v-toolbar-title
-      >
       <v-spacer></v-spacer>
 
       <nuxt-link
         v-for="(desitnation, i) in destinations"
         :key="`nav_${i}`"
         :to="desitnation.href"
-        ><v-btn text class="mr-4"
+        style="text-decoration: none"
+        ><v-btn text x-large outlined color="white" class="mr-4"
           ><span class="font-weight-bold">{{ desitnation.text }}</span></v-btn
         >
       </nuxt-link>

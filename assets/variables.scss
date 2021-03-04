@@ -2,3 +2,19 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap');
+
+
+$primary-font-family: 'Source Sans Pro';
+$secondary-font-family: 'Montserrat';
+
+.v-application {
+  [class*='text-'] {
+    font-family: $primary-font-family, sans-serif !important;
+  }
+  .text-h1 {
+      font-family: $secondary-font-family, sans-serif !important;
+  }
+  font-family: $primary-font-family, sans-serif !important;
+}
