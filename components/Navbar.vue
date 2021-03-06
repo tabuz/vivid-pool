@@ -10,25 +10,28 @@
 
       <div v-if="$vuetify.breakpoint.mdAndUp">
         <nuxt-link
-          v-for="(desitnation, i) in destinations"
+          v-for="(destination, i) in destinations"
           :key="`nav_${i}`"
-          :to="desitnation.href"
+          :to="destination.href"
           style="text-decoration: none"
-          ><v-btn text x-large outlined color="white" class="mr-4"
-            ><span class="font-weight-bold">{{ desitnation.text }}</span></v-btn
-          >
+          ><button
+            class="mr-4 btn-flip subtle"
+            :class="{ active: $nuxt.$route.name === destination.page_name }"
+            :data-front="destination.text"
+            :data-back="destination.text"
+          ></button>
         </nuxt-link>
       </div>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <nuxt-link
-        v-for="(desitnation, i) in destinations"
+        v-for="(destination, i) in destinations"
         :key="`nav_${i}`"
-        :to="desitnation.href"
+        :to="destination.href"
         style="text-decoration: none"
         ><v-btn text x-large outlined color="white" class="mr-4"
-          ><span class="font-weight-bold">{{ desitnation.text }}</span></v-btn
+          ><span class="font-weight-bold">{{ destination.text }}</span></v-btn
         >
       </nuxt-link>
     </v-navigation-drawer>
@@ -45,18 +48,22 @@ export default {
       {
         text: 'Home',
         href: '/',
+        page_name: 'index',
       },
       {
         text: 'Our mission',
         href: '/mission',
+        page_name: 'mission',
       },
       {
         text: 'About us',
         href: '/about',
+        page_name: 'about',
       },
       {
         text: 'Contact',
         href: '/contact',
+        page_name: 'contact',
       },
     ],
   }),

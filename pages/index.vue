@@ -61,25 +61,15 @@ export default {
 .blurp {
   text-align: justify;
   background: #3c3c3ca2;
-  // border-radius: 5px;
   padding: 1rem 1.2rem;
   color: white;
-  line-height: 1.6em;
-  font-size: 1.6em !important;
 }
 
 .hero-text {
   color: white;
   border-radius: 16px;
 }
-@keyframes rainbow {
-  0% {
-    background-position-x: 0;
-  }
-  to {
-    background-position-x: 10240px;
-  }
-}
+
 .vivid-decoration {
   color: white;
   font-weight: normal;
@@ -120,61 +110,5 @@ export default {
   color: #000000;
   background: #89009b;
   display: inline-block;
-}
-.btn-flip {
-  opacity: 1;
-  outline: 0;
-  color: #fff;
-  line-height: 40px;
-  position: relative;
-  text-align: center;
-  letter-spacing: 1px;
-  display: inline-block;
-  text-decoration: none;
-  // font-family: 'Open Sans';
-  text-transform: uppercase;
-
-  &:hover {
-    &:after {
-      opacity: 1;
-      transform: translateY(0) rotateX(0);
-    }
-
-    &:before {
-      opacity: 0;
-      transform: translateY(50%) rotateX(90deg);
-    }
-  }
-
-  &:after {
-    will-change: transform;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    width: 100%;
-    color: #323237;
-    display: block;
-    transition: 0.5s;
-    position: absolute;
-    background: #adadaf;
-    content: attr(data-back);
-    transform: translateY(-50%) rotateX(90deg);
-  }
-
-  &:before {
-    will-change: transform;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    color: #f7f7f7;
-    display: block;
-    padding: 0 30px;
-    line-height: 40px;
-    transition: 0.5s;
-    position: relative;
-    background: #868686;
-    content: attr(data-front);
-    transform: translateY(0) rotateX(0);
-  }
 }
 </style>
