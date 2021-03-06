@@ -4,8 +4,8 @@
       :aspect-ratio="1 / 1"
       class="mb-3"
       contain
-      :max-height="$vuetify.breakpoint.smAndDown ? '50px' : '130px'"
-      :min-height="$vuetify.breakpoint.smAndDown ? '50px' : '130px'"
+      :max-height="$vuetify.breakpoint.smAndDown ? '75px' : '130px'"
+      :min-height="$vuetify.breakpoint.smAndDown ? '75px' : '130px'"
       :max-width="$vuetify.breakpoint.smAndDown ? '50%' : '200px'"
       :src="require(`@/static/${image}`)"
     />

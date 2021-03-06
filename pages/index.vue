@@ -2,14 +2,14 @@
   <v-main>
     <v-container fluid class="home pa-2 pa-md-4">
       <v-row class="fill-height" align="center">
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" lg="5" xl="5">
           <div class="hero-text white-elevation">
             <h1
-              class="text-h4 text-md-h2 text-xl-h1 mb-1 mb-md-4 font-weight-thin"
+              class="text-h3 text-md-h2 text-xl-h1 mb-1 mb-md-4 font-weight-thin"
             >
               <span class="vivid-decoration">Vivid</span> Stake Pool
             </h1>
-            <h3 class="text-h5 text-md-h3 mb-2 mb-md-6 slogan">
+            <h3 class="text-h4 text-md-h3 text-lg-h3 mb-2 mb-md-6 slogan">
               The future is here.
             </h3>
             <p class="text-body-1 text-md-h6 mb-2 mb-md-6 blurp">
@@ -90,7 +90,7 @@ export default {
     width: 100%;
     height: 3px;
     position: absolute;
-    bottom: 7px;
+    bottom: 5px;
     background: linear-gradient(
       90deg,
       hsl(30, 92%, 58%),
@@ -110,9 +110,9 @@ export default {
       #f79533
     );
 
-    @media #{map-get($display-breakpoints, 'md-and-down')} {
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
       height: 1px;
-      bottom: 2px;
+      bottom: 4px;
     }
   }
 }
