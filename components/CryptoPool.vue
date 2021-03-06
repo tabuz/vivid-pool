@@ -4,12 +4,12 @@
       :aspect-ratio="1 / 1"
       class="mb-3"
       contain
-      max-height="130px"
-      min-height="130px"
-      max-width="200px"
+      :max-height="$vuetify.breakpoint.smAndDown ? '50px' : '130px'"
+      :min-height="$vuetify.breakpoint.smAndDown ? '50px' : '130px'"
+      :max-width="$vuetify.breakpoint.smAndDown ? '50%' : '200px'"
       :src="require(`@/static/${image}`)"
     />
-    <h2 class="font-weight-thin">{{ name }} Pools</h2>
+    <h2 class="text-body-1 text-md-h5 font-weight-thin">{{ name }} Pools</h2>
   </div>
 </template>
 
@@ -39,6 +39,10 @@ export default {
   transition: 0.125s ease-in-out;
   border-bottom: 1px solid transparent;
   filter: grayscale(0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     filter: grayscale(0);

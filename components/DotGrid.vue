@@ -9,13 +9,18 @@ import {
   Particle,
   CanvasRenderer,
 } from 'three'
+import { mapState } from 'vuex'
 
 export default {
   name: 'DotGrid',
+  computed: {
+    ...mapState('DotGrid', ['x', 'y']),
+  },
   mounted() {
     const SEPARATION = 100
     const AMOUNTX = 150
     const AMOUNTY = 70
+    const component = this
 
     let container
     let camera, scene, renderer
@@ -23,12 +28,6 @@ export default {
     let particles
     let particle
     let count = 0
-
-    const mouseX = 85
-    const mouseY = -342
-
-    // const windowHalfX = window.innerWidth / 2
-    // const windowHalfY = window.innerHeight / 2
 
     init()
     animate()
@@ -58,11 +57,25 @@ export default {
         },
       })
 
+      const blue = new ParticleCanvasMaterial({
+        color: '#e6007a',
+        program(context) {
+          context.beginPath()
+          context.arc(0, 0, 0.6, 0, PI2, true)
+          context.fill()
+        },
+      })
+
       let i = 0
 
       for (let ix = 0; ix < AMOUNTX; ix++) {
         for (let iy = 0; iy < AMOUNTY; iy++) {
-          particle = particles[i++] = new Particle(material)
+          if (Math.random() < 0.05) {
+            particle = particles[i++] = new Particle(blue)
+            particle.scale.x = particle.scale.y = 2
+          } else {
+            particle = particles[i++] = new Particle(material)
+          }
           particle.position.x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2
           particle.position.z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2
           scene.add(particle)
@@ -73,61 +86,27 @@ export default {
       renderer.setSize(window.innerWidth, window.innerHeight)
       container.appendChild(renderer.domElement)
 
-      // document.addEventListener('mousemove', onDocumentMouseMove, false)
-      // document.addEventListener('touchstart', onDocumentTouchStart, false)
-      // document.addEventListener('touchmove', onDocumentTouchMove, false)
-
-      //
-
       window.addEventListener('resize', onWindowResize, false)
     }
 
     function onWindowResize() {
-      // windowHalfX = window.innerWidth / 2
-      // windowHalfY = window.innerHeight / 2
-
       camera.aspect = window.innerWidth / window.innerHeight
       camera.updateProjectionMatrix()
 
       renderer.setSize(window.innerWidth, window.innerHeight)
     }
 
-    //
-
-    // function onDocumentMouseMove(event) {
-    //   mouseX = event.clientX - windowHalfX
-    //   mouseY = event.clientY - windowHalfY
-    // }
-
-    // function onDocumentTouchStart(event) {
-    //   if (event.touches.length === 1) {
-    //     event.preventDefault()
-
-    //     mouseX = event.touches[0].pageX - windowHalfX
-    //     mouseY = event.touches[0].pageY - windowHalfY
-    //   }
-    // }
-
-    // function onDocumentTouchMove(event) {
-    //   if (event.touches.length === 1) {
-    //     event.preventDefault()
-
-    //     mouseX = event.touches[0].pageX - windowHalfX
-    //     mouseY = event.touches[0].pageY - windowHalfY
-    //   }
-    // }
-
-    //
-
     function animate() {
       requestAnimationFrame(animate)
-
       render()
     }
 
     function render() {
-      camera.position.x += (mouseX - camera.position.x) * 0.05
-      camera.position.y += (-mouseY - camera.position.y) * 0.05
+      const grid_x = component.x
+      const grid_y = component.y
+
+      camera.position.x += (grid_x - camera.position.x) * 0.05
+      camera.position.y += (-grid_y - camera.position.y) * 0.05
       camera.lookAt(scene.position)
 
       let i = 0

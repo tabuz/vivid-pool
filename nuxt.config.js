@@ -4,6 +4,7 @@ export default {
   target: 'static',
   router: {
     base: '/vivid-pool/',
+    middleware: ['dot_grid']
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -56,6 +57,9 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    options: {
+      customProperties: true,
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
