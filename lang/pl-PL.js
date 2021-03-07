@@ -16,4 +16,17 @@ export default {
     get_started_front: 'Zaczynajmy',
     get_started_back: 'Teraz',
   },
+  contact: {
+    title: 'Kontakt',
+    subtitle: `Jeżeli masz jakieś pytania skontaktuj się z nami przez portal 
+      społecznościowy lub użyj formularza kontaktowego a my postaramy 
+      się odpowiedzieć na Twoje pytania tak szybko jak to możliwe.
+    `,
+  },
+  contact_form: {
+    name: 'Imię',
+    message: 'Wiadomość',
+    send_front: 'Wyślij',
+    send_back: 'Teraz',
+  },
 }

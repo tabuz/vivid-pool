@@ -1,0 +1,43 @@
+.vivid-decoration {
+  color: white;
+  font-weight: normal;
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 5px;
+    background: linear-gradient(
+      90deg,
+      hsl(30, 92%, 58%),
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6dba82,
+      #07b39b,
+      #1098ad,
+      #5073b8,
+      #a166ab,
+      #ef4e7b,
+      #f37055,
+      #f79533
+    );
+
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      height: 1px;
+      bottom: 4px;
+    }
+  }
+}
+
+.blurp {
+  text-align: justify;
+  background: #3c3c3ca2;
+  padding: 1rem 1.2rem;
+  color: white;
+}

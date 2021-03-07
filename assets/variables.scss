@@ -10,7 +10,7 @@ $primary-font-family: 'Raleway';
 $secondary-font-family: 'Montserrat';
 
 .v-application {
-  [class*='text-'] {
+  [class*='text-'], input {
     font-family: $primary-font-family, sans-serif !important;
   }
   .text-h1 {

@@ -1,0 +1,13 @@
+.v-application--wrap {
+  color: white;
+  background-color: #0b0b0b;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}

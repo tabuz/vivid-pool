@@ -9,8 +9,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - vivid-pool',
-    title: 'vivid-pool',
+    titleTemplate: '%s - Vivid Stake Pool',
+    title: 'Vivid Stake Pool',
     htmlAttrs: {
       lang: 'en',
     },

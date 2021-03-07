@@ -16,4 +16,17 @@ export default {
     get_started_front: 'Get Started',
     get_started_back: 'Now',
   },
+  contact: {
+    title: 'Contact',
+    subtitle: `If you have any questions please do not hesitate to contact 
+      us on socials or via contact form message. We will try to anwser you 
+      questions you as soon as possible.
+    `,
+  },
+  contact_form: {
+    name: 'Name',
+    message: 'Message',
+    send_front: 'Send',
+    send_back: 'Now',
+  },
 }
