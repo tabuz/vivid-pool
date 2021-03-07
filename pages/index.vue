@@ -10,13 +10,10 @@
               <span class="vivid-decoration">Vivid</span> Stake Pool
             </h1>
             <h3 class="text-h4 text-md-h3 text-lg-h3 mb-2 mb-md-6 slogan">
-              The future is here.
+              {{ $t('index.slogan') }}
             </h3>
             <p class="text-body-1 text-md-h6 mb-2 mb-md-6 blurp">
-              We are an international staking pools validator for Cardano and
-              Polkadot network. Offering cutting edge technology for today and
-              tommorows cryptocurrencry technology. Join us today in this
-              exciting journey.
+              {{ $t('index.blurp') }}
             </p>
             <div class="text-right">
               <button

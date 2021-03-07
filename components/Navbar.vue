@@ -7,12 +7,13 @@
         @click="drawer = true"
       ></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
+      <LocalesDropdown v-if="$vuetify.breakpoint.smAndDown" />
 
       <div v-if="$vuetify.breakpoint.mdAndUp">
         <nuxt-link
           v-for="(destination, i) in destinations"
           :key="`nav_${i}`"
-          :to="destination.href"
+          :to="localePath(destination.page_name)"
           style="text-decoration: none"
           ><button
             class="mr-4 btn-flip subtle"
@@ -21,6 +22,7 @@
             :data-back="destination.text"
           ></button>
         </nuxt-link>
+        <LocalesDropdown />
       </div>
     </v-app-bar>
 
@@ -28,7 +30,7 @@
       <nuxt-link
         v-for="(destination, i) in destinations"
         :key="`nav_${i}`"
-        :to="destination.href"
+        :to="localePath(destination.page_name)"
         style="text-decoration: none"
         ><v-btn text x-large outlined color="white" class="mr-4"
           ><span class="font-weight-bold">{{ destination.text }}</span></v-btn
@@ -39,30 +41,31 @@
 </template>
 
 <script>
+import LocalesDropdown from '@/components/LocalesDropdown'
+
 export default {
   name: 'Navbar',
+  components: {
+    LocalesDropdown,
+  },
   data: () => ({
     drawer: false,
     group: null,
     destinations: [
       {
         text: 'Home',
-        href: '/',
         page_name: 'index',
       },
       {
         text: 'Our mission',
-        href: '/mission',
         page_name: 'mission',
       },
       {
         text: 'About us',
-        href: '/about',
         page_name: 'about',
       },
       {
         text: 'Contact',
-        href: '/contact',
         page_name: 'contact',
       },
     ],

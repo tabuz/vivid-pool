@@ -1,3 +1,3 @@
-export default function ({ store, route }) {
-  store.commit('DotGrid/set_config', route.name)
+export default function ({ store, route, app }) {
+  store.commit('DotGrid/set_config', app.getRouteBaseName(route))
 }
