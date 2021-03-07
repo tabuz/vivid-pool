@@ -9,7 +9,7 @@
             >
               <span class="vivid-decoration">Vivid</span> Stake Pool
             </h1>
-            <h3 class="text-h4 text-md-h3 text-lg-h3 mb-2 mb-md-6 slogan">
+            <h3 class="text-h4 blue text-md-h3 text-lg-h3 mb-2 mb-md-6 slogan">
               {{ $t('index.slogan') }}
             </h3>
             <p class="text-body-1 text-md-h6 mb-2 mb-md-6 blurp">
@@ -18,8 +18,8 @@
             <div class="text-right">
               <button
                 class="btn-flip mb-12"
-                data-front="Get started"
-                data-back="Now"
+                :data-front="$t('index.get_started_front')"
+                :data-back="$t('index.get_started_back')"
               ></button>
             </div>
             <div class="d-flex justify-center align-center">

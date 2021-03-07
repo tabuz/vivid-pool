@@ -51,24 +51,28 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
-    destinations: [
-      {
-        text: 'Home',
-        page_name: 'index',
-      },
-      {
-        text: 'Our mission',
-        page_name: 'mission',
-      },
-      {
-        text: 'About us',
-        page_name: 'about',
-      },
-      {
-        text: 'Contact',
-        page_name: 'contact',
-      },
-    ],
   }),
+  computed: {
+    destinations() {
+      return [
+        {
+          text: this.$t('nav.home'),
+          page_name: 'index',
+        },
+        {
+          text: this.$t('nav.our_mission'),
+          page_name: 'mission',
+        },
+        {
+          text: this.$t('nav.about_us'),
+          page_name: 'about',
+        },
+        {
+          text: this.$t('nav.contact'),
+          page_name: 'contact',
+        },
+      ]
+    },
+  },
 }
 </script>
