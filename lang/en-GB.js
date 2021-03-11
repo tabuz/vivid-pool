@@ -9,8 +9,8 @@ export default {
     slogan: 'The future is here.',
     blurp: `
       We are an international staking pools validator for Cardano and
-      Polkadot network.Offering cutting edge technology for today and
-      tommorows cryptocurrencry technology. Join us today in this
+      Polkadot network. Offering cutting edge technology for today and
+      tommorow's cryptocurrency technology. Join us today in this
       exciting journey.
     `,
     get_started_front: 'Get Started',
@@ -28,5 +28,36 @@ export default {
     message: 'Message',
     send_front: 'Send',
     send_back: 'Now',
+  },
+  about: {
+    title: 'Meet the team',
+    subtitle: `We have been friends who know each other for over 10 years. 
+      The cutting edge technologies have always been our main point of 
+      interest. The concept of the block chain showed all of us new 
+      possibilities and solutions to problems created by the digital 
+      age. Inspired by that we decided to be a part of the decentralization 
+      movement. The two projects about which we are mostly excited are 
+      Cardano and Polkadot. They are the best example of the last 12 
+      years of progress which have been made in block chain technologies.
+    `,
+    rafal: `
+      I'm a 29 years old software tester/developer with over 5 years of 
+      experience in a field. I used to study IT at Cracow University of 
+      Technology. My programming skills include languages like: Python, 
+      C#, bash and Solidity. In a Vivid Pool my role is to operate the 
+      pools and provide them security. In free time blockchain fanatic, 
+      martial artist and motorbike rider.
+    `,
+    patryk: `
+      If I would describe myself in a few words I would say I am a vivid 
+      soul. I love adventures, new opportunities and journeys. I have 
+      graduated from Warsaw School of Economics in Quantitative Methods 
+      in Economics and Information Systems, currently working for an 
+      International company as an analyst. I am the youngest member of 
+      vivid team who is responsible for communication, social media and
+      research. So if you have any questions you will most probably contact 
+      me :)
+    `,
+    hubert: `Profesionall idiot`,
   },
 }

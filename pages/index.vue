@@ -8,7 +8,9 @@
           >
             <span class="vivid-decoration">Vivid</span> Stake Pool
           </h1>
-          <h3 class="text-h4 blue text-md-h3 text-lg-h3 mb-2 mb-md-6 slogan">
+          <h3
+            class="text-h4 text-md-h3 text-lg-h3 mb-2 mb-md-6 vivid-bg slogan"
+          >
             {{ $t('index.slogan') }}
           </h3>
           <p class="text-body-1 text-md-h6 mb-2 mb-md-6 blurp">
