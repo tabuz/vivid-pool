@@ -1,11 +1,11 @@
 <template>
   <v-main>
     <v-container fluid class="contact pa-2 pa-md-4">
-      <v-row class="fill-height" align="center">
-        <v-col cols="12" md="6" lg="5" xl="5">
+      <v-row class="fill-height">
+        <v-col cols="12" md="6" lg="5">
           <div class="hero-text white-elevation">
             <h1
-              class="text-h3 text-md-h2 text-xl-h1 mb-1 mb-md-4 font-weight-thin"
+              class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
             >
               <span class="vivid-decoration">{{ $t('contact.title') }}</span>
             </h1>

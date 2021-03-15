@@ -1,24 +1,25 @@
 <template>
   <v-main>
     <v-container fluid class="about pa-2 pa-md-4">
-      <v-row class="fill-height" align="center">
+      <v-row class="fill-height">
         <v-col cols="12" md="7" lg="6" xl="5">
           <div class="hero-text white-elevation">
             <h1
-              class="text-h3 text-md-h2 text-xl-h1 mb-1 mb-md-4 font-weight-thin"
+              class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
             >
               <span class="vivid-decoration">{{ $t('about.title') }}</span>
             </h1>
             <div class="team blurp mb-2 mb-md-6">
               <div
-                v-for="person in team"
+                v-for="(person, idx) in team"
                 :key="person.name"
                 class="person rounded pt-2"
                 :class="{
                   blur: selected_person && selected_person !== person,
                   active: selected_person === person,
+                  [`person-${idx}`]: true,
                 }"
-                @click="on_click_person(person)"
+                @click="on_click_person(person, idx)"
               >
                 <div class="image mb-2">
                   <v-img
@@ -33,7 +34,12 @@
                 <p class="role">{{ person.role }}</p>
               </div>
             </div>
-            <div class="blurp with-decoration">
+            <div
+              class="blurp with-decoration"
+              :class="{
+                [`person-${person_idx}`]: true,
+              }"
+            >
               <span class="mask"></span>
               <p class="text-body-1 text-md-h6">
                 {{ subtitle_text }}
@@ -52,6 +58,7 @@ export default {
   data() {
     return {
       selected_person: null,
+      person_idx: null,
       team: [
         {
           name: 'Rafał',
@@ -75,11 +82,16 @@ export default {
     },
   },
   methods: {
-    on_click_person(person) {
+    on_click_person(person, idx) {
       const selected_person = this.selected_person
 
-      if (selected_person === person) this.selected_person = null
-      else this.selected_person = person
+      if (selected_person === person) {
+        this.selected_person = null
+        this.person_idx = null
+      } else {
+        this.selected_person = person
+        this.person_idx = idx
+      }
     },
   },
 }
