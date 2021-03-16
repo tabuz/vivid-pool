@@ -60,8 +60,8 @@ export default {
           page_name: 'index',
         },
         {
-          text: this.$t('nav.our_mission'),
-          page_name: 'mission',
+          text: this.$t('nav.docs'),
+          page_name: 'docs-category-article',
         },
         {
           text: this.$t('nav.about_us'),

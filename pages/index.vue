@@ -1,15 +1,15 @@
 <template>
   <v-main>
     <v-container fluid class="home pa-2 pa-md-4">
-      <v-row class="fill-height">
+      <v-row class="fill-height" align="center">
         <v-col cols="12" md="6" lg="5" xl="5">
           <h1
-            class="text-h3 text-md-h3 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
+            class="text-h3 text-md-h3 text-xl-h2 mb-1 mb-md-4 pl-md-8 font-weight-thin"
           >
             <span class="vivid-decoration">Vivid</span> Stake Pool
           </h1>
           <h2
-            class="text-h4 text-md-h3 text-lg-h3 mb-2 mb-md-6 vivid-bg slogan"
+            class="text-h4 text-md-h3 text-lg-h3 mb-2 mb-md-6 ml-md-8 vivid-bg slogan"
           >
             {{ $t('index.slogan') }}
           </h2>
@@ -17,7 +17,7 @@
             {{ $t('index.blurp') }}
           </p>
           <div class="text-right">
-            <nuxt-link :to="localePath('get_started')">
+            <nuxt-link :to="localePath('docs-category-article')">
               <button
                 class="btn-flip mb-12"
                 :data-front="$t('index.get_started_front')"

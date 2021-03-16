@@ -37,6 +37,8 @@ export default {
 .pool {
   cursor: pointer;
   transition: 0.125s ease-in-out;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0);
   border-bottom: 1px solid transparent;
   filter: grayscale(0.9);
   display: flex;

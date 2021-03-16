@@ -1,3 +1,9 @@
+---
+name: Cryptocurrency Exchange
+category: exchanges
+order: 0
+---
+
 # Cryptocurrency Exchanges
 
 Create an account on one of cryptocurrency exchange platform:

@@ -1,3 +1,0 @@
-# Dedalus
-
-about dedalus

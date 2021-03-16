@@ -4,16 +4,17 @@
       <v-row>
         <v-col cols="6" class="pb-0 mb-0">
           <h1
-            class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
+            class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 pl-md-8 font-weight-thin"
           >
-            <span class="vivid-decoration">{{ $t('get_started.title') }}</span>
+            <span class="vivid-decoration">{{ $t('docs.title') }}</span>
           </h1>
           <p class="text-body-1 text-md-h6 mb-2 mb-md-4 blurp">
-            {{ $t('get_started.subtitle') }}
+            {{ $t('docs.subtitle') }}
           </p>
         </v-col>
-        <v-col cols="10">
-          <div class="blurp">
+        <v-col cols="12">
+          <div class="blurp blurred">
+            <div class="mask"></div>
             <v-row>
               <v-col cols="3">
                 <v-treeview
@@ -22,9 +23,12 @@
                   color="purple"
                   hoverable
                   open-on-click
-                  :items="steps"
+                  item-key="slug"
+                  :items="docs_categories"
                   :active.sync="active"
                   :open.sync="open"
+                  return-object
+                  @update:active="select_article"
                 ></v-treeview>
               </v-col>
               <v-divider class="mt-4" color="white" vertical></v-divider>
@@ -32,17 +36,13 @@
                 <v-scroll-y-transition mode="out-in">
                   <div v-if="!content" :key="question">
                     <template v-if="question === 0">
-                      <p class="text-h6">
-                        Do you know what is Staking?
-                      </p>
+                      <p class="text-h6">Do you know what is Staking?</p>
                       <button class="choice-btn mr-2" @click="question = 1">
                         Yes
                       </button>
                       <button
                         class="choice-btn"
-                        @click="
-                          ;(active = ['staking']), (open = ['general'])
-                        "
+                        @click=";(open = ['faq']), (active = ['staking'])"
                       >
                         No
                       </button>
@@ -57,7 +57,8 @@
                       <button
                         class="choice-btn"
                         @click="
-                          ;(active = ['exchanges']), (open = ['purchase'])
+                          ;(open = ['exchanges']),
+                            (active = ['about_exchanges'])
                         "
                       >
                         No
@@ -84,14 +85,14 @@
                       <button
                         class="choice-btn mr-2"
                         @click="
-                          ;(active = ['stake_with_yori']), (open = ['stake'])
+                          ;(open = ['stake']), (active = ['stake_with_yori'])
                         "
                       >
                         Yes
                       </button>
                       <button
                         class="choice-btn"
-                        @click=";(active = ['yori']), (open = ['wallets'])"
+                        @click=";(open = ['wallets']), (active = ['yori'])"
                       >
                         No
                       </button>
@@ -104,7 +105,7 @@
                       <button
                         class="choice-btn mr-2"
                         @click="
-                          ;(active = ['stake_with_dedalus']), (open = ['stake'])
+                          ;(open = ['stake']), (active = ['stake_with_dedalus'])
                         "
                       >
                         Dedalus
@@ -112,22 +113,20 @@
                       <button
                         class="choice-btn mr-2"
                         @click="
-                          ;(active = ['stake_with_yori']), (open = ['stake'])
+                          ;(open = ['stake']), (active = ['stake_with_yori'])
                         "
                       >
                         Yori
                       </button>
                       <button
                         class="choice-btn"
-                        @click="
-                          ;(active = ['about_wallets']), (open = ['wallets'])
-                        "
+                        @click=";(open = ['about']), (active = ['wallets'])"
                       >
                         None
                       </button>
                     </template>
                   </div>
-                  <div v-else :key="active[0]">
+                  <div v-else :key="active[0].slug">
                     <nuxt-content :document="content" />
                   </div>
                 </v-scroll-y-transition>
@@ -142,77 +141,92 @@
 
 <script>
 export default {
-  name: 'GetStarted',
+  name: 'DocsCategoryArticle',
+  async asyncData({ app, params }) {
+    const category = params.category
+    const article = params.article
+    let content
+
+    if (category && article) {
+      try {
+        content = await app
+          .$content(`${app.i18n.locale}/docs/${article}`)
+          .fetch()
+      } catch (error) {}
+    }
+
+    const docs_content = await app
+      .$content(app.i18n.locale, 'docs')
+      .only(['name', 'order', 'slug', 'category'])
+      .fetch()
+
+    return {
+      content,
+      docs_content,
+      open: [{ slug: category }],
+      active: [{ category, slug: article }],
+    }
+  },
   data() {
     return {
       active: [],
       open: [],
       question: 0,
       content: null,
+      docs_content: [],
     }
   },
   computed: {
-    steps() {
+    docs_categories() {
       return [
         {
-          id: 'general',
+          slug: 'faq',
           name: 'FAQ',
-          children: [
-            { id: 'staking', name: 'What is Staking?' },
-          ],
+          children: this.filter_content('faq'),
         },
         {
-          id: 'purchase',
+          slug: 'exchanges',
           name: 'Purchase ADA',
-          children: [
-            { id: 'exchanges', name: 'Cryptocurrency Exchange' },
-            { id: 'binance', name: 'Binance' },
-            { id: 'coinmama', name: 'Coinmama' },
-            { id: 'etoro', name: 'EToro' },
-          ],
+          children: this.filter_content('exchanges'),
         },
         {
-          id: 'wallets',
+          slug: 'wallets',
           name: 'Digital Wallets',
-          children: [
-            { id: 'about_wallets', name: 'About' },
-            { id: 'yori', name: 'Yori' },
-            { id: 'dedalus', name: 'Dedalus' },
-          ],
+          children: this.filter_content('wallets'),
         },
         {
-          id: 'stake',
+          slug: 'stake',
           name: 'Stake with Vivid Pools',
-          children: [
-            { id: 'stake_with_yori', name: 'Yori' },
-            { id: 'stake_with_dedalus', name: 'Dedalus' },
-          ],
+          children: this.filter_content('stake'),
         },
       ]
     },
   },
-  watch: {
-    active: {
-      handler(v) {
-        v.length ? this.selected() : (this.content = null)
-      },
-    },
-  },
   methods: {
-    async selected() {
+    filter_content(category) {
+      return this.docs_content
+        .filter((c) => c.category === category)
+        .sort((a, b) => (a.order > b.order ? 1 : -1))
+    },
+    async select_article() {
       if (!this.active.length) {
         this.content = null
         return
       }
 
-      const [slug] = this.active
+      const { category, slug: article } = this.active[0]
 
       const content = await this.$content(
-        `${this.$i18n.locale}/get_started`,
-        slug
+        `${this.$i18n.locale}/docs/${article}`
       ).fetch()
 
       this.content = content
+
+      window.history.replaceState(
+        window.history.state,
+        '',
+        `/docs/${category}/${article}`
+      )
     },
   },
 }

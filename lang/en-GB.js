@@ -1,7 +1,7 @@
 export default {
   nav: {
     home: 'Home',
-    our_mission: 'Our Mission',
+    docs: 'Docs',
     about_us: 'About Us',
     contact: 'Contact',
   },
@@ -59,26 +59,12 @@ export default {
     `,
     hubert: `Profesionall idiot`,
   },
-  get_started: {
+  docs: {
     title: `Get Started`,
     subtitle: `
       Please follow tutorial below which will show you step-by-step how
       to participate to our staking pool. In few simple steps you should 
       obtain ADA, create your own digital wallet and stake with Vivid Pools.
-    `,
-    11: `
-      # Cryptocurrency Exchanges
-      Create an account on one of cryptocurrency exchange platform:
-      Binance (https://accounts.binance.com/en/register)
-      Coinmama (https://www.coinmama.com/buy/cardano)
-      Cex (https://cex.io/)
-      Etoro (https://www.etoro.com/)
-      Please make sure you are using legit website!
-      You can also compare different platforms under this link:
-      https://cryptoradar.co/buy-cardano
-      For each mentioned platforms you can find detailed instruction how to 
-      create account (you will need to provide information like: full name, 
-      current address, an email and phone number, a copy form of your ID or passport)
     `,
   },
 }

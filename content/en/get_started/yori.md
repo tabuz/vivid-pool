@@ -1,3 +1,0 @@
-# Yori
-
-About yori wallet

@@ -1,3 +1,9 @@
+---
+name: Binance
+category: exchanges
+order: 1
+---
+
 # Binance
 
 Binance is a cryptocurrency exchange that provides a platform for trading various cryptocurrencies. As of January 2018, Binance was the largest cryptocurrency exchange in the world in terms of trading volume.
