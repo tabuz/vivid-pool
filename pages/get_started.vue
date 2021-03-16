@@ -31,7 +31,23 @@
               <v-col class="d-flex pa-6">
                 <v-scroll-y-transition mode="out-in">
                   <div v-if="!content" :key="question">
-                    <template v-if="question == 1">
+                    <template v-if="question === 0">
+                      <p class="text-h6">
+                        Do you know what is Staking?
+                      </p>
+                      <button class="choice-btn mr-2" @click="question = 1">
+                        Yes
+                      </button>
+                      <button
+                        class="choice-btn"
+                        @click="
+                          ;(active = ['staking']), (open = ['general'])
+                        "
+                      >
+                        No
+                      </button>
+                    </template>
+                    <template v-if="question === 1">
                       <p class="text-h6">
                         Do you already have ADA cryptocurrency?
                       </p>
@@ -48,7 +64,7 @@
                       </button>
                     </template>
 
-                    <template v-if="question == 2">
+                    <template v-if="question === 2">
                       <p class="text-h6">
                         What is your preffered way of controling you digital
                         wallet?
@@ -61,7 +77,7 @@
                       </button>
                     </template>
 
-                    <template v-if="question == 3">
+                    <template v-if="question === 3">
                       <p class="text-h6">
                         Do you have already have Yori wallet setup?
                       </p>
@@ -81,7 +97,7 @@
                       </button>
                     </template>
 
-                    <template v-if="question == 4">
+                    <template v-if="question === 4">
                       <p class="text-h6">
                         Do you already have have Yori or Dedalus wallet?
                       </p>
@@ -131,13 +147,20 @@ export default {
     return {
       active: [],
       open: [],
-      question: 1,
+      question: 0,
       content: null,
     }
   },
   computed: {
     steps() {
       return [
+        {
+          id: 'general',
+          name: 'FAQ',
+          children: [
+            { id: 'staking', name: 'What is Staking?' },
+          ],
+        },
         {
           id: 'purchase',
           name: 'Purchase ADA',
