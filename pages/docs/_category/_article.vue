@@ -164,7 +164,7 @@ export default {
 
     return {
       content,
-      payload,
+      docs_content: payload,
       open: [{ slug: category }],
       active: [{ category, slug: article }],
     }
