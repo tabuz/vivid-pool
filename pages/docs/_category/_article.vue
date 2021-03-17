@@ -142,7 +142,7 @@
 <script>
 export default {
   name: 'DocsCategoryArticle',
-  async asyncData({ app, params }) {
+  async asyncData({ app, params, payload }) {
     const category = params.category
     const article = params.article
     let content
@@ -155,14 +155,16 @@ export default {
       } catch (error) {}
     }
 
-    const docs_content = await app
-      .$content(app.i18n.locale, 'docs')
-      .only(['name', 'order', 'slug', 'category'])
-      .fetch()
+    if (!payload) {
+      payload = await app
+        .$content(app.i18n.locale, 'docs')
+        .only(['name', 'order', 'slug', 'category'])
+        .fetch()
+    }
 
     return {
       content,
-      docs_content,
+      payload,
       open: [{ slug: category }],
       active: [{ category, slug: article }],
     }
