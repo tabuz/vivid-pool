@@ -67,25 +67,39 @@ export default {
     ],
   ],
   generate: {
-    async routes() {
+    routes() {
       const { $content } = require('@nuxt/content')
 
       const routes = []
-      const locales = ['en', 'pl']
 
-      for (const locale of locales) {
-        const docs_content = await $content(locale || 'en', 'docs').fetch()
-        routes.concat(
-          docs_content.map((c) => {
-            const route = locale ? `/${locale}/docs/${c.category}/${c.slug}` : `/docs/${c.category}/${c.slug}`;
-            return {
-              route: route,
-              payload: docs_content,
-            }
-          })
-        )
-      }
-      return routes
+      return $content('en', 'docs')
+        .fetch()
+        .then((docs_content) => {
+          return routes.concat(
+            docs_content.map((c) => {
+              const route = `/docs/${c.category}/${c.slug}`
+              return {
+                route,
+                payload: docs_content,
+              }
+            })
+          )
+        })
+        .then((routes) => {
+          return $content('pl', 'docs')
+            .fetch()
+            .then((docs_content) => {
+              return routes.concat(
+                docs_content.map((c) => {
+                  const route = `/pl/docs/${c.category}/${c.slug}`
+                  return {
+                    route,
+                    payload: docs_content,
+                  }
+                })
+              )
+            })
+        })
     },
   },
 
