@@ -9,21 +9,24 @@
       <v-spacer></v-spacer>
       <LocalesDropdown v-if="$vuetify.breakpoint.smAndDown" />
 
-      <div v-if="$vuetify.breakpoint.mdAndUp">
-        <nuxt-link
-          v-for="(destination, i) in destinations"
-          :key="`nav_${i}`"
-          :to="localePath(destination.page_name)"
-          style="text-decoration: none"
-          ><button
-            class="mr-4 btn-flip subtle"
-            :class="{ active: $nuxt.$route.name === destination.page_name }"
-            :data-front="destination.text"
-            :data-back="destination.text"
-          ></button>
-        </nuxt-link>
-        <LocalesDropdown />
-      </div>
+      <v-fade-transition>
+        <div v-if="$vuetify.breakpoint.mdAndUp">
+          <nuxt-link
+            v-for="(destination, i) in destinations"
+            :key="`nav_${i}`"
+            :to="localePath(destination.page_name)"
+            style="text-decoration: none"
+          >
+            <button
+              class="mr-4 btn-flip subtle"
+              :class="{ active: $nuxt.$route.name === destination.page_name }"
+              :data-front="destination.text"
+              :data-back="destination.text"
+            ></button>
+          </nuxt-link>
+          <LocalesDropdown />
+        </div>
+      </v-fade-transition>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute temporary>

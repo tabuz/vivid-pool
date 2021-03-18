@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-container fluid class="get-started pa-2 pa-md-4">
+    <v-container fluid class="docs pa-2 pa-md-4">
       <v-row>
         <v-col cols="6" class="pb-0 mb-0">
           <h1
@@ -155,7 +155,7 @@ export default {
       } catch (error) {}
     }
 
-    if (!payload) {
+    if (!Object.keys(payload).length) {
       payload = await app
         .$content(app.i18n.locale, 'docs')
         .only(['name', 'order', 'slug', 'category'])
@@ -235,28 +235,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.get-started {
+.docs {
   height: 100%;
-
-  .socials {
-    display: flex;
-    justify-content: center;
-    .icon {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      align-items: center;
-      &:first-of-type {
-        margin-right: 2rem;
-      }
-      i {
-        font-size: 4rem !important;
-      }
-      span {
-        color: white;
-        font-weight: normal;
-      }
-    }
-  }
 }
 </style>

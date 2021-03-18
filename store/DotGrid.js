@@ -14,7 +14,6 @@ export const state = () => ({
 
 export const mutations = {
   set_config(state, page_name) {
-    console.log(page_name)
     const { x, y, sinx, siny } = page_name__config[page_name]
 
     state.x = x

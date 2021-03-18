@@ -2,7 +2,9 @@
   <v-app>
     <DotGrid />
     <Navbar />
-    <nuxt />
+    <v-fade-transition>
+      <nuxt />
+    </v-fade-transition>
     <Footer />
   </v-app>
 </template>

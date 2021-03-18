@@ -75,10 +75,10 @@ export default {
       const locales = [null, 'en', 'pl']
 
       for (const locale of locales) {
-        const docs_content = await $content(locale ? locale : 'en', 'docs').fetch()
+        const docs_content = await $content(locale || 'en', 'docs').fetch()
         routes.concat(
           docs_content.map((c) => {
-            const route = `/${locale}/docs/${c.category}/${c.slug}` ? locale : `/docs/${c.category}/${c.slug}`;
+            const route = locale ? `/${locale}/docs/${c.category}/${c.slug}` : `/docs/${c.category}/${c.slug}`;
             return {
               route: route,
               payload: docs_content,
