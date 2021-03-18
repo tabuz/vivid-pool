@@ -3,7 +3,6 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
-    base: '/vivid-pool/',
     middleware: ['dot_grid'],
   },
 
