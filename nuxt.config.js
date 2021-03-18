@@ -71,7 +71,7 @@ export default {
       const { $content } = require('@nuxt/content')
 
       const routes = []
-      const locales = [null, 'en', 'pl']
+      const locales = ['en', 'pl']
 
       for (const locale of locales) {
         const docs_content = await $content(locale || 'en', 'docs').fetch()

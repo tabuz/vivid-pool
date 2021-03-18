@@ -154,13 +154,16 @@ export default {
           .fetch()
       } catch (error) {}
     }
-
-    if (!Object.keys(payload).length) {
+    console.log({ payload }, app.i18n.locale)
+    if (!payload || !Object.keys(payload).length) {
+      console.log('lookin')
       payload = await app
         .$content(app.i18n.locale, 'docs')
         .only(['name', 'order', 'slug', 'category'])
         .fetch()
     }
+
+    console.log({ payload })
 
     return {
       content,
