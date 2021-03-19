@@ -42,7 +42,7 @@
                       </button>
                       <button
                         class="choice-btn"
-                        @click=";(open = ['faq']), (active = ['staking'])"
+                        @click="open_article('faq', 'staking')"
                       >
                         No
                       </button>
@@ -56,10 +56,7 @@
                       </button>
                       <button
                         class="choice-btn"
-                        @click="
-                          ;(open = ['exchanges']),
-                            (active = ['about_exchanges'])
-                        "
+                        @click="open_article('exchanges', 'about_exchanges')"
                       >
                         No
                       </button>
@@ -84,15 +81,13 @@
                       </p>
                       <button
                         class="choice-btn mr-2"
-                        @click="
-                          ;(open = ['stake']), (active = ['stake_with_yori'])
-                        "
+                        @click="open_article('stake', 'stake_with_yori')"
                       >
                         Yes
                       </button>
                       <button
                         class="choice-btn"
-                        @click=";(open = ['wallets']), (active = ['yori'])"
+                        @click="open_article('wallets', 'yori')"
                       >
                         No
                       </button>
@@ -104,23 +99,19 @@
                       </p>
                       <button
                         class="choice-btn mr-2"
-                        @click="
-                          ;(open = ['stake']), (active = ['stake_with_dedalus'])
-                        "
+                        @click="open_article('stake', 'stake_with_dedalus')"
                       >
                         Dedalus
                       </button>
                       <button
                         class="choice-btn mr-2"
-                        @click="
-                          ;(open = ['stake']), (active = ['stake_with_yori'])
-                        "
+                        @click="open_article('stake', 'stake_with_yori')"
                       >
                         Yori
                       </button>
                       <button
                         class="choice-btn"
-                        @click=";(open = ['about']), (active = ['wallets'])"
+                        @click="open_article('about', 'wallets')"
                       >
                         None
                       </button>
@@ -205,6 +196,10 @@ export default {
     },
   },
   methods: {
+    open_article(category, article) {
+      this.open = [{ slug: category }]
+      this.active = [{ category, slug: article }]
+    },
     filter_content(category) {
       return this.docs_content
         .filter((c) => c.category === category)
