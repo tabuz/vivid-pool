@@ -6,6 +6,6 @@ order: 3
 
 # Etoro
 
-Trade and invest in cryptocurrencies, stocks, ETFs, currencies, indices and commodities or copy leading investors on eToro's disruptive trading platform.
+Trade and invest in cryptocurrencies, stocks, ETFs, currencies, indices and commodities or copy leading investors on eToro's disruptive trading platform. Let's test how does it work.
 
 Register Here
