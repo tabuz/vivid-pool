@@ -72,12 +72,12 @@ export default {
 
       const routes = []
 
-      return $content('en', 'docs')
+      return $content('en', 'guide')
         .fetch()
         .then((docs_content) => {
           return routes.concat(
             docs_content.map((c) => {
-              const route = `/docs/${c.category}/${c.slug}`
+              const route = `/guide/${c.category}/${c.slug}`
               return {
                 route,
                 payload: docs_content,
@@ -86,12 +86,12 @@ export default {
           )
         })
         .then((routes) => {
-          return $content('pl', 'docs')
+          return $content('pl', 'guide')
             .fetch()
             .then((docs_content) => {
               return routes.concat(
                 docs_content.map((c) => {
-                  const route = `/pl/docs/${c.category}/${c.slug}`
+                  const route = `/pl/guide/${c.category}/${c.slug}`
                   return {
                     route,
                     payload: docs_content,

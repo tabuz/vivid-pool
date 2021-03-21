@@ -74,8 +74,8 @@ export default {
           page_name: 'index',
         },
         {
-          text: this.$t('nav.docs'),
-          page_name: 'docs-category-article',
+          text: this.$t('nav.guide'),
+          page_name: 'guide-category-article',
         },
         {
           text: this.$t('nav.about_us'),

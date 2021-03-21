@@ -23,7 +23,7 @@ export default {
     href: { type: Boolean, default: false },
   },
   methods: {
-    ...mapMutations('Docs', ['set_props']),
+    ...mapMutations('Guide', ['set_props']),
   },
 }
 </script>

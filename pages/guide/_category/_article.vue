@@ -73,17 +73,17 @@
 
                     <template v-if="question === 3">
                       <p class="text-h6">
-                        Do you have already have Yori wallet setup?
+                        Do you have already have Yoroi wallet setup?
                       </p>
                       <button
                         class="choice-btn mr-2"
-                        @click="open_article('stake', 'stake_with_yori')"
+                        @click="open_article('stake', 'stake_with_yoroi')"
                       >
                         Yes
                       </button>
                       <button
                         class="choice-btn"
-                        @click="open_article('wallets', 'yori')"
+                        @click="open_article('wallets', 'yoroi')"
                       >
                         No
                       </button>
@@ -91,29 +91,29 @@
 
                     <template v-if="question === 4">
                       <p class="text-h6">
-                        Do you already have have Yori or Dedalus wallet?
+                        Do you already have have Yoroi or Dedalus wallet?
                       </p>
                       <button
                         class="choice-btn mr-2"
-                        @click="open_article('stake', 'stake_with_dedalus')"
+                        @click="open_article('stake', 'stake_with_daedalus')"
                       >
                         Dedalus
                       </button>
                       <button
                         class="choice-btn mr-2"
-                        @click="open_article('stake', 'stake_with_yori')"
+                        @click="open_article('stake', 'stake_with_yoroi')"
                       >
-                        Yori
+                        Yoroi
                       </button>
                       <button
                         class="choice-btn"
-                        @click="open_article('about', 'wallets')"
+                        @click="open_article('wallets', 'about_wallets')"
                       >
                         None
                       </button>
                     </template>
                   </div>
-                  <div v-else :key="active[0].slug" class="width-100">
+                  <div v-else :key="active[0].slug" class="max-width-800">
                     <div class="text-right" @click="content = null">
                       <v-btn icon>
                         <v-icon color="white">mdi-close</v-icon>
@@ -141,7 +141,7 @@ import { mapState } from 'vuex'
 import PageTitle from '@/components/PageTitle'
 
 export default {
-  name: 'DocsCategoryArticle',
+  name: 'GuideCategoryArticle',
   components: {
     PageTitle,
   },
@@ -153,14 +153,14 @@ export default {
     if (category && article) {
       try {
         content = await app
-          .$content(`${app.i18n.locale}/docs/${article}`)
+          .$content(`${app.i18n.locale}/guide/${article}`)
           .fetch()
       } catch (error) {}
     }
 
     if (!payload || !Object.keys(payload).length) {
       payload = await app
-        .$content(app.i18n.locale, 'docs')
+        .$content(app.i18n.locale, 'guide')
         .only(['name', 'order', 'slug', 'category'])
         .fetch()
     }
@@ -182,7 +182,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('Docs', ['next_category', 'next_article']),
+    ...mapState('Guide', ['next_category', 'next_article']),
     docs_categories() {
       return [
         {
@@ -235,7 +235,7 @@ export default {
       const { category, slug: article } = this.active[0]
 
       const content = await this.$content(
-        `${this.$i18n.locale}/docs/${article}`
+        `${this.$i18n.locale}/guide/${article}`
       ).fetch()
 
       this.content = content
@@ -243,7 +243,7 @@ export default {
       window.history.replaceState(
         window.history.state,
         '',
-        `/docs/${category}/${article}`
+        `/guide/${category}/${article}`
       )
     },
   },
@@ -254,7 +254,8 @@ export default {
 .docs {
   height: 100%;
 }
-.width-100 {
+.max-width-800 {
+  max-width: 800px;
   width: 100%;
 }
 </style>

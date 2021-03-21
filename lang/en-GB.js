@@ -1,7 +1,7 @@
 export default {
   nav: {
     home: 'Home',
-    docs: 'Docs',
+    guide: 'Guide',
     about_us: 'About Us',
     contact: 'Contact',
   },

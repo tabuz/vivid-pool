@@ -1,5 +1,5 @@
 ---
-name: Dedalus
+name: Daedalus
 category: stake
 order: 1
 ---

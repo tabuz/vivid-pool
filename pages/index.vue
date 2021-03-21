@@ -9,7 +9,7 @@
             <span class="vivid-decoration">Vivid</span> Stake Pool
           </h1>
           <h2
-            class="text-h4 text-md-h3 text-lg-h2 mb-2 mb-md-4 vivid-bg slogan"
+            class="text-h4 text-md-h3 text-xl-h2 mb-2 mb-md-4 vivid-bg slogan"
           >
             {{ $t('index.slogan') }}
           </h2>
@@ -17,7 +17,7 @@
             {{ $t('index.blurp') }}
           </p>
           <div class="text-right">
-            <nuxt-link :to="localePath('docs-category-article')">
+            <nuxt-link :to="localePath('guide-category-article')">
               <button
                 class="btn-flip mb-12"
                 :data-front="$t('index.get_started_front')"
