@@ -4,11 +4,7 @@
       <v-row class="fill-height">
         <v-col cols="12" md="7" lg="6" xl="5">
           <div class="hero-text white-elevation">
-            <h1
-              class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
-            >
-              <span class="vivid-decoration">{{ $t('about.title') }}</span>
-            </h1>
+            <PageTitle :title="$t('about.title')" />
             <div class="team blurp mb-2 mb-md-6">
               <div
                 v-for="(person, idx) in team"
@@ -53,8 +49,13 @@
 </template>
 
 <script>
+import PageTitle from '@/components/PageTitle'
+
 export default {
   name: 'About',
+  components: {
+    PageTitle,
+  },
   data() {
     return {
       selected_person: null,

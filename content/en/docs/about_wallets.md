@@ -11,3 +11,8 @@ A digital wallet also known as "e-Wallet" is an electronic device, online servic
 ## Cryptocurrency wallet
 
 A cryptocurrency wallet is a digital wallet where private keys are stored for cryptocurrencies like bitcoin or cardano. In addition to this basic function of storing the keys, a cryptocurrency wallet more often also offers the functionality of encrypting and/or signing information. Signing can for example result in executing a smart contract, a cryptocurrency transaction, identification or legally signing a 'document'.
+
+<div class="text-right">
+    <article-button text="Yori" next_category="wallets" next_article="yori"></article-button>
+    <article-button text="Dedalus" next_category="wallets" next_article="dedalus"></article-button>
+</div>

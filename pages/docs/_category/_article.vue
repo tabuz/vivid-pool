@@ -3,20 +3,16 @@
     <v-container fluid class="docs pa-2 pa-md-4">
       <v-row>
         <v-col cols="12" md="6" class="pb-0 mb-0">
-          <h1
-            class="text-h5 text-md-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 pl-md-8 font-weight-thin"
-          >
-            <span class="vivid-decoration">{{ $t('docs.title') }}</span>
-          </h1>
-          <p class="text-body-2 text-md-body-1 text-md-h6 mb-2 mb-md-4 blurp">
-            {{ $t('docs.subtitle') }}
-          </p>
+          <PageTitle
+            :title="$t('docs.title')"
+            :subtitle="$t('docs.subtitle')"
+          />
         </v-col>
         <v-col cols="12">
           <div class="blurp blurred">
             <div class="mask"></div>
             <v-row>
-              <v-col cols="3">
+              <v-col cols="12" md="3">
                 <v-treeview
                   dark
                   activatable
@@ -31,8 +27,8 @@
                   @update:active="select_article"
                 ></v-treeview>
               </v-col>
-              <v-divider class="mt-4" color="white" vertical></v-divider>
-              <v-col class="d-flex pa-6">
+              <!-- <v-divider class="mt-4" color="white" vertical></v-divider> -->
+              <v-col cols="12" md="9" class="d-flex pa-6">
                 <v-scroll-y-transition mode="out-in">
                   <div v-if="!content" :key="question">
                     <template v-if="question === 0">
@@ -42,7 +38,7 @@
                       </button>
                       <button
                         class="choice-btn"
-                        @click="open_article('faq', 'staking')"
+                        @click="open_article('essentials', 'staking')"
                       >
                         No
                       </button>
@@ -117,8 +113,18 @@
                       </button>
                     </template>
                   </div>
-                  <div v-else :key="active[0].slug">
-                    <nuxt-content :document="content" />
+                  <div v-else :key="active[0].slug" class="width-100">
+                    <div class="text-right" @click="content = null">
+                      <v-btn icon>
+                        <v-icon color="white">mdi-close</v-icon>
+                      </v-btn>
+                    </div>
+                    <nuxt-content
+                      :document="content"
+                      @open="
+                        (category, article) => open_article(category, article)
+                      "
+                    />
                   </div>
                 </v-scroll-y-transition>
               </v-col>
@@ -131,8 +137,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import PageTitle from '@/components/PageTitle'
+
 export default {
   name: 'DocsCategoryArticle',
+  components: {
+    PageTitle,
+  },
   async asyncData({ app, params, payload }) {
     const category = params.category
     const article = params.article
@@ -170,12 +182,13 @@ export default {
     }
   },
   computed: {
+    ...mapState('Docs', ['next_category', 'next_article']),
     docs_categories() {
       return [
         {
-          slug: 'faq',
-          name: 'FAQ',
-          children: this.filter_content('faq'),
+          slug: 'essentials',
+          name: 'Essentials',
+          children: this.filter_content('essentials'),
         },
         {
           slug: 'exchanges',
@@ -193,6 +206,14 @@ export default {
           children: this.filter_content('stake'),
         },
       ]
+    },
+  },
+  watch: {
+    next_article: {
+      handler(article) {
+        const next_category = this.next_category
+        this.open_article(next_category, article)
+      },
     },
   },
   methods: {
@@ -232,5 +253,8 @@ export default {
 <style lang="scss" scoped>
 .docs {
   height: 100%;
+}
+.width-100 {
+  width: 100%;
 }
 </style>

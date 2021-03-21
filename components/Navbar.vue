@@ -29,7 +29,14 @@
       </v-fade-transition>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" color="black" absolute temporary>
+    <v-navigation-drawer
+      v-model="drawer"
+      color="black"
+      floating
+      fixed
+      temporary
+      bottom
+    >
       <v-list dense nav>
         <v-list-item v-for="(destination, i) in destinations" :key="`nav_${i}`">
           <nuxt-link
@@ -56,7 +63,7 @@ export default {
     LocalesDropdown,
   },
   data: () => ({
-    drawer: true,
+    drawer: false,
     group: null,
   }),
   computed: {

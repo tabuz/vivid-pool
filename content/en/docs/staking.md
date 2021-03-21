@@ -1,6 +1,6 @@
 ---
 name: What is Staking?
-category: faq
+category: essentials
 order: 0
 ---
 

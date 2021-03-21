@@ -4,14 +4,10 @@
       <v-row class="fill-height">
         <v-col cols="12" md="6" lg="5">
           <div class="hero-text white-elevation">
-            <h1
-              class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
-            >
-              <span class="vivid-decoration">{{ $t('contact.title') }}</span>
-            </h1>
-            <p class="text-body-1 text-md-h6 mb-2 mb-md-6 blurp">
-              {{ $t('contact.subtitle') }}
-            </p>
+            <PageTitle
+              :title="$t('contact.title')"
+              :subtitle="$t('contact.subtitle')"
+            />
             <div class="socials blurp">
               <a href="https://twtter.com" target="_blank" class="icon twitter">
                 <v-icon x-large color="#00acee">mdi-twitter</v-icon>
@@ -36,11 +32,13 @@
 
 <script>
 import ContactForm from '@/components/ContactForm'
+import PageTitle from '@/components/PageTitle'
 
 export default {
   name: 'Contact',
   components: {
     ContactForm,
+    PageTitle,
   },
 }
 </script>

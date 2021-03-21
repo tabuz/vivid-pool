@@ -6,15 +6,12 @@ order: 0
 
 # Cryptocurrency Exchanges
 
-Create an account on one of cryptocurrency exchange platform:
-- Binance (https://accounts.binance.com/en/register)
-- Coinmama (https://www.coinmama.com/buy/cardano)
-- Cex (https://cex.io/)
-- Etoro (https://www.etoro.com/)
+Create an account on one of cryptocurrency exchange platform, you can also compare different platforms on [cryptoradar](https://cryptoradar.co/buy-cardano).
+- <article-button text="Binance" href next_category="exchanges" next_article="binance"></article-button>
+- <article-button text="Cex" href next_category="exchanges" next_article="cex"></article-button>
+- <article-button text="Etoro" href next_category="exchanges" next_article="etoro"></article-button>
 
-Please make sure you are using legit website!
-
-You can also compare different platforms under [this](https://cryptoradar.co/buy-cardano) link.
+<br>
 
 For each mentioned platforms you can find detailed instruction how to 
 create account (you will need to provide information like: full name, 
