@@ -3,7 +3,7 @@
     <v-app-bar flat color="transparent">
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.smAndDown"
-        color="purple"
+        color="white"
         @click="drawer = true"
       ></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
@@ -29,16 +29,20 @@
       </v-fade-transition>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary>
-      <nuxt-link
-        v-for="(destination, i) in destinations"
-        :key="`nav_${i}`"
-        :to="localePath(destination.page_name)"
-        style="text-decoration: none"
-        ><v-btn text x-large outlined color="white" class="mr-4"
-          ><span class="font-weight-bold">{{ destination.text }}</span></v-btn
-        >
-      </nuxt-link>
+    <v-navigation-drawer v-model="drawer" color="black" absolute temporary>
+      <v-list dense nav>
+        <v-list-item v-for="(destination, i) in destinations" :key="`nav_${i}`">
+          <nuxt-link
+            :to="localePath(destination.page_name)"
+            style="text-decoration: none; width: 100%"
+            ><button
+              style="width: 100%"
+              class="btn-flip d-block"
+              :data-front="destination.text"
+            ></button>
+          </nuxt-link>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
   </nav>
 </template>
@@ -52,7 +56,7 @@ export default {
     LocalesDropdown,
   },
   data: () => ({
-    drawer: false,
+    drawer: true,
     group: null,
   }),
   computed: {

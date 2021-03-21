@@ -2,13 +2,13 @@
   <v-main>
     <v-container fluid class="docs pa-2 pa-md-4">
       <v-row>
-        <v-col cols="6" class="pb-0 mb-0">
+        <v-col cols="12" md="6" class="pb-0 mb-0">
           <h1
-            class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 pl-md-8 font-weight-thin"
+            class="text-h5 text-md-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 pl-md-8 font-weight-thin"
           >
             <span class="vivid-decoration">{{ $t('docs.title') }}</span>
           </h1>
-          <p class="text-body-1 text-md-h6 mb-2 mb-md-4 blurp">
+          <p class="text-body-2 text-md-body-1 text-md-h6 mb-2 mb-md-4 blurp">
             {{ $t('docs.subtitle') }}
           </p>
         </v-col>
