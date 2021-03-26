@@ -55,10 +55,10 @@ export default {
             code: 'en',
             file: 'en-GB.js',
           },
-          {
-            code: 'pl',
-            file: 'pl-PL.js',
-          },
+          // {
+          //   code: 'pl',
+          //   file: 'pl-PL.js',
+          // },
         ],
         defaultLocale: 'en',
         lazy: true,
@@ -85,21 +85,21 @@ export default {
             })
           )
         })
-        .then((routes) => {
-          return $content('pl', 'guide')
-            .fetch()
-            .then((docs_content) => {
-              return routes.concat(
-                docs_content.map((c) => {
-                  const route = `/pl/guide/${c.category}/${c.slug}`
-                  return {
-                    route,
-                    payload: docs_content,
-                  }
-                })
-              )
-            })
-        })
+        // .then((routes) => {
+        //   return $content('pl', 'guide')
+        //     .fetch()
+        //     .then((docs_content) => {
+        //       return routes.concat(
+        //         docs_content.map((c) => {
+        //           const route = `/pl/guide/${c.category}/${c.slug}`
+        //           return {
+        //             route,
+        //             payload: docs_content,
+        //           }
+        //         })
+        //       )
+        //     })
+        // })
     },
   },
 

@@ -7,7 +7,7 @@
         @click="drawer = true"
       ></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
-      <LocalesDropdown v-if="$vuetify.breakpoint.smAndDown" />
+      <!-- <LocalesDropdown v-if="$vuetify.breakpoint.smAndDown" /> -->
 
       <v-fade-transition>
         <div v-if="$vuetify.breakpoint.mdAndUp">
@@ -24,7 +24,7 @@
               :data-back="destination.text"
             ></button>
           </nuxt-link>
-          <LocalesDropdown />
+          <!-- <LocalesDropdown /> -->
         </div>
       </v-fade-transition>
     </v-app-bar>
@@ -55,12 +55,12 @@
 </template>
 
 <script>
-import LocalesDropdown from '@/components/LocalesDropdown'
+// import LocalesDropdown from '@/components/LocalesDropdown'
 
 export default {
   name: 'Navbar',
   components: {
-    LocalesDropdown,
+    // LocalesDropdown,
   },
   data: () => ({
     drawer: false,

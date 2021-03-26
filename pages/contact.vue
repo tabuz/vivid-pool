@@ -9,12 +9,24 @@
               :subtitle="$t('contact.subtitle')"
             />
             <div class="socials blurp">
-              <a href="https://twtter.com" target="_blank" class="icon twitter">
+              <a
+                href="https://twitter.com/Cryptoguys4"
+                target="_blank"
+                class="icon twitter"
+              >
                 <v-icon x-large color="#00acee">mdi-twitter</v-icon>
                 <span>Twitter</span>
               </a>
               <a
-                href="https://telegram.com"
+                href="https://discord.gg/8Dw8s6Fm"
+                target="_blank"
+                class="icon discord"
+              >
+                <v-icon x-large color="#7289da">mdi-discord</v-icon>
+                <span>Discord</span>
+              </a>
+              <a
+                href="https://t.me/vivid_pool"
                 target="_blank"
                 class="icon telegram"
               >
@@ -55,8 +67,9 @@ export default {
       flex-direction: column;
       text-decoration: none;
       align-items: center;
-      &:first-of-type {
-        margin-right: 2rem;
+      margin-right: 2rem;
+      &:last-of-type {
+        margin-right: none;
       }
       i {
         font-size: 4rem !important;

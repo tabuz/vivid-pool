@@ -1,15 +1,15 @@
 <template>
   <v-main>
     <v-container fluid class="home pa-2 pa-md-4">
-      <v-row class="fill-height" align="center">
+      <v-row class="fill-height">
         <v-col cols="12" md="6" lg="5" xl="5">
           <h1
-            class="text-h3 text-md-h2 text-xl-h1 mb-1 mb-md-4 font-weight-thin"
+            class="text-h4 text-md-h3 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
           >
             <span class="vivid-decoration">Vivid</span> Stake Pool
           </h1>
           <h2
-            class="text-h4 text-md-h3 text-xl-h2 mb-2 mb-md-4 vivid-bg slogan"
+            class="text-h5 text-md-h4 text-xl-h3 mb-2 mb-md-4 vivid-bg slogan"
           >
             {{ $t('index.slogan') }}
           </h2>
@@ -25,7 +25,8 @@
               ></button>
             </nuxt-link>
           </div>
-          <div class="d-flex justify-center align-center">
+
+          <!-- <div class="d-flex justify-center align-center">
             <CryptoPool
               name="Cardano"
               :container-class="
@@ -34,7 +35,56 @@
               image="cardano-ada-logo.svg"
             />
             <CryptoPool name="Polkadot" image="polkadot-new-dot-logo.svg" />
-          </div>
+          </div> -->
+          <v-simple-table dark class="pool-table">
+            <template #default>
+              <thead>
+                <tr>
+                  <th class="text-left">Ticker</th>
+                  <th class="text-left">Fee</th>
+                  <th class="text-left">Pledge</th>
+                  <th class="text-left">Active Stake</th>
+                  <th class="text-left">ROA</th>
+                  <th class="text-left">Lifetime Blocks</th>
+                  <th class="text-left">Saturation</th>
+                  <th class="text-left">Pool ID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="pool in pools" :key="pool.pool_id">
+                  <td>{{ pool.ticker_orig }}</td>
+                  <td>{{ format_percent(pool.tax_ratio) }}</td>
+                  <td>{{ format_ada(pool.pledge) }}</td>
+                  <td>{{ format_ada(pool.active_stake) }}</td>
+                  <td>{{ format_percent(pool.roa_lifetime) }}</td>
+                  <td>{{ format_percent(pool.blocks_lifetime) }}</td>
+                  <td>
+                    <v-progress-linear
+                      v-model="pool.saturated"
+                      color="purple"
+                      rounded
+                      height="25"
+                    >
+                      {{ format_percent(pool.saturated) }}
+                    </v-progress-linear>
+                  </td>
+                  <td>
+                    <v-btn
+                      v-clipboard="() => pool.pool_id"
+                      small
+                      tile
+                      color="purple"
+                      @click="feedback_copied(pool.pool_id)"
+                      ><span v-if="!copied">Copy</span
+                      ><v-icon v-else-if="copied === pool.pool_id"
+                        >mdi-check</v-icon
+                      ></v-btn
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </template>
+          </v-simple-table>
         </v-col>
       </v-row>
     </v-container>
@@ -42,11 +92,44 @@
 </template>
 
 <script>
-import CryptoPool from '@/components/CryptoPool'
+// import CryptoPool from '@/components/CryptoPool'
+import Vue from 'vue'
+import Clipboard from 'v-clipboard'
+
+Vue.use(Clipboard)
 
 export default {
   components: {
-    CryptoPool,
+    // CryptoPool,
+  },
+  data() {
+    return {
+      pools: [],
+      copied: false,
+    }
+  },
+  async created() {
+    const response = await fetch(
+      'https://js.adapools.org/pools/194430bee1245b2d7e19a33e52635e5328ef24431874a0cb191c0195/summary.json'
+    )
+    const data = await response.json()
+    this.pools.push(data.data)
+  },
+  methods: {
+    format_percent(value) {
+      return `${(Number(value) * 100).toFixed(2)} %`
+    },
+    format_ada(value) {
+      value = parseInt(value / 1000000)
+      if (value / 1000 < 1000) return `${Number(value / 1000).toFixed(0)}k ₳`
+      return 'dupa'
+    },
+    feedback_copied(pool_id) {
+      this.copied = pool_id
+      setTimeout(() => {
+        this.copied = null
+      }, 1500)
+    },
   },
 }
 </script>
@@ -54,6 +137,17 @@ export default {
 <style lang="scss" scoped>
 .home {
   height: 100%;
+  .pool-table {
+    th,
+    td {
+      color: white !important;
+    }
+    tr {
+      &:hover {
+        background: inherit !important;
+      }
+    }
+  }
 }
 
 .hero-text {
