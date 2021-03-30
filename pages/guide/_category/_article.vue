@@ -3,37 +3,22 @@
     <v-container fluid class="docs pa-2 pa-md-4">
       <v-row>
         <v-col cols="12" md="6" class="pb-0 mb-0">
-          <PageTitle
-            :title="$t('docs.title')"
-            :subtitle="$t('docs.subtitle')"
-          />
+          <PageTitle :title="$t('docs.title')" />
         </v-col>
         <v-col cols="12">
           <div class="blurp blurred">
             <div class="mask"></div>
             <v-row>
               <v-col cols="12" md="3">
-                <v-treeview
-                  dark
-                  activatable
-                  color="purple"
-                  hoverable
-                  open-on-click
-                  item-text="text"
-                  item-key="id"
-                  item-children="toc"
-                  :items="docs_categories"
-                  :active.sync="active"
-                  :open.sync="open"
-                  return-object
-                  @update:active="select_article"
-                ></v-treeview>
+                <ArticlesTree :content="docs_content" />
               </v-col>
+
               <!-- <v-divider class="mt-4" color="white" vertical></v-divider> -->
-              <v-col cols="12" md="9" class="d-flex pa-6">
+              <v-col cols="12" md="9" class="d-flex">
                 <v-scroll-y-transition mode="out-in">
-                  <div v-if="!content" :key="question">
+                  <div v-if="!content" :key="question" class="max-width-800">
                     <template v-if="question === 0">
+                      <p>{{ $t('docs.subtitle') }}</p>
                       <p class="text-h6">
                         What is your level of knowledge about blockchain
                         technology?
@@ -124,7 +109,7 @@
                       </button>
                     </template>
                   </div>
-                  <div v-else :key="active[0].slug" class="max-width-800">
+                  <div v-else class="max-width-800">
                     <div class="text-right" @click="content = null">
                       <v-btn icon>
                         <v-icon color="white">mdi-close</v-icon>
@@ -150,11 +135,13 @@
 <script>
 import { mapState } from 'vuex'
 import PageTitle from '@/components/PageTitle'
+import ArticlesTree from '@/components/ArticlesTree'
 
 export default {
   name: 'GuideCategoryArticle',
   components: {
     PageTitle,
+    ArticlesTree,
   },
   async asyncData({ app, params, payload }) {
     const category = params.category
@@ -176,13 +163,16 @@ export default {
         .fetch()
     }
 
-    payload = payload.map((_) => ({ ..._, id: _.slug, text: _.name }))
+    payload = payload.map((_) => ({
+      ..._,
+      id: _.slug,
+      text: _.name,
+      toc: _.toc.map((__) => ({ ...__, category: _.category })),
+    }))
 
     return {
       content,
       docs_content: payload,
-      open: [{ id: category }],
-      active: [{ category, id: article }],
     }
   },
   data() {
@@ -196,30 +186,6 @@ export default {
   },
   computed: {
     ...mapState('Guide', ['next_category', 'next_article']),
-    docs_categories() {
-      return [
-        {
-          id: 'essentials',
-          text: 'Essentials',
-          toc: this.filter_content('essentials'),
-        },
-        {
-          id: 'exchanges',
-          text: 'Purchase ADA',
-          toc: this.filter_content('exchanges'),
-        },
-        {
-          id: 'wallets',
-          text: 'Digital Wallets',
-          toc: this.filter_content('wallets'),
-        },
-        {
-          id: 'stake',
-          text: 'Stake with Vivid Pools',
-          toc: this.filter_content('stake'),
-        },
-      ]
-    },
   },
   watch: {
     next_article: {
@@ -244,7 +210,7 @@ export default {
         this.content = null
         return
       }
-
+      console.log(this.active)
       const { category, slug: article } = this.active[0]
 
       const content = await this.$content(

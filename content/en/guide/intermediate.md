@@ -1,5 +1,5 @@
 ---
-name: Itermediate Start
+name: Intermediate Start
 category: essentials
 order: 1
 ---
