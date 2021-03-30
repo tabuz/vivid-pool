@@ -19,7 +19,9 @@
                   color="purple"
                   hoverable
                   open-on-click
-                  item-key="slug"
+                  item-text="text"
+                  item-key="id"
+                  item-children="toc"
                   :items="docs_categories"
                   :active.sync="active"
                   :open.sync="open"
@@ -32,15 +34,24 @@
                 <v-scroll-y-transition mode="out-in">
                   <div v-if="!content" :key="question">
                     <template v-if="question === 0">
-                      <p class="text-h6">Do you know what is Staking?</p>
-                      <button class="choice-btn mr-2" @click="question = 1">
-                        Yes
+                      <p class="text-h6">
+                        What is your level of knowledge about blockchain
+                        technology?
+                      </p>
+                      <button
+                        class="choice-btn mr-2"
+                        @click="open_article('essentials', 'beginner')"
+                      >
+                        Beginner
                       </button>
                       <button
-                        class="choice-btn"
-                        @click="open_article('essentials', 'staking')"
+                        class="choice-btn mr-2"
+                        @click="open_article('essentials', 'intermediate')"
                       >
-                        No
+                        Intermediate
+                      </button>
+                      <button class="choice-btn mr-2" @click="question = 1">
+                        Advanced
                       </button>
                     </template>
                     <template v-if="question === 1">
@@ -161,15 +172,17 @@ export default {
     if (!payload || !Object.keys(payload).length) {
       payload = await app
         .$content(app.i18n.locale, 'guide')
-        .only(['name', 'order', 'slug', 'category'])
+        .only(['name', 'order', 'slug', 'category', 'toc'])
         .fetch()
     }
+
+    payload = payload.map((_) => ({ ..._, id: _.slug, text: _.name }))
 
     return {
       content,
       docs_content: payload,
-      open: [{ slug: category }],
-      active: [{ category, slug: article }],
+      open: [{ id: category }],
+      active: [{ category, id: article }],
     }
   },
   data() {
@@ -186,24 +199,24 @@ export default {
     docs_categories() {
       return [
         {
-          slug: 'essentials',
-          name: 'Essentials',
-          children: this.filter_content('essentials'),
+          id: 'essentials',
+          text: 'Essentials',
+          toc: this.filter_content('essentials'),
         },
         {
-          slug: 'exchanges',
-          name: 'Purchase ADA',
-          children: this.filter_content('exchanges'),
+          id: 'exchanges',
+          text: 'Purchase ADA',
+          toc: this.filter_content('exchanges'),
         },
         {
-          slug: 'wallets',
-          name: 'Digital Wallets',
-          children: this.filter_content('wallets'),
+          id: 'wallets',
+          text: 'Digital Wallets',
+          toc: this.filter_content('wallets'),
         },
         {
-          slug: 'stake',
-          name: 'Stake with Vivid Pools',
-          children: this.filter_content('stake'),
+          id: 'stake',
+          text: 'Stake with Vivid Pools',
+          toc: this.filter_content('stake'),
         },
       ]
     },
@@ -218,8 +231,8 @@ export default {
   },
   methods: {
     open_article(category, article) {
-      this.open = [{ slug: category }]
-      this.active = [{ category, slug: article }]
+      this.open = [{ id: category }]
+      this.active = [{ category, id: article }]
     },
     filter_content(category) {
       return this.docs_content
