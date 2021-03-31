@@ -13,28 +13,6 @@
             "
             >{{ depth_2.text }}</nuxt-link
           >
-          <ul
-            v-if="depth_2.toc"
-            class="toc mb-1"
-            :class="{
-              active:
-                ($route.params.category === depth_1.id) &
-                ($route.params.article === depth_2.id),
-            }"
-          >
-            <li v-for="depth_3 in depth_2.toc" :key="depth_3.id">
-              <nuxt-link
-                :to="
-                  localePath({
-                    name: 'guide-category-article',
-                    params: { category: depth_1.id, article: depth_2.id },
-                    hash: `#${depth_3.id}`,
-                  })
-                "
-                >{{ depth_3.text }}</nuxt-link
-              >
-            </li>
-          </ul>
         </li>
       </ul>
     </li>
@@ -45,7 +23,7 @@
 export default {
   name: 'ArticleTree',
   props: {
-    content: { type: Array },
+    content: { type: Array, default: () => [] },
   },
   computed: {
     content_by_category() {
@@ -78,7 +56,7 @@ ul {
 }
 ol {
   position: sticky;
-  top: 0;
+  top: 50px;
   padding: 0;
   color: white;
 }

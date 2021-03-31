@@ -75,7 +75,7 @@ export default {
         },
         {
           text: this.$t('nav.guide'),
-          page_name: 'guide-category-article',
+          page_name: 'guide',
         },
         {
           text: this.$t('nav.about_us'),
