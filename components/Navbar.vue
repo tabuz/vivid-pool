@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-app-bar flat color="transparent">
+    <v-app-bar flat color="#0b0b0b" app>
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.smAndDown"
         color="white"

@@ -1,11 +1,16 @@
 export const state = () => ({
-  next_category: null,
-  next_article: null,
+  question_step: 0,
 })
 
 export const mutations = {
-  set_props(state, { next_category, next_article }) {
-    state.next_category = next_category
-    state.next_article = next_article
+  set_question_step(state, { question_step }) {
+    state.question_step = question_step
+  },
+}
+
+export const actions = {
+  async set_question_step({ commit }, { question_step }) {
+    await new Promise((resolve) => setTimeout(resolve, 100))
+    commit('set_question_step', { question_step })
   },
 }

@@ -1,107 +1,24 @@
 <template>
-  <v-col cols="12" md="10">
+  <v-col cols="12" md="8">
     <v-row>
-      <v-col cols="12" md="10">
+      <v-col cols="12" md="8" order="12" order-md="1">
         <v-scroll-y-transition mode="out-in">
-          <div v-if="!content" :key="question" class="max-width-800">
-            <template v-if="question === 0">
-              <p>{{ $t('docs.subtitle') }}</p>
-              <p class="text-h6">
-                What is your level of knowledge about blockchain technology?
-              </p>
-              <button
-                class="choice-btn mr-2"
-                @click="open_article('essentials', 'beginner')"
-              >
-                Beginner
-              </button>
-              <button
-                class="choice-btn mr-2"
-                @click="open_article('essentials', 'intermediate')"
-              >
-                Intermediate
-              </button>
-              <button class="choice-btn mr-2" @click="question = 1">
-                Advanced
-              </button>
-            </template>
-            <template v-if="question === 1">
-              <p class="text-h6">Do you already have ADA cryptocurrency?</p>
-              <button class="choice-btn mr-2" @click="question = 2">Yes</button>
-              <button
-                class="choice-btn"
-                @click="open_article('exchanges', 'about_exchanges')"
-              >
-                No
-              </button>
-            </template>
-
-            <template v-if="question === 2">
-              <p class="text-h6">
-                What is your preffered way of controling you digital wallet?
-              </p>
-              <button class="choice-btn mr-2" @click="question = 3">
-                Mobile
-              </button>
-              <button class="choice-btn" @click="question = 4">Desktop</button>
-            </template>
-
-            <template v-if="question === 3">
-              <p class="text-h6">
-                Do you have already have Yoroi wallet setup?
-              </p>
-              <button
-                class="choice-btn mr-2"
-                @click="open_article('stake', 'stake_with_yoroi')"
-              >
-                Yes
-              </button>
-              <button
-                class="choice-btn"
-                @click="open_article('wallets', 'yoroi')"
-              >
-                No
-              </button>
-            </template>
-
-            <template v-if="question === 4">
-              <p class="text-h6">
-                Do you already have have Yoroi or Dedalus wallet?
-              </p>
-              <button
-                class="choice-btn mr-2"
-                @click="open_article('stake', 'stake_with_daedalus')"
-              >
-                Dedalus
-              </button>
-              <button
-                class="choice-btn mr-2"
-                @click="open_article('stake', 'stake_with_yoroi')"
-              >
-                Yoroi
-              </button>
-              <button
-                class="choice-btn"
-                @click="open_article('wallets', 'about_wallets')"
-              >
-                None
-              </button>
-            </template>
+          <div v-if="!content" :key="question_step" class="max-width-800">
+            <Questions />
           </div>
           <div v-else>
-            <div class="text-right" @click="content = null">
-              <v-btn icon>
-                <v-icon color="white">mdi-close</v-icon>
-              </v-btn>
+            <div class="text-right">
+              <nuxt-link :to="localePath('guide-category-article')">
+                <v-btn icon>
+                  <v-icon color="white">mdi-close</v-icon>
+                </v-btn>
+              </nuxt-link>
             </div>
-            <nuxt-content
-              :document="content"
-              @open="(category, article) => open_article(category, article)"
-            />
+            <nuxt-content :document="content" />
           </div>
         </v-scroll-y-transition>
       </v-col>
-      <v-col cols="12" md="2">
+      <v-col cols="12" md="4" order="1" order-md="12">
         <TableOfContent
           v-if="content && content.toc"
           :category="$route.params.category"
@@ -115,12 +32,14 @@
 
 <script>
 import { mapState } from 'vuex'
-import TableOfContent from '@/components/TableOfContent'
+import TableOfContent from '@/components/guide/TableOfContent'
+import Questions from '@/components/guide/Questions'
 
 export default {
   name: 'GuideCategoryArticle',
   components: {
     TableOfContent,
+    Questions,
   },
   async asyncData({ app, params }) {
     const category = params.category
@@ -149,7 +68,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('Guide', ['next_category', 'next_article']),
+    ...mapState('Guide', ['question_step']),
   },
   watch: {
     next_article: {

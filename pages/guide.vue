@@ -1,16 +1,19 @@
 <template>
   <v-main>
-    <v-container fluid class="docs pa-2 pa-md-4">
+    <v-container fluid>
       <v-row>
         <v-col cols="12" md="6" class="pb-0 mb-0">
-          <PageTitle :title="$t('docs.title')" />
+          <PageTitle :title="$t('guide.title')" />
         </v-col>
         <v-col cols="12">
           <div class="blurp blurred">
             <div class="mask"></div>
             <v-row>
               <v-col cols="12" md="2">
-                <ArticlesTree :content="content" />
+                <ArticlesTree
+                  v-if="$vuetify.breakpoint.mdAndUp"
+                  :content="content"
+                />
               </v-col>
               <nuxt-child />
             </v-row>
@@ -22,8 +25,9 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import PageTitle from '@/components/PageTitle'
-import ArticlesTree from '@/components/ArticlesTree'
+import ArticlesTree from '@/components/guide/ArticlesTree'
 
 export default {
   name: 'Guide',
@@ -54,6 +58,12 @@ export default {
     return {
       content: [],
     }
+  },
+  beforeDestroy() {
+    this.set_question_step({ question_step: 0 })
+  },
+  methods: {
+    ...mapActions('Guide', ['set_question_step']),
   },
 }
 </script>

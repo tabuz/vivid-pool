@@ -4,7 +4,7 @@ category: exchanges
 order: 0
 ---
 
-# Cryptocurrency Exchanges
+## Cryptocurrency Exchanges
 
 Create an account on one of cryptocurrency exchange platform, you can also compare different platforms on [cryptoradar](https://cryptoradar.co/buy-cardano).
 - <article-button text="Binance" href next_category="exchanges" next_article="binance"></article-button>

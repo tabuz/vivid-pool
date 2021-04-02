@@ -31,7 +31,7 @@ export default {
 ul {
   list-style-type: none;
   position: sticky;
-  top: 50px;
+  top: 74px;
   padding: 0;
   color: white;
 }

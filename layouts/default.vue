@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <DotGrid />
+    <DotGrid v-if="true" />
     <div class="text-center">
       <Navbar />
     </div>

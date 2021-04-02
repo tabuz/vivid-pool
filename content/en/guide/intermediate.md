@@ -59,15 +59,3 @@ The block reward in Cardano ecosystem come from:
 2. Fee at Vivid Stake Pool is equal 2.9 % and this is significantly lower than in any cryptocurrency exchange which offers staking. Binance exchange for example offers 6 % fee. 
 3. Reliability. Our nodes are cloud based and they are distributed between three different VPS providers. Additionally there exist three different sets of physical keys located in three different cities in two different countries, so there is a very little chance that the keys will be lost or destroyed. 
 4. Technological know-how, we have a complementary set of skills which enable us to provide high quality service.
-
-
-
-
-
-
-
-
-
-
-
-

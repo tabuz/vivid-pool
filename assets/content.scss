@@ -1,0 +1,38 @@
+.nuxt-content {
+  padding-bottom: 100px;
+  h2 {
+    cursor: pointer;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e3e3e331;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &:before {
+      content: '#';
+      margin-right: 1rem;
+      color: purple;
+    }
+
+    // &:not(:first-of-type) {
+    //   margin-top: 2rem;
+    // }
+  }
+  h2 > ul, h2 > ol {
+    margin-bottom: 2rem !important;
+  }
+  ul, ol {
+    padding-bottom: 1rem !important;
+  }
+
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    p {
+      padding-left: 2rem;
+      // padding-top: 1.5rem
+    }
+    ul, ol {
+      padding-left: 3rem !important;
+    }
+  }
+}

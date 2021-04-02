@@ -28,7 +28,6 @@ Cryptocurrency is a digital asset designed to work as a medium of exchange where
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)
 
 ## What is a coin?
-
 It is the native digital asset of the blockchain network. 
 - for Cardano blockchain native asset is ADA
 - for Ethereum blockchain native asset is ETH
