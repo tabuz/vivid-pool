@@ -1,6 +1,6 @@
 <template>
-  <v-main class="pt-8 ml-10">
-    <v-row>
+  <v-main class="pt-8">
+    <v-row :class="{ 'pl-10': $vuetify.breakpoint.mdAndUp }">
       <v-col cols="12" md="6" lg="5" style="max-width: 800px">
         <h1 class="text-h4 text-md-h3 text-xl-h2 mb-1 mb-md-4 font-weight-thin">
           <span class="vivid-decoration">Vivid</span> Stake Pool

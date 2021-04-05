@@ -1,9 +1,8 @@
 <template>
   <v-app>
     <DotGrid v-if="true" />
-    <div class="text-center">
-      <Navbar />
-    </div>
+    <Navbar />
+    <Appbar />
     <v-fade-transition>
       <nuxt />
     </v-fade-transition>
@@ -12,12 +11,14 @@
 
 <script>
 import Navbar from '@/components/Navbar'
+import Appbar from '@/components/Appbar'
 import DotGrid from '@/components/DotGrid'
 
 export default {
   components: {
     Navbar,
     DotGrid,
+    Appbar,
   },
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <v-main class="pt-8 ml-4">
-    <v-row>
+  <v-main class="pt-8">
+    <v-row :class="{ 'pl-10': $vuetify.breakpoint.mdAndUp }">
       <v-col cols="12" md="6" lg="5" style="max-width: 800px" class="about">
         <div class="hero-text white-elevation">
           <PageTitle :title="$t('about.title')" />

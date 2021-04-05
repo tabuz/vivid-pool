@@ -3,9 +3,11 @@
 
   .img {
     text-align: center;
-    border-radius: 8px;
+    
     margin: 0 auto;
+
     img {
+      border-radius: 12px;
       max-width: 100%;
 
       &.small {
@@ -13,8 +15,8 @@
       }
 
       @media #{map-get($display-breakpoints, 'md-and-up')} {
-        padding-left: 2rem;
-        padding-bottom: 2rem;
+        margin-left: 2rem;
+        margin-bottom: 2rem;
       }
     }
   }

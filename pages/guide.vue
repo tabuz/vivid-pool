@@ -1,39 +1,47 @@
 <template>
-  <v-main class="pt-8 ml-4">
-    <v-row>
-      <v-col cols="12" class="pb-0 mb-0">
-        <PageTitle :title="$t('guide.title')" />
-      </v-col>
-      <v-col cols="12" style="max-width: 1900px" class="pa-0">
-        <div class="blurp blurred">
-          <div class="mask"></div>
-          <v-row no-gutters>
-            <v-col cols="12" md="2">
-              <ArticlesTree
-                v-if="$vuetify.breakpoint.mdAndUp"
-                :content="content"
-              />
-            </v-col>
-            <v-col cols="12" md="10">
-              <nuxt-child />
-            </v-col>
-          </v-row>
-        </div>
-      </v-col>
-    </v-row>
-  </v-main>
+  <div>
+    <v-main class="pt-8">
+      <v-row no-gutters :class="{ 'pl-10': $vuetify.breakpoint.mdAndUp }">
+        <v-col cols="12" class="pb-0 mb-0">
+          <PageTitle :title="$t('guide.title')" />
+        </v-col>
+        <v-col cols="12" class="guide-container pb-0 mb-0">
+          <div class="blurp blurred">
+            <div class="mask"></div>
+            <v-row>
+              <v-col cols="12" md="2">
+                <ArticlesTree
+                  v-if="$vuetify.breakpoint.mdAndUp"
+                  :content="content"
+                />
+              </v-col>
+              <v-col cols="12" md="10">
+                <nuxt-child />
+              </v-col>
+            </v-row>
+          </div>
+        </v-col>
+      </v-row>
+    </v-main>
+    <ArticlesTreeDrawer
+      v-if="!$vuetify.breakpoint.mdAndUp"
+      :content="content"
+    />
+  </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
 import PageTitle from '@/components/PageTitle'
 import ArticlesTree from '@/components/guide/ArticlesTree'
+import ArticlesTreeDrawer from '@/components/guide/ArticlesTreeDrawer'
 
 export default {
   name: 'Guide',
   components: {
     PageTitle,
     ArticlesTree,
+    ArticlesTreeDrawer,
   },
   async asyncData({ app, payload }) {
     if (!payload || !Object.keys(payload).length) {
@@ -67,3 +75,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.guide-container {
+  max-width: 1920px;
+}
+</style>

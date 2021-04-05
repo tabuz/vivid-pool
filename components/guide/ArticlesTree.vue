@@ -1,5 +1,5 @@
 <template>
-  <ol>
+  <ol class="guide-sticky">
     <li v-for="depth_1 in content_by_category" :key="depth_1.id">
       <p class="mb-0">{{ depth_1.text }}</p>
       <ul v-if="depth_1.toc" class="guide-tree mb-4">
@@ -56,7 +56,7 @@ ul {
 }
 ol {
   position: sticky;
-  top: 74px;
+  top: 45px;
   padding: 0;
   color: white;
 }

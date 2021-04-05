@@ -7,9 +7,10 @@
     color="transparent"
   >
     <v-list>
-      <v-list-item class="pt-4 pb-8 vivid-logo">
-        <v-list-item-avatar>
-          <v-img :src="require('@/static/vivid-pool-logo.png')" contain></v-img>
+      <v-list-item class="pb-8 vivid-logo">
+        <v-list-item-avatar class="img">
+          <!-- <v-img :src="require('@/static/vivid-pool-logo.png')" contain></v-img> -->
+          <img :src="require('@/static/vivid-pool-logo.png')" />
         </v-list-item-avatar>
       </v-list-item>
       <div>
@@ -36,6 +37,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 // import LocalesDropdown from '@/components/LocalesDropdown'
 
 export default {
@@ -43,11 +45,16 @@ export default {
   components: {
     // LocalesDropdown,
   },
-  data: () => ({
-    drawer: true,
-    group: null,
-  }),
   computed: {
+    ...mapState('App', ['is_drawer_open']),
+    drawer: {
+      get() {
+        return this.is_drawer_open
+      },
+      set(v) {
+        this.set_is_drawer_open(v)
+      },
+    },
     destinations() {
       return [
         {
@@ -73,10 +80,27 @@ export default {
       ]
     },
   },
+  methods: {
+    ...mapMutations('App', ['set_is_drawer_open']),
+  },
 }
 </script>
 
 <style lang="scss">
+$logo-size: 80px;
+
+.vivid-logo {
+  .img {
+    min-height: $logo-size;
+    min-width: $logo-size !important;
+    border: 1px solid rgba(238, 238, 238, 0.1);
+
+    img {
+      height: $logo-size;
+      width: $logo-size;
+    }
+  }
+}
 nav {
   backdrop-filter: blur(4px);
 

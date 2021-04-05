@@ -30,3 +30,9 @@ header { width: 100%; }
     text-decoration: underline;
   }
 }
+.guide-sticky {
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    position: sticky;
+    top: 45px;
+  }
+}
