@@ -4,7 +4,7 @@
     app
     :mini-variant="true"
     mini-variant-width="96"
-    color="transparent"
+    color="#0b0b0b"
   >
     <v-list>
       <v-list-item class="pb-8 vivid-logo">

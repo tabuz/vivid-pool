@@ -1,11 +1,5 @@
 <template>
-  <v-navigation-drawer
-    v-model="drawer"
-    app
-    right
-    color="transparent"
-    class="pl-4"
-  >
+  <v-navigation-drawer v-model="drawer" app right color="#0b0b0b" class="pl-4">
     <ArticleTree :content="content" />
   </v-navigation-drawer>
 </template>

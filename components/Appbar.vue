@@ -1,12 +1,11 @@
 <template>
-  <v-app-bar class="appbar" app bottom hide-on-scroll>
+  <v-app-bar class="appbar" color="#0b0b0b" app bottom hide-on-scroll>
     <v-icon color="white" @click="() => set_is_drawer_open(!is_drawer_open)"
       >mdi-menu</v-icon
     >
     <div v-if="$route.path.includes('/guide')" class="controls">
       <v-btn
-        text
-        small
+        icon
         color="white"
         @click="set_is_article_tree_drawer_open(!is_article_tree_drawer_open)"
       >
@@ -39,7 +38,6 @@ export default {
 
 <style lang="scss">
 .appbar {
-  background-color: transparent !important;
   backdrop-filter: blur(8px);
 
   .controls {
