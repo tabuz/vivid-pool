@@ -1,44 +1,42 @@
 <template>
-  <v-main>
-    <v-container fluid class="contact pa-2 pa-md-4">
-      <v-row class="fill-height">
-        <v-col cols="12" md="6" lg="5">
-          <div class="hero-text white-elevation">
-            <PageTitle
-              :title="$t('contact.title')"
-              :subtitle="$t('contact.subtitle')"
-            />
-            <div class="socials blurp">
-              <a
-                href="https://twitter.com/Cryptoguys4"
-                target="_blank"
-                class="icon twitter"
-              >
-                <v-icon x-large color="#00acee">mdi-twitter</v-icon>
-                <span>Twitter</span>
-              </a>
-              <a
-                href="https://discord.gg/8Dw8s6Fm"
-                target="_blank"
-                class="icon discord"
-              >
-                <v-icon x-large color="#7289da">mdi-discord</v-icon>
-                <span>Discord</span>
-              </a>
-              <a
-                href="https://t.me/vivid_pool"
-                target="_blank"
-                class="icon telegram"
-              >
-                <v-icon x-large color="#0088cc">mdi-telegram</v-icon>
-                <span>Telegram</span>
-              </a>
-            </div>
-            <ContactForm />
+  <v-main class="pt-8 ml-4">
+    <v-row>
+      <v-col cols="12" md="6" lg="5" style="max-width: 800px">
+        <div class="hero-text white-elevation">
+          <PageTitle
+            :title="$t('contact.title')"
+            :subtitle="$t('contact.subtitle')"
+          />
+          <div class="socials blurp">
+            <a
+              href="https://twitter.com/Cryptoguys4"
+              target="_blank"
+              class="icon twitter"
+            >
+              <v-icon x-large color="#00acee">mdi-twitter</v-icon>
+              <span>Twitter</span>
+            </a>
+            <a
+              href="https://discord.gg/8Dw8s6Fm"
+              target="_blank"
+              class="icon discord"
+            >
+              <v-icon x-large color="#7289da">mdi-discord</v-icon>
+              <span>Discord</span>
+            </a>
+            <a
+              href="https://t.me/vivid_pool"
+              target="_blank"
+              class="icon telegram"
+            >
+              <v-icon x-large color="#0088cc">mdi-telegram</v-icon>
+              <span>Telegram</span>
+            </a>
           </div>
-        </v-col>
-      </v-row>
-    </v-container>
+          <ContactForm />
+        </div>
+      </v-col>
+    </v-row>
   </v-main>
 </template>
 

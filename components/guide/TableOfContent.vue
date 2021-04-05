@@ -1,7 +1,7 @@
 <template>
   <ul v-if="toc.length">
     <p>On this page</p>
-    <li v-for="el in toc" :key="el.id">
+    <li v-for="el in toc" :key="el.id" class="table-of-content">
       <nuxt-link
         :to="
           localePath({

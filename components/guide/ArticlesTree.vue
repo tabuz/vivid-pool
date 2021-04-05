@@ -2,7 +2,7 @@
   <ol>
     <li v-for="depth_1 in content_by_category" :key="depth_1.id">
       <p class="mb-0">{{ depth_1.text }}</p>
-      <ul v-if="depth_1.toc" class="mb-4">
+      <ul v-if="depth_1.toc" class="guide-tree mb-4">
         <li v-for="depth_2 in depth_1.toc" :key="depth_2.id">
           <nuxt-link
             :to="

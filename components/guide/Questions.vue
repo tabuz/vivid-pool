@@ -3,20 +3,30 @@
     <p class="text-h6">
       {{ question.q }}
     </p>
-    <nuxt-link
-      v-for="(answer, i) in question.answers"
-      :key="`ans_${i}`"
-      :to="answer.url"
-      @click.native="
-        answer.next_step
-          ? set_question_step({ question_step: answer.next_step })
-          : null
-      "
-    >
-      <button class="choice-btn mr-2 mb-2 d-block d-md-inline-block">
+    <template v-for="(answer, i) in question.answers">
+      <nuxt-link
+        v-if="answer.url"
+        :key="`ans_${i}`"
+        :to="answer.url"
+        @click.native="
+          answer.next_step
+            ? set_question_step({ question_step: answer.next_step })
+            : null
+        "
+      >
+        <button class="choice-btn mr-2 mb-2 d-block d-md-inline-block">
+          {{ answer.text }}
+        </button>
+      </nuxt-link>
+      <button
+        v-else
+        :key="`ans_${i}`"
+        class="choice-btn mr-2 mb-2 d-block d-md-inline-block"
+        @click="set_question_step({ question_step: answer.next_step })"
+      >
         {{ answer.text }}
       </button>
-    </nuxt-link>
+    </template>
   </div>
 </template>
 
@@ -58,10 +68,7 @@ export default {
             // Advance
             {
               text: this.$t('guide.questions[0].a_3'),
-              url: this.localePath({
-                name: 'guide-category-article',
-                params: { category: 'stake', article: 'stake_with_daedalus' },
-              }),
+              next_step: 4,
             },
           ],
         },

@@ -1,26 +1,26 @@
 <template>
-  <v-main>
-    <v-container fluid>
-      <v-row>
-        <v-col cols="12" md="6" class="pb-0 mb-0">
-          <PageTitle :title="$t('guide.title')" />
-        </v-col>
-        <v-col cols="12">
-          <div class="blurp blurred">
-            <div class="mask"></div>
-            <v-row>
-              <v-col cols="12" md="2">
-                <ArticlesTree
-                  v-if="$vuetify.breakpoint.mdAndUp"
-                  :content="content"
-                />
-              </v-col>
+  <v-main class="pt-8 ml-4">
+    <v-row>
+      <v-col cols="12" class="pb-0 mb-0">
+        <PageTitle :title="$t('guide.title')" />
+      </v-col>
+      <v-col cols="12" style="max-width: 1900px" class="pa-0">
+        <div class="blurp blurred">
+          <div class="mask"></div>
+          <v-row no-gutters>
+            <v-col cols="12" md="2">
+              <ArticlesTree
+                v-if="$vuetify.breakpoint.mdAndUp"
+                :content="content"
+              />
+            </v-col>
+            <v-col cols="12" md="10">
               <nuxt-child />
-            </v-row>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
+            </v-col>
+          </v-row>
+        </div>
+      </v-col>
+    </v-row>
   </v-main>
 </template>
 

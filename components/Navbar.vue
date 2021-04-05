@@ -1,57 +1,38 @@
 <template>
-  <nav>
-    <v-app-bar flat color="#0b0b0b" app>
-      <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.smAndDown"
-        color="white"
-        @click="drawer = true"
-      ></v-app-bar-nav-icon>
-      <v-spacer></v-spacer>
-      <!-- <LocalesDropdown v-if="$vuetify.breakpoint.smAndDown" /> -->
-
-      <v-fade-transition>
-        <div v-if="$vuetify.breakpoint.mdAndUp">
-          <nuxt-link
-            v-for="(destination, i) in destinations"
-            :key="`nav_${i}`"
-            :to="localePath(destination.page_name)"
-            style="text-decoration: none"
-          >
-            <button
-              class="mr-4 btn-flip subtle"
-              :class="{ active: $nuxt.$route.name === destination.page_name }"
-              :data-front="destination.text"
-              :data-back="destination.text"
-            ></button>
-          </nuxt-link>
-          <!-- <LocalesDropdown /> -->
-        </div>
-      </v-fade-transition>
-    </v-app-bar>
-
-    <v-navigation-drawer
-      v-model="drawer"
-      color="black"
-      floating
-      fixed
-      temporary
-      bottom
-    >
-      <v-list dense nav>
-        <v-list-item v-for="(destination, i) in destinations" :key="`nav_${i}`">
-          <nuxt-link
-            :to="localePath(destination.page_name)"
-            style="text-decoration: none; width: 100%"
-            ><button
-              style="width: 100%"
-              class="btn-flip d-block"
-              :data-front="destination.text"
-            ></button>
-          </nuxt-link>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-  </nav>
+  <v-navigation-drawer
+    v-model="drawer"
+    app
+    :mini-variant="true"
+    mini-variant-width="96"
+    color="transparent"
+  >
+    <v-list>
+      <v-list-item class="pt-4 pb-8 vivid-logo">
+        <v-list-item-avatar>
+          <v-img :src="require('@/static/vivid-pool-logo.png')" contain></v-img>
+        </v-list-item-avatar>
+      </v-list-item>
+      <div>
+        <nuxt-link
+          v-for="(destination, i) in destinations"
+          :key="`nav_${i}`"
+          :to="localePath(destination.page_name)"
+          style="text-decoration: none"
+        >
+          <v-list-item class="text-center px-0 py-4">
+            <span>
+              <v-icon color="white">{{ destination.icon }}</v-icon>
+              <v-subheader
+                style="height: 28px"
+                class="font-weight-bold white--text"
+                >{{ destination.text }}</v-subheader
+              >
+            </span>
+          </v-list-item>
+        </nuxt-link>
+      </div>
+    </v-list>
+  </v-navigation-drawer>
 </template>
 
 <script>
@@ -63,7 +44,7 @@ export default {
     // LocalesDropdown,
   },
   data: () => ({
-    drawer: false,
+    drawer: true,
     group: null,
   }),
   computed: {
@@ -72,21 +53,49 @@ export default {
         {
           text: this.$t('nav.home'),
           page_name: 'index',
+          icon: 'mdi-home-outline',
         },
         {
           text: this.$t('nav.guide'),
           page_name: 'guide',
+          icon: 'mdi-school-outline',
         },
         {
           text: this.$t('nav.about_us'),
           page_name: 'about',
+          icon: 'mdi-account-group-outline',
         },
         {
           text: this.$t('nav.contact'),
           page_name: 'contact',
+          icon: 'mdi-chat-question-outline',
         },
       ]
     },
   },
 }
 </script>
+
+<style lang="scss">
+nav {
+  backdrop-filter: blur(4px);
+
+  .v-list-item:not(.vivid-logo) {
+    transition: all 0.25s ease;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: rgba(128, 0, 128, 0);
+    margin-bottom: 4px;
+
+    &:hover {
+      background-color: rgba(61, 61, 61, 0.5);
+    }
+  }
+  .nuxt-link-active:not([href='/']),
+  .nuxt-link-active.nuxt-link-exact-active[href='/'] {
+    .v-list-item {
+      background-color: rgba(128, 0, 128, 0.5);
+    }
+  }
+}
+</style>

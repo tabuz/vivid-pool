@@ -60,7 +60,7 @@ export default {
     hubert: `Profesionall idiot`,
   },
   guide: {
-    title: `Get Started`,
+    title: `The Guide`,
     subtitle: `
       Please follow tutorial below which will show you step-by-step how
       to participate to our staking pool. In few simple steps you should 

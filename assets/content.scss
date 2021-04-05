@@ -1,6 +1,29 @@
 .nuxt-content {
   padding-bottom: 100px;
-  h2 {
+
+  .img {
+    text-align: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    img {
+      max-width: 100%;
+
+      &.small {
+        max-width: 50%;
+      }
+
+      @media #{map-get($display-breakpoints, 'md-and-up')} {
+        padding-left: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+  
+  p {
+    text-align: left;
+  }
+  h2, h3 {
+    text-align: left;
     cursor: pointer;
     padding-bottom: 0.3rem;
     margin-bottom: 1rem;
