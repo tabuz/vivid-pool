@@ -1,7 +1,7 @@
 export default {
   nav: {
     home: 'Home',
-    docs: 'Docs',
+    guide: 'Guide',
     about_us: 'About Us',
     contact: 'Contact',
   },
@@ -59,12 +59,41 @@ export default {
     `,
     hubert: `Profesionall idiot`,
   },
-  docs: {
-    title: `Get Started`,
+  guide: {
+    title: `The Guide`,
     subtitle: `
       Please follow tutorial below which will show you step-by-step how
       to participate to our staking pool. In few simple steps you should 
       obtain ADA, create your own digital wallet and stake with Vivid Pools.
     `,
+    questions: {
+      0: {
+        q: 'What is your level of knowledge about blockchain technology?',
+        a_1: 'Beginner',
+        a_2: 'Intermediate',
+        a_3: 'Advanced',
+      },
+      1: {
+        q: 'Do you already have ADA cryptocurrency?',
+        a_1: 'Yes',
+        a_2: 'No',
+      },
+      2: {
+        q: 'What is your preffered way of controling you digital wallet?',
+        a_1: 'Mobile',
+        a_2: 'Desktop',
+      },
+      3: {
+        q: 'Do you have already have Yoroi wallet setup?',
+        a_1: 'Yes',
+        a_2: 'No',
+      },
+      4: {
+        q: 'Do you already have have Yoroi or Daedalus wallet?',
+        a_1: 'Yoroi',
+        a_2: 'Daedalus',
+        a_3: 'None',
+      },
+    },
   },
 }

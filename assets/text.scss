@@ -34,15 +34,16 @@
 
 .blurp {
   text-align: justify;
-  backdrop-filter: blur(2px);
-  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  padding: .5rem;
   color: white;
   position: relative;
   overflow: visible;
-  z-index: 10;
+  z-index: 1;
 
   p {
-    z-index: 2;
+    z-index: 1;
   }
   
   .mask {

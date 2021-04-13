@@ -2,16 +2,19 @@
   opacity: 1;
   outline: 0;
   min-width: 150px;
+  width: 100%;
   color: #fff;
   background: #79797a;
   line-height: 40px;
   position: relative;
   text-align: center;
   letter-spacing: 1px;
-  display: inline-block;
-  text-decoration: none;
-  // font-family: 'Open Sans';
+  text-decoration: none !important;
   text-transform: uppercase;
+
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    width: auto;
+  }
 }
 
 .btn-flip {

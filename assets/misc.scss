@@ -11,3 +11,28 @@
 .page-leave-to {
   opacity: 0;
 }
+
+.container--fluid, nav {
+  max-width: 1920px !important;
+  margin: 0 auto !important;
+}
+header { width: 100%; }
+
+.guide-tree {
+  .nuxt-link-active {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+.table-of-content {
+  .nuxt-link-exact-active {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+.guide-sticky {
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    position: sticky;
+    top: 45px;
+  }
+}

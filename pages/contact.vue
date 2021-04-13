@@ -1,46 +1,54 @@
 <template>
-  <v-main>
-    <v-container fluid class="contact pa-2 pa-md-4">
-      <v-row class="fill-height">
-        <v-col cols="12" md="6" lg="5">
-          <div class="hero-text white-elevation">
-            <h1
-              class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
+  <v-main class="pt-8">
+    <v-row :class="{ 'pl-10': $vuetify.breakpoint.mdAndUp }">
+      <v-col cols="12" md="6" lg="5" style="max-width: 800px">
+        <div class="hero-text white-elevation">
+          <PageTitle
+            :title="$t('contact.title')"
+            :subtitle="$t('contact.subtitle')"
+          />
+          <div class="socials blurp">
+            <a
+              href="https://twitter.com/Cryptoguys4"
+              target="_blank"
+              class="icon twitter"
             >
-              <span class="vivid-decoration">{{ $t('contact.title') }}</span>
-            </h1>
-            <p class="text-body-1 text-md-h6 mb-2 mb-md-6 blurp">
-              {{ $t('contact.subtitle') }}
-            </p>
-            <div class="socials blurp">
-              <a href="https://twtter.com" target="_blank" class="icon twitter">
-                <v-icon x-large color="#00acee">mdi-twitter</v-icon>
-                <span>Twitter</span>
-              </a>
-              <a
-                href="https://telegram.com"
-                target="_blank"
-                class="icon telegram"
-              >
-                <v-icon x-large color="#0088cc">mdi-telegram</v-icon>
-                <span>Telegram</span>
-              </a>
-            </div>
-            <ContactForm />
+              <v-icon x-large color="#00acee">mdi-twitter</v-icon>
+              <span>Twitter</span>
+            </a>
+            <a
+              href="https://discord.gg/8Dw8s6Fm"
+              target="_blank"
+              class="icon discord"
+            >
+              <v-icon x-large color="#7289da">mdi-discord</v-icon>
+              <span>Discord</span>
+            </a>
+            <a
+              href="https://t.me/vivid_pool"
+              target="_blank"
+              class="icon telegram"
+            >
+              <v-icon x-large color="#0088cc">mdi-telegram</v-icon>
+              <span>Telegram</span>
+            </a>
           </div>
-        </v-col>
-      </v-row>
-    </v-container>
+          <ContactForm />
+        </div>
+      </v-col>
+    </v-row>
   </v-main>
 </template>
 
 <script>
 import ContactForm from '@/components/ContactForm'
+import PageTitle from '@/components/PageTitle'
 
 export default {
   name: 'Contact',
   components: {
     ContactForm,
+    PageTitle,
   },
 }
 </script>
@@ -57,8 +65,9 @@ export default {
       flex-direction: column;
       text-decoration: none;
       align-items: center;
-      &:first-of-type {
-        margin-right: 2rem;
+      margin-right: 2rem;
+      &:last-of-type {
+        margin-right: none;
       }
       i {
         font-size: 4rem !important;

@@ -7,13 +7,14 @@
   >
     <v-text-field
       v-model="name"
+      autocomplete="new-password"
       dark
       type="text"
       :label="`${$t('contact_form.name')}`"
     ></v-text-field>
     <v-text-field
       v-model="email"
-      type="email"
+      autocomplete="new-password"
       :rules="[(v) => !!v || 'This field is required']"
       dark
       color="white"
@@ -23,6 +24,7 @@
     ></v-text-field>
     <v-textarea
       v-model="message"
+      autocomplete="new-password"
       dark
       color="white"
       :label="`${$t('contact_form.message')}*`"
