@@ -74,6 +74,7 @@ export default {
       const width = window.innerWidth
       const height = window.innerHeight
 
+      let rotStep = 0
       let mouseX = 0
       let mouseY = 0
       // const rotate = 0
@@ -190,6 +191,14 @@ export default {
 
         camera.position.x += (mouseX - camera.position.x) * 0.05 + 15
         camera.position.y += (-mouseY - camera.position.y) * 0.05 + 35
+
+        // camera.rotation.y +=  (-mouseX - camera.rotation.y ) * .000005;
+
+        rotStep = camera.rotation.y + (-mouseX - camera.rotation.y) * 0.0000005
+
+        if (rotStep > -0.2 && rotStep < 0.2) {
+          camera.rotation.y = rotStep
+        }
 
         // camera.rotation.y += ( mouseX - camera.rotation.y )/1200000;
         // camera.lookAt( scene.position );
