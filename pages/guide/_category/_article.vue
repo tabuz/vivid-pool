@@ -1,4 +1,5 @@
 <template>
+<v-container fluid class="pa-0">
   <v-row>
     <v-col cols="12" md="9" order="12" order-md="1">
       <v-scroll-y-transition mode="out-in">
@@ -21,6 +22,7 @@
       </v-scroll-y-transition>
     </v-col>
   </v-row>
+</v-container>
 </template>
 
 <script>

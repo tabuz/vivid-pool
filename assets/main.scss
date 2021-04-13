@@ -3,3 +3,7 @@
 @import './buttons.scss';
 @import './text.scss';
 @import './content.scss';
+
+html {
+    overflow-y: hidden;
+}

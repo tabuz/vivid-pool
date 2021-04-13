@@ -1,27 +1,29 @@
 <template>
   <div>
     <v-main class="pt-8">
-      <v-row no-gutters :class="{ 'pl-10': $vuetify.breakpoint.mdAndUp }">
-        <v-col cols="12" class="pb-0 mb-0">
-          <PageTitle :title="$t('guide.title')" />
-        </v-col>
-        <v-col cols="12" class="guide-container pb-0 mb-0">
-          <div class="blurp blurred">
-            <div class="mask"></div>
-            <v-row>
-              <v-col cols="12" md="2">
-                <ArticlesTree
-                  v-if="$vuetify.breakpoint.mdAndUp"
-                  :content="content"
-                />
-              </v-col>
-              <v-col cols="12" md="10">
-                <nuxt-child />
-              </v-col>
-            </v-row>
-          </div>
-        </v-col>
-      </v-row>
+      <v-container fluid class="pa-0">
+        <v-row no-gutters>
+          <v-col cols="12" class="pb-0 mb-0">
+            <PageTitle :title="$t('guide.title')" />
+          </v-col>
+          <v-col cols="12" class="guide-container pb-0 mb-0">
+            <div class="blurp blurred pl-10">
+              <div class="mask"></div>
+              <v-row>
+                <v-col cols="12" md="2">
+                  <ArticlesTree
+                    v-if="$vuetify.breakpoint.mdAndUp"
+                    :content="content"
+                  />
+                </v-col>
+                <v-col cols="12" md="10">
+                  <nuxt-child />
+                </v-col>
+              </v-row>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
     <ArticlesTreeDrawer
       v-if="!$vuetify.breakpoint.mdAndUp"

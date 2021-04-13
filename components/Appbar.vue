@@ -1,5 +1,12 @@
 <template>
-  <v-app-bar class="appbar" color="#0b0b0b" app bottom hide-on-scroll>
+  <v-app-bar
+    v-if="!$vuetify.breakpoint.mdAndUp"
+    class="appbar"
+    color="#0b0b0b"
+    app
+    bottom
+    hide-on-scroll
+  >
     <v-icon color="white" @click="() => set_is_drawer_open(!is_drawer_open)"
       >mdi-menu</v-icon
     >

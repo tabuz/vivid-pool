@@ -34,7 +34,8 @@
 
 .blurp {
   text-align: justify;
-  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
   padding: .5rem;
   color: white;
   position: relative;

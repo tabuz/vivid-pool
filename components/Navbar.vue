@@ -4,12 +4,12 @@
     app
     :mini-variant="true"
     mini-variant-width="96"
-    color="#0b0b0b"
+    class="vivid-navbar"
+    color="#030303"
   >
     <v-list>
       <v-list-item class="pb-8 vivid-logo">
         <v-list-item-avatar class="img">
-          <!-- <v-img :src="require('@/static/vivid-pool-logo.png')" contain></v-img> -->
           <img :src="require('@/static/vivid-pool-logo.png')" />
         </v-list-item-avatar>
       </v-list-item>
@@ -93,7 +93,6 @@ $logo-size: 80px;
   .img {
     min-height: $logo-size;
     min-width: $logo-size !important;
-    border: 1px solid rgba(238, 238, 238, 0.1);
 
     img {
       height: $logo-size;
@@ -102,8 +101,6 @@ $logo-size: 80px;
   }
 }
 nav {
-  backdrop-filter: blur(4px);
-
   .v-list-item:not(.vivid-logo) {
     transition: all 0.25s ease;
     border-top-right-radius: 16px;

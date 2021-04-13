@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <DotGrid v-if="true" />
+    <DotGrid />
     <Navbar />
     <Appbar />
     <v-fade-transition>
