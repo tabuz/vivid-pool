@@ -1,26 +1,97 @@
 const page_name__config = {
-  index: { x: 0, y: -800, sinx: 0.1, siny: 0.13 },
-  mission: { x: -400, y: -250, sinx: 0.3, siny: 0.2 },
-  about: { x: -800, y: -550, sinx: 0.6, siny: 0 },
-  'guide-category-article': { x: -600, y: -700, sinx: 0.6, siny: 0 },
-  guide: { x: -600, y: -700, sinx: 0.6, siny: 0 },
-  null: { x: -600, y: -700, sinx: 0.6, siny: 0 },
-  contact: { x: -400, y: -600, sinx: 0.1, siny: 0.15 },
+  index: {
+    x: 0,
+    y: -300,
+    z: 0,
+    rotx: 0.0,
+    roty: 0.0,
+    rotz: 0.0,
+    color: '#ffffff',
+    texture: 'static/sqTest2.png',
+  },
+  mission: {
+    x: -400,
+    y: -250,
+    rotx: 0.0,
+    roty: 0.0,
+    rotz: 0.0,
+    color: '#ffffff',
+    texture: 'static/sqTest2.png',
+  },
+  about: {
+    x: 0,
+    y: 400,
+    z: -1000,
+    rotx: -3.14,
+    roty: -1.57,
+    rotz: 0.0,
+    color: '#ffffff',
+    texture: 'static/sqTest2.png',
+  },
+  'guide-category-article': {
+    x: 2000,
+    y: -500,
+    z: -1500,
+    rotx: -0.5,
+    roty: -3.14,
+    rotz: 0,
+    color: '#ffffff',
+    texture: 'static/sqTest2.png',
+  },
+  guide: {
+    x: 0,
+    y: 0,
+    z: 0,
+    rotx: -3.14,
+    roty: 0.0,
+    rotz: 0.0,
+    color: '#ffffff',
+    texture: 'static/sqTest2.png',
+  },
+  null: {
+    x: -600,
+    y: -700,
+    z: 400,
+    rotx: 0.0,
+    roty: 0.0,
+    rotz: 0.0,
+    color: '#ffffff',
+    texture: 'static/sqTest2.png',
+  },
+  contact: {
+    x: -400,
+    y: -600,
+    z: 300,
+    rotx: 0.0,
+    roty: 0.0,
+    rotz: -0.75,
+    color: '#ffffff',
+    texture: 'static/sqTest2.png',
+  },
 }
 export const state = () => ({
   x: 85,
   y: -345,
-  sinx: 0,
-  siny: 0,
+  z: 0,
+  rotx: 0.0,
+  roty: 0.0,
+  rotz: 0.0,
+  color: '#ffffff',
+  texture: 'static/sqTest2.png',
 })
 
 export const mutations = {
   set_config(state, page_name) {
-    const { x, y, sinx, siny } = page_name__config[page_name]
-
+    const { x, y, z, rotx, roty, rotz, color, texture } = page_name__config[
+      page_name
+    ]
     state.x = x
     state.y = y
-    state.sinx = sinx
-    state.siny = siny
+    state.z = z
+    state.rotx = rotx
+    state.roty = roty
+    state.rotz = rotz
+    state.color = color
+    state.texture = texture
   },
 }
