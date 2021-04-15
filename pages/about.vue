@@ -20,7 +20,7 @@
                 <v-img
                   width="150px"
                   height="150px"
-                  :src="require('@/static/patryk.png')"
+                  :src="person.image"
                   contain
                   aspect-ratio="1/1"
                 />
@@ -30,12 +30,11 @@
             </div>
           </div>
           <div
-            class="blurp with-decoration"
+            class="blurp"
             :class="{
               [`person-${person_idx}`]: true,
             }"
           >
-            <span class="mask"></span>
             <p class="text-body-1 text-md-h6">
               {{ subtitle_text }}
             </p>
@@ -63,12 +62,19 @@ export default {
           name: 'Rafał',
           text: 'about.rafal',
           role: 'Founder, Stake Pool Operator',
+          image: require('@/static/rafal.png'),
         },
-        { name: 'Patryk', text: 'about.patryk', role: 'Social Media & PR' },
+        {
+          name: 'Patryk',
+          text: 'about.patryk',
+          role: 'Co-Founder, Social Media',
+          image: require('@/static/patryk.png'),
+        },
         {
           name: 'Hubert',
           text: 'about.hubert',
-          role: 'Web, Automation & Integrations',
+          role: 'Co-Founder, Web Developer',
+          image: require('@/static/hubert.jpeg'),
         },
       ],
     }
@@ -112,18 +118,18 @@ export default {
       &:hover,
       &.active {
         .image {
-          filter: saturate(0.5);
+          // filter: saturate(0.5);
         }
       }
       &.blur {
-        filter: blur(1px);
+        // filter: blur(1px);
       }
 
       .image {
         width: 150px;
         height: 150px;
         transition: filter 0.125s ease-in-out;
-        filter: saturate(0);
+        filter: saturate(0.6);
 
         .v-image {
           border-radius: 16px;

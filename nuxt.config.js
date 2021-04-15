@@ -55,10 +55,10 @@ export default {
             code: 'en',
             file: 'en-GB.js',
           },
-          // {
-          //   code: 'pl',
-          //   file: 'pl-PL.js',
-          // },
+          {
+            code: 'pl',
+            file: 'pl-PL.js',
+          },
         ],
         defaultLocale: 'en',
         lazy: true,
@@ -66,42 +66,42 @@ export default {
       },
     ],
   ],
-  // generate: {
-  //   routes() {
-  //     const { $content } = require('@nuxt/content')
+  generate: {
+    routes() {
+      const { $content } = require('@nuxt/content')
 
-  //     const routes = []
+      const routes = []
 
-  //     return $content('en', 'guide')
-  //       .fetch()
-  //       .then((docs_content) => {
-  //         return routes.concat(
-  //           docs_content.map((c) => {
-  //             const route = `/guide/${c.category}/${c.slug}`
-  //             return {
-  //               route,
-  //               payload: docs_content,
-  //             }
-  //           })
-  //         )
-  //       })
-  //       // .then((routes) => {
-  //       //   return $content('pl', 'guide')
-  //       //     .fetch()
-  //       //     .then((docs_content) => {
-  //       //       return routes.concat(
-  //       //         docs_content.map((c) => {
-  //       //           const route = `/pl/guide/${c.category}/${c.slug}`
-  //       //           return {
-  //       //             route,
-  //       //             payload: docs_content,
-  //       //           }
-  //       //         })
-  //       //       )
-  //       //     })
-  //       // })
-  //   },
-  // },
+      return $content('en', 'guide')
+        .fetch()
+        .then((docs_content) => {
+          return routes.concat(
+            docs_content.map((c) => {
+              const route = `/guide/${c.category}/${c.slug}`
+              return {
+                route,
+                payload: docs_content,
+              }
+            })
+          )
+        })
+        .then((routes) => {
+          return $content('pl', 'guide')
+            .fetch()
+            .then((docs_content) => {
+              return routes.concat(
+                docs_content.map((c) => {
+                  const route = `/pl/guide/${c.category}/${c.slug}`
+                  return {
+                    route,
+                    payload: docs_content,
+                  }
+                })
+              )
+            })
+        })
+    },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

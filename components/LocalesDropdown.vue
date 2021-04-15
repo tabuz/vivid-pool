@@ -1,7 +1,7 @@
 <template>
   <v-menu offset-y open-on-hover tile color="transparent">
     <template #activator="{ on, attrs }">
-      <v-btn dark v-bind="attrs" v-on="on">
+      <v-btn color="transparent" v-bind="attrs" v-on="on">
         <v-img
           aspect-ratio="2/1"
           :src="require(`@/static/${$i18n.locale.toLowerCase()}.svg`)"

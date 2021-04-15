@@ -57,7 +57,7 @@ export default {
       research. So if you have any questions you will most probably contact 
       me :)
     `,
-    hubert: `Profesionall idiot`,
+    hubert: `TBC`,
   },
   guide: {
     title: `The Guide`,
@@ -84,7 +84,7 @@ export default {
         a_2: 'Desktop',
       },
       3: {
-        q: 'Do you have already have Yoroi wallet setup?',
+        q: 'Do you already have Yoroi wallet setup?',
         a_1: 'Yes',
         a_2: 'No',
       },

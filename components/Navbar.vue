@@ -4,7 +4,7 @@
     app
     :mini-variant="true"
     mini-variant-width="96"
-    class="vivid-navbar"
+    :class="`vivid-navbar ${$i18n.locale}`"
     color="#030303"
   >
     <v-list>
@@ -32,18 +32,21 @@
           </v-list-item>
         </nuxt-link>
       </div>
+      <div class="d-flex justify-center align-center">
+        <LocalesDropdown />
+      </div>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-// import LocalesDropdown from '@/components/LocalesDropdown'
+import LocalesDropdown from '@/components/LocalesDropdown'
 
 export default {
   name: 'Navbar',
   components: {
-    // LocalesDropdown,
+    LocalesDropdown,
   },
   computed: {
     ...mapState('App', ['is_drawer_open']),
@@ -112,10 +115,20 @@ nav {
       background-color: rgba(61, 61, 61, 0.5);
     }
   }
-  .nuxt-link-active:not([href='/']),
-  .nuxt-link-active.nuxt-link-exact-active[href='/'] {
-    .v-list-item {
-      background-color: rgba(128, 0, 128, 0.5);
+  &.en {
+    .nuxt-link-active:not([href='/']),
+    .nuxt-link-active.nuxt-link-exact-active[href='/'] {
+      .v-list-item {
+        background-color: rgba(128, 0, 128, 0.5);
+      }
+    }
+  }
+  &.pl {
+    .nuxt-link-active:not([href='/pl']),
+    .nuxt-link-active.nuxt-link-exact-active[href='/pl'] {
+      .v-list-item {
+        background-color: rgba(128, 0, 128, 0.5);
+      }
     }
   }
 }
