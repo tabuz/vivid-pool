@@ -1,28 +1,28 @@
 <template>
-<v-container fluid class="pa-0">
-  <v-row>
-    <v-col cols="12" md="9" order="12" order-md="1">
-      <v-scroll-y-transition mode="out-in">
-        <div v-if="!content" :key="question_step" class="max-width-800">
-          <Questions />
-        </div>
-        <div v-else>
-          <nuxt-content :document="content" />
-        </div>
-      </v-scroll-y-transition>
-    </v-col>
-    <v-col cols="12" md="3" order="1" order-md="12">
-      <v-scroll-y-transition mode="out-in">
-        <TableOfContent
-          v-if="content && content.toc"
-          :category="$route.params.category"
-          :article="$route.params.article"
-          :toc="content.toc"
-        />
-      </v-scroll-y-transition>
-    </v-col>
-  </v-row>
-</v-container>
+  <v-container fluid class="pa-0">
+    <v-row>
+      <v-col cols="12" md="9" order="12" order-md="1">
+        <v-scroll-y-transition mode="out-in">
+          <div v-if="!content" :key="question_step" class="max-width-800">
+            <Questions />
+          </div>
+          <div v-else>
+            <nuxt-content :document="content" />
+          </div>
+        </v-scroll-y-transition>
+      </v-col>
+      <v-col cols="12" md="3" order="1" order-md="12">
+        <v-scroll-y-transition mode="out-in">
+          <TableOfContent
+            v-if="content && content.toc"
+            :category="$route.params.category"
+            :article="$route.params.article"
+            :toc="content.toc"
+          />
+        </v-scroll-y-transition>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

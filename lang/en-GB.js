@@ -8,7 +8,7 @@ export default {
   index: {
     slogan: 'The future is here.',
     blurp: `
-      Meet international staking pools validators for Cardano and Polkadot. 
+      Meet international staking pools validators for Cardano. 
       We're offering cutting edge cryptocurrency technology of today and 
       tomorrow. Join us today on this exciting journey!
     `,

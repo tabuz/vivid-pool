@@ -1,47 +1,49 @@
 <template>
-  <v-main class="pt-8">
-    <v-row :class="{ 'pl-10': $vuetify.breakpoint.mdAndUp }">
-      <v-col cols="12" md="6" lg="5" style="max-width: 800px" class="about">
-        <div class="hero-text white-elevation">
-          <PageTitle :title="$t('about.title')" />
-          <div class="team blurp mb-2 mb-md-6">
-            <div
-              v-for="(person, idx) in team"
-              :key="person.name"
-              class="person rounded pt-2"
-              :class="{
-                blur: selected_person && selected_person !== person,
-                active: selected_person === person,
-                [`person-${idx}`]: true,
-              }"
-              @click="on_click_person(person, idx)"
-            >
-              <div class="image mb-2">
-                <v-img
-                  width="150px"
-                  height="150px"
-                  :src="person.image"
-                  contain
-                  aspect-ratio="1/1"
-                />
+  <v-main class="pt-4">
+    <v-container fluid>
+      <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
+        <v-col cols="12" md="6" lg="5" style="max-width: 800px" class="about">
+          <div class="hero-text">
+            <PageTitle :title="$t('about.title')" />
+            <div class="team blurp mb-2">
+              <div
+                v-for="(person, idx) in team"
+                :key="person.name"
+                class="person rounded pt-2"
+                :class="{
+                  blur: selected_person && selected_person !== person,
+                  active: selected_person === person,
+                  [`person-${idx}`]: true,
+                }"
+                @click="on_click_person(person, idx)"
+              >
+                <div class="image mb-2">
+                  <v-img
+                    :width="$vuetify.breakpoint.mdAndUp ? 150 : 100"
+                    :height="$vuetify.breakpoint.mdAndUp ? 150 : 100"
+                    :src="person.image"
+                    contain
+                    aspect-ratio="1/1"
+                  />
+                </div>
+                <p class="font-weight-bold mb-0">{{ person.name }}</p>
+                <p class="role">{{ person.role }}</p>
               </div>
-              <p class="font-weight-bold mb-0">{{ person.name }}</p>
-              <p class="role">{{ person.role }}</p>
+            </div>
+            <div
+              class="blurp"
+              :class="{
+                [`person-${person_idx}`]: true,
+              }"
+            >
+              <p class="text-body-1 pa-2 pa-md-6 text-body-1 mb-0">
+                {{ subtitle_text }}
+              </p>
             </div>
           </div>
-          <div
-            class="blurp"
-            :class="{
-              [`person-${person_idx}`]: true,
-            }"
-          >
-            <p class="text-body-1 text-md-h6">
-              {{ subtitle_text }}
-            </p>
-          </div>
-        </div>
-      </v-col>
-    </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-main>
 </template>
 
@@ -113,27 +115,13 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 200px;
-
-      &:hover,
-      &.active {
-        .image {
-          // filter: saturate(0.5);
-        }
-      }
-      &.blur {
-        // filter: blur(1px);
-      }
 
       .image {
-        width: 150px;
-        height: 150px;
         transition: filter 0.125s ease-in-out;
         filter: saturate(0.6);
 
         .v-image {
-          border-radius: 16px;
-          border: 1px solid white;
+          border-radius: 8px;
         }
       }
 

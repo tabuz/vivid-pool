@@ -1,26 +1,30 @@
 <template>
   <div>
-    <v-main class="pt-8">
-      <v-container fluid class="pa-0">
-        <v-row no-gutters>
-          <v-col cols="12" class="pb-0 mb-0">
-            <PageTitle :title="$t('guide.title')" />
+    <v-main class="pt-4">
+      <v-container fluid>
+        <v-row
+          no-gutters
+          class="blurp blurred pt-0"
+          :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }"
+        >
+          <div class="mask"></div>
+          <v-col cols="12" md="6" lg="5">
+            <div class="hero-text">
+              <PageTitle :title="$t('guide.title')" />
+            </div>
           </v-col>
           <v-col cols="12" class="guide-container pb-0 mb-0">
-            <div class="blurp blurred pl-10">
-              <div class="mask"></div>
-              <v-row>
-                <v-col cols="12" md="2">
-                  <ArticlesTree
-                    v-if="$vuetify.breakpoint.mdAndUp"
-                    :content="content"
-                  />
-                </v-col>
-                <v-col cols="12" md="10">
-                  <nuxt-child />
-                </v-col>
-              </v-row>
-            </div>
+            <v-row>
+              <v-col cols="12" md="2">
+                <ArticlesTree
+                  v-if="$vuetify.breakpoint.mdAndUp"
+                  :content="content"
+                />
+              </v-col>
+              <v-col cols="12" md="10">
+                <nuxt-child />
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </v-container>

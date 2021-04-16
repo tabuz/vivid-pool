@@ -13,7 +13,7 @@
           <img :src="require('@/static/vivid-pool-logo.png')" />
         </v-list-item-avatar>
       </v-list-item>
-      <div>
+      <div class="mb-4">
         <nuxt-link
           v-for="(destination, i) in destinations"
           :key="`nav_${i}`"
@@ -22,7 +22,9 @@
         >
           <v-list-item class="text-center px-0 py-4">
             <span>
-              <v-icon color="white">{{ destination.icon }}</v-icon>
+              <v-icon :class="destination.icon" color="white">{{
+                destination.icon
+              }}</v-icon>
               <v-subheader
                 style="height: 28px"
                 class="font-weight-bold white--text"
@@ -92,6 +94,12 @@ export default {
 <style lang="scss">
 $logo-size: 80px;
 
+.vivid-navbar {
+  height: auto !important;
+  border-bottom-right-radius: 8px;
+  padding-bottom: 1rem;
+}
+
 .vivid-logo {
   .img {
     min-height: $logo-size;
@@ -124,6 +132,9 @@ nav {
     }
   }
   &.pl {
+    .mdi-home-outline {
+      margin-bottom: 0.5rem;
+    }
     .nuxt-link-active:not([href='/pl']),
     .nuxt-link-active.nuxt-link-exact-active[href='/pl'] {
       .v-list-item {

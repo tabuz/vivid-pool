@@ -1,7 +1,7 @@
 <template>
-  <v-main class="pt-8">
-    <v-container fluid class="pa-0">
-      <v-row :class="{ 'pl-10': $vuetify.breakpoint.mdAndUp }">
+  <v-main class="pt-4">
+    <v-container fluid>
+      <v-row :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col cols="12" md="6" lg="5" style="max-width: 800px">
           <h1
             class="text-h4 text-md-h3 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
