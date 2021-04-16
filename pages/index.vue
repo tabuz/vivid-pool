@@ -3,14 +3,10 @@
     <v-container fluid>
       <v-row :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col cols="12" md="6" lg="5" style="max-width: 800px">
-          <h1
-            class="text-h4 text-md-h3 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
-          >
+          <h1 class="text-h4 text-md-h3 text-xl-h2 mb-1 font-weight-thin">
             <span class="vivid-decoration">Vivid</span> Stake Pool
           </h1>
-          <h2
-            class="text-h5 text-md-h4 text-xl-h3 mb-2 mb-md-4 vivid-bg slogan"
-          >
+          <h2 class="text-h5 text-md-h4 mb-2 mb-md-4 slogan purple--text">
             {{ $t('index.slogan') }}
           </h2>
           <p class="text-body-1 text-md-h6 mb-2 mb-md-6 blurp">
@@ -156,8 +152,7 @@ export default {
 }
 
 .slogan {
-  color: #000000;
-  background: #89009b;
+  color: #89009b;
   display: inline-block;
 }
 </style>
