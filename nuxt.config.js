@@ -38,6 +38,7 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/google-analytics',
   ],
   eslint: {
     fix: true,
@@ -106,6 +107,9 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
+  googleAnalytics: {
+    id: 'G-JYMB94Y710',
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
