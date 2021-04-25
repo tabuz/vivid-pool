@@ -133,7 +133,7 @@ export default {
 <style lang="scss" scoped>
 .pool-table-container {
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .pool-table {
   width: 100%;
