@@ -81,6 +81,7 @@
               </tbody>
             </table>
           </div>
+          <Videos />
         </v-col>
       </v-row>
     </v-container>
@@ -89,6 +90,7 @@
 
 <script>
 // import CryptoPool from '@/components/CryptoPool'
+import Videos from '@/components/Videos'
 import Vue from 'vue'
 import Clipboard from 'v-clipboard'
 
@@ -97,6 +99,7 @@ Vue.use(Clipboard)
 export default {
   components: {
     // CryptoPool,
+    Videos,
   },
   data() {
     return {

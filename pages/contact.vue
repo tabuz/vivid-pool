@@ -74,7 +74,7 @@ export default {
     margin-right: 2rem;
 
     &:last-of-type {
-      margin-right: none;
+      margin-right: 0 !important;
     }
     i {
       // font-size: 4rem !important;

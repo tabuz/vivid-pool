@@ -1,5 +1,5 @@
 ---
-name: Kompedium
+name: Kompendium
 category: portfele
 order: 0
 ---
