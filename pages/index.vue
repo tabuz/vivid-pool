@@ -32,16 +32,15 @@
             />
             <CryptoPool name="Polkadot" image="polkadot-new-dot-logo.svg" />
           </div> -->
-          <v-simple-table dark class="pool-table">
-            <template #default>
+          <div class="pool-table-container">
+            <table class="pool-table">
               <thead>
                 <tr>
                   <th class="text-left">Ticker</th>
                   <th class="text-left">Fee</th>
                   <th class="text-left">Pledge</th>
-                  <th class="text-left">Active Stake</th>
+                  <th class="text-left">Stake</th>
                   <th class="text-left">ROA</th>
-                  <th class="text-left">Lifetime Blocks</th>
                   <th class="text-left">Saturation</th>
                   <th class="text-left">Pool ID</th>
                 </tr>
@@ -52,16 +51,17 @@
                   <td>{{ format_percent(pool.tax_ratio) }}</td>
                   <td>{{ format_ada(pool.pledge) }}</td>
                   <td>{{ format_ada(pool.active_stake) }}</td>
-                  <td>{{ format_percent(pool.roa_lifetime) }}</td>
                   <td>{{ format_percent(pool.blocks_lifetime) }}</td>
                   <td>
                     <v-progress-linear
-                      v-model="pool.saturated"
                       color="purple"
                       rounded
                       height="25"
+                      :value="pool.saturated * 100"
                     >
-                      {{ format_percent(pool.saturated) }}
+                      <span class="white--text">{{
+                        format_percent(pool.saturated)
+                      }}</span>
                     </v-progress-linear>
                   </td>
                   <td>
@@ -71,16 +71,16 @@
                       tile
                       color="purple"
                       @click="feedback_copied(pool.pool_id)"
-                      ><span v-if="!copied">Copy</span
-                      ><v-icon v-else-if="copied === pool.pool_id"
+                      ><span v-if="!copied" class="white--text">Copy</span
+                      ><v-icon v-else-if="copied === pool.pool_id" color="white"
                         >mdi-check</v-icon
                       ></v-btn
                     >
                   </td>
                 </tr>
               </tbody>
-            </template>
-          </v-simple-table>
+            </table>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -131,17 +131,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  height: 100%;
-  .pool-table {
-    th,
-    td {
-      color: white !important;
-    }
-    tr {
-      &:hover {
-        background: inherit !important;
-      }
+.pool-table-container {
+  width: 100%;
+  overflow-x: scroll;
+}
+.pool-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white !important;
+
+  thead {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  th {
+    padding: 0.3em 1em;
+  }
+  td {
+    padding: 0.6em 1em;
+  }
+  tr {
+    white-space: nowrap;
+    &:hover {
+      background: inherit !important;
     }
   }
 }

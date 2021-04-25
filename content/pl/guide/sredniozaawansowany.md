@@ -1,6 +1,6 @@
 ---
 name: Średnio zaawansowany
-category: essentials
+category: niezbednik
 order: 1
 ---
 

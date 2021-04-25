@@ -1,7 +1,7 @@
 export default function (to, from, savedPosition) {
   if (to.hash) {
     return {
-      selector: to.hash,
+      selector: window.decodeURIComponent(to.hash),
       behavior: 'smooth',
     }
   } else {

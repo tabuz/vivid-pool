@@ -9,7 +9,7 @@
       </v-btn>
     </nuxt-link>
     <ul v-if="toc.length">
-      <p>On this page</p>
+      <p>{{ $t('guide.on_this_page') }}</p>
       <li v-for="el in toc" :key="el.id" class="table-of-content">
         <nuxt-link
           :to="

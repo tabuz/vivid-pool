@@ -1,6 +1,6 @@
 ---
 name: Początkujący
-category: essentials
+category: niezbednik
 order: 0
 ---
 

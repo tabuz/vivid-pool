@@ -1,6 +1,6 @@
 ---
-name: About
-category: exchanges
+name: Kompedium
+category: gieldy
 order: 0
 ---
 

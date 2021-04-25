@@ -4,8 +4,12 @@
     app
     :mini-variant="true"
     mini-variant-width="96"
-    :class="`vivid-navbar ${$i18n.locale}`"
     color="#030303"
+    class="vivid-navbar"
+    :class="{
+      [$i18n.locale]: true,
+      cropped: $vuetify.breakpoint.mdAndUp,
+    }"
   >
     <v-list>
       <v-list-item class="pb-8 vivid-logo">
@@ -95,9 +99,12 @@ export default {
 $logo-size: 80px;
 
 .vivid-navbar {
-  height: auto !important;
   border-bottom-right-radius: 8px;
   padding-bottom: 1rem;
+
+  &.cropped {
+    height: auto !important;
+  }
 }
 
 .vivid-logo {

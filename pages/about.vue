@@ -1,5 +1,5 @@
 <template>
-  <v-main class="pt-4">
+  <v-main class="pt-8">
     <v-container fluid>
       <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col cols="12" md="6" lg="5" style="max-width: 800px" class="about">
@@ -115,6 +115,16 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.2s ease-in-out;
+
+      &:hover {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      &.active {
+        border-bottom: 1px solid white;
+      }
 
       .image {
         transition: filter 0.125s ease-in-out;
