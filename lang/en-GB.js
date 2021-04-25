@@ -40,12 +40,11 @@ export default {
       years of progress which have been made in block chain technologies.
     `,
     rafal: `
-      I'm a 29 years old software tester/developer with over 5 years of 
-      experience in a field. I used to study IT at Cracow University of 
-      Technology. My programming skills include languages like: Python, 
-      C#, bash and Solidity. In a Vivid Pool my role is to operate the 
-      pools and provide them security. In free time blockchain fanatic, 
-      martial artist and motorbike rider.
+      I'm software tester/developer with over 5 years of experience in a 
+      field. I used to study IT at Cracow University of Technology. My 
+      programming skills include languages like: Python, C#, bash and 
+      Solidity. In a Vivid Pool my role is to operate the pools and provide 
+      them security. In free time martial artist and motorbike rider.
     `,
     patryk: `
       If I would describe myself in a few words I would say I am a vivid 

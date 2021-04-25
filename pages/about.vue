@@ -2,14 +2,14 @@
   <v-main class="pt-4">
     <v-container fluid>
       <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
-        <v-col cols="12" md="6" lg="5" style="max-width: 800px" class="about">
+        <v-col cols="12" md="8" lg="6" style="max-width: 800px" class="about">
           <div class="hero-text">
             <PageTitle :title="$t('about.title')" />
             <div class="team blurp mb-2">
               <div
                 v-for="(person, idx) in team"
                 :key="person.name"
-                class="person rounded pt-2"
+                class="person pt-2"
                 :class="{
                   blur: selected_person && selected_person !== person,
                   active: selected_person === person,
@@ -19,8 +19,8 @@
               >
                 <div class="image mb-2">
                   <v-img
-                    :width="$vuetify.breakpoint.mdAndUp ? 150 : 100"
-                    :height="$vuetify.breakpoint.mdAndUp ? 150 : 100"
+                    :width="$vuetify.breakpoint.mdAndUp ? 130 : 100"
+                    :height="$vuetify.breakpoint.mdAndUp ? 130 : 100"
                     :src="person.image"
                     contain
                     aspect-ratio="1/1"
@@ -129,10 +129,6 @@ export default {
       .image {
         transition: filter 0.125s ease-in-out;
         filter: saturate(0.6);
-
-        .v-image {
-          border-radius: 8px;
-        }
       }
 
       .role {

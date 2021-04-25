@@ -41,12 +41,11 @@ export default {
       postępu jaki dokonał się w świecie krypto przez ostanie 12 lat.
     `,
     rafal: `
-      Jestem 29-cio letnim testerem i deweloperem oprogramowania z ponad
-      5-cioma lat doświadczenia. Studiowałem na Akademi Górniczo-Hutniczej
-      w Krakowie na kierunku IT. Zakres moich kompetencji obejmuje technologie
-      takie jak: Python, C#, bash, Solidity. W Vivid Pool moja rola to zarządzanie
-      i bezpieczeństwo węzła. W wolnym czasie jestem fanatykiem krypto,
-      artystą sztuk walki i kierowcą motocykla.
+      Jestem testerem i deweloperem oprogramowania z ponad 5-cioma lat 
+      doświadczenia. Studiowałem na Politechnice Krakowskiej na kierunku IT.
+      Zakres moich kompetencji obejmuje technologie takie jak: Python, C#, 
+      bash, Solidity. W Vivid Pool moja rola to zarządzanie i bezpieczeństwo 
+      node's. W wolnym czasie trenuję sztuk walki i jeżdżę na motocyklach.
     `,
     patryk: `
       Jeśli miałbym opisać siebie w kilku słowach to określiłbym się jako

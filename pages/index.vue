@@ -12,13 +12,14 @@
           <p class="text-body-1 pa-0 text-md-h6 mb-2 mb-md-6 blurp">
             {{ $t('index.blurp') }}
           </p>
-          <div class="text-right">
-            <nuxt-link :to="localePath('guide-category-article')">
-              <button
-                class="btn-flip mb-12"
-                :data-front="$t('index.get_started_front')"
-                :data-back="$t('index.get_started_back')"
-              ></button>
+          <div class="text-right mb-8">
+            <nuxt-link
+              :to="localePath('guide-category-article')"
+              class="button"
+            >
+              <button>
+                {{ $t('index.get_started_front') }}
+              </button>
             </nuxt-link>
           </div>
 
@@ -55,7 +56,6 @@
                   <td>
                     <v-progress-linear
                       color="purple"
-                      rounded
                       height="25"
                       :value="pool.saturated * 100"
                     >
@@ -69,7 +69,7 @@
                       v-clipboard="() => pool.pool_id"
                       small
                       tile
-                      color="purple"
+                      color="transparent"
                       @click="feedback_copied(pool.pool_id)"
                       ><span v-if="!copied" class="white--text">Copy</span
                       ><v-icon v-else-if="copied === pool.pool_id" color="white"
@@ -134,11 +134,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$purple: #581c7b;
+
+.button {
+  padding: 0.3rem 1.5rem;
+  border: 0px solid $purple;
+  border-left-width: 5px;
+  border-right-width: 5px;
+  color: white;
+  font-weight: 700;
+  transition: all 0.125s ease;
+
+  &:focus {
+    outline: $purple 1px auto !important;
+  }
+  button:focus {
+    outline: none;
+  }
+
+  &:hover {
+    // background-color: white;
+    border-left-width: 5px;
+    // color: black;
+  }
+}
 .pool-table-container {
   width: 100%;
   overflow-x: auto;
 }
 .pool-table {
+  background-color: rgba(0, 0, 0, 0.795);
+  backdrop-filter: blur(8px);
   width: 100%;
   border-collapse: collapse;
   color: white !important;
