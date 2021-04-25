@@ -1,5 +1,5 @@
 <template>
-  <v-main class="pt-8">
+  <v-main class="pt-4">
     <v-container fluid>
       <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col cols="12" md="6" lg="5" style="max-width: 800px" class="about">
@@ -36,7 +36,7 @@
                 [`person-${person_idx}`]: true,
               }"
             >
-              <p class="text-body-1 pa-2 pa-md-6 text-body-1 mb-0">
+              <p class="text-body-1 text-body-1 mb-0">
                 {{ subtitle_text }}
               </p>
             </div>
