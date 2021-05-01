@@ -38,7 +38,6 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/google-analytics',
   ],
   eslint: {
     fix: true,
