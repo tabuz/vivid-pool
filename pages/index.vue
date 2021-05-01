@@ -95,8 +95,9 @@ export default {
     Videos,
   },
   async asyncData({ $content, app }) {
+    const locale = app.i18n.locale
     const pools = []
-    const videos = await $content(app.i18n.locale, 'videos')
+    const videos = await $content(locale, 'videos')
       .only(['name', 'order', 'thumbnail', 'url'])
       .fetch()
 
@@ -110,14 +111,94 @@ export default {
       console.error('Failed fetching rom adapools.org')
     }
 
-    return { videos, pools }
+    let head
+
+    switch (locale) {
+      case 'pl':
+        head = {
+          title: 'Strona Główna',
+          meta: [
+            {
+              hid: 'description',
+              name: 'description',
+              content:
+                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+            },
+            {
+              hid: 'og:title',
+              property: 'og:title',
+              content: 'Strona Główna - Vivid Stake Pool',
+            },
+            {
+              hid: 'og:description',
+              property: 'og:description',
+              content:
+                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+            },
+            {
+              hid: 'twitter:title',
+              property: 'twitter:title',
+              content: 'Strona Główna - Vivid Stake Pool',
+            },
+            {
+              hid: 'twitter:description',
+              property: 'twitter:description',
+              content:
+                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+            },
+          ],
+        }
+        break
+
+      default:
+        head = {
+          title: 'Home Page',
+          meta: [
+            {
+              hid: 'description',
+              name: 'description',
+              content:
+                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+            },
+            {
+              hid: 'og:title',
+              property: 'og:title',
+              content: 'Home Page - Vivid Stake Pool',
+            },
+            {
+              hid: 'og:description',
+              property: 'og:description',
+              content:
+                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+            },
+            {
+              hid: 'twitter:title',
+              property: 'twitter:title',
+              content: 'Home Page - Vivid Stake Pool',
+            },
+            {
+              hid: 'twitter:description',
+              property: 'twitter:description',
+              content:
+                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+            },
+          ],
+        }
+        break
+    }
+
+    return { videos, pools, head }
   },
   data() {
     return {
+      head: {},
       pools: [],
       videos: [],
       copied: false,
     }
+  },
+  head() {
+    return this.head
   },
   methods: {
     format_percent(value) {
@@ -126,7 +207,7 @@ export default {
     format_ada(value) {
       value = parseInt(value / 1000000)
       if (value / 1000 < 1000) return `${Number(value / 1000).toFixed(0)}k ₳`
-      return 'dupa'
+      return '-'
     },
     feedback_copied(pool_id) {
       this.copied = pool_id
@@ -158,9 +239,7 @@ $purple: #581c7b;
   }
 
   &:hover {
-    // background-color: white;
     border-left-width: 5px;
-    // color: black;
   }
 }
 .pool-table-container {
