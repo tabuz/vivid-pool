@@ -23,17 +23,7 @@
             </nuxt-link>
           </div>
 
-          <!-- <div class="d-flex justify-center align-center">
-            <CryptoPool
-              name="Cardano"
-              :container-class="
-                $vuetify.breakpoint.smAndDown ? 'mr-2' : 'mr-16'
-              "
-              image="cardano-ada-logo.svg"
-            />
-            <CryptoPool name="Polkadot" image="polkadot-new-dot-logo.svg" />
-          </div> -->
-          <div class="pool-table-container">
+          <div class="pool-table-container mb-8">
             <table class="pool-table">
               <thead>
                 <tr>
@@ -72,7 +62,10 @@
                       color="transparent"
                       @click="feedback_copied(pool.pool_id)"
                       ><span v-if="!copied" class="white--text">Copy</span
-                      ><v-icon v-else-if="copied === pool.pool_id" color="white"
+                      ><v-icon
+                        v-else-if="copied === pool.pool_id"
+                        color="white"
+                        class="mx-2"
                         >mdi-check</v-icon
                       ></v-btn
                     >
@@ -81,7 +74,7 @@
               </tbody>
             </table>
           </div>
-          <Videos />
+          <Videos :videos="videos" />
         </v-col>
       </v-row>
     </v-container>
@@ -101,18 +94,30 @@ export default {
     // CryptoPool,
     Videos,
   },
+  async asyncData({ $content, app }) {
+    const pools = []
+    const videos = await $content(app.i18n.locale, 'videos')
+      .only(['name', 'order', 'thumbnail', 'url'])
+      .fetch()
+
+    try {
+      const response = await fetch(
+        'https://js.adapools.org/pools/194430bee1245b2d7e19a33e52635e5328ef24431874a0cb191c0195/summary.json'
+      )
+      const { data: pool_data } = await response.json()
+      pools.push(pool_data)
+    } catch (e) {
+      console.error('Failed fetching rom adapools.org')
+    }
+
+    return { videos, pools }
+  },
   data() {
     return {
       pools: [],
+      videos: [],
       copied: false,
     }
-  },
-  async created() {
-    const response = await fetch(
-      'https://js.adapools.org/pools/194430bee1245b2d7e19a33e52635e5328ef24431874a0cb191c0195/summary.json'
-    )
-    const data = await response.json()
-    this.pools.push(data.data)
   },
   methods: {
     format_percent(value) {

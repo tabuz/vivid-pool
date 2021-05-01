@@ -5,11 +5,14 @@
         <v-col cols="12" md="8" lg="6" style="max-width: 800px" class="about">
           <div class="hero-text">
             <PageTitle :title="$t('about.title')" />
-            <div class="team blurp mb-2">
+            <p class="text-body-1 text-body-1 pt-4">
+              {{ $t('about.subtitle') }}
+            </p>
+            <div class="team blurp">
               <div
                 v-for="(person, idx) in team"
                 :key="person.name"
-                class="person pt-2"
+                class="person"
                 :class="{
                   blur: selected_person && selected_person !== person,
                   active: selected_person === person,
@@ -24,13 +27,19 @@
                     :src="person.image"
                     contain
                     aspect-ratio="1/1"
+                    class="mb-2"
                   />
+                  <p class="font-weight-bold mb-0">{{ person.name }}</p>
                 </div>
-                <p class="font-weight-bold mb-0">{{ person.name }}</p>
-                <p class="role">{{ person.role }}</p>
+                <div class="text px-4">
+                  <p class="role mb-1">{{ person.role }}</p>
+                  <p class="text-body-1 text-body-1 mb-0">
+                    {{ $t(person.text) }}
+                  </p>
+                </div>
               </div>
             </div>
-            <div
+            <!-- <div
               class="blurp"
               :class="{
                 [`person-${person_idx}`]: true,
@@ -39,7 +48,7 @@
               <p class="text-body-1 text-body-1 mb-0">
                 {{ subtitle_text }}
               </p>
-            </div>
+            </div> -->
           </div>
         </v-col>
       </v-row>
@@ -84,7 +93,7 @@ export default {
   computed: {
     subtitle_text() {
       const person = this.selected_person
-      if (!person) return this.$t('about.subtitle')
+      if (!person) return ''
       return this.$t(person.text)
     },
   },
@@ -107,23 +116,16 @@ export default {
 <style lang="scss" scoped>
 .about {
   .team {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: row;
 
     .person {
-      cursor: pointer;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       border-bottom: 1px solid transparent;
       transition: border-bottom 0.2s ease-in-out;
+      margin-bottom: 20px;
 
-      &:hover {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      }
-
-      &.active {
-        border-bottom: 1px solid white;
+      &:last-of-type {
+        margin-bottom: 0;
       }
 
       .image {
@@ -133,6 +135,7 @@ export default {
 
       .role {
         font-size: 0.8em;
+        font-weight: bold;
       }
     }
   }

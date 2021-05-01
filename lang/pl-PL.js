@@ -16,6 +16,9 @@ export default {
     get_started_front: 'Dołącz',
     get_started_back: 'Teraz',
   },
+  video: {
+    title: 'Poradniki Video',
+  },
   contact: {
     title: 'Kontakt',
     subtitle: `Jeżeli masz jakieś pytania, skontaktuj się z nami przez portal 

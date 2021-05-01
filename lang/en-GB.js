@@ -15,6 +15,9 @@ export default {
     get_started_front: 'Get Started',
     get_started_back: 'Now',
   },
+  video: {
+    title: 'Video Guides',
+  },
   contact: {
     title: 'Contact',
     subtitle: `If you have any questions please do not hesitate to contact 

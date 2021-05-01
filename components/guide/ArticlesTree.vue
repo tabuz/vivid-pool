@@ -1,5 +1,5 @@
 <template>
-  <ol class="guide-sticky">
+  <ol class="guide-sticky pt-4">
     <li v-for="depth_1 in content_by_category" :key="depth_1.id">
       <p class="mb-0">{{ depth_1.text }}</p>
       <ul v-if="depth_1.toc" class="guide-tree mb-4">

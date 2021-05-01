@@ -103,7 +103,6 @@ $purple: #581c7b;
 $blue: #0084b1;
 
 .vivid-navbar {
-  border-bottom-right-radius: 8px;
   padding-bottom: 1rem;
 
   &.cropped {
