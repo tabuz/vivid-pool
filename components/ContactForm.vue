@@ -2,7 +2,7 @@
   <v-form
     ref="contact_form"
     v-model="is_form_valid"
-    class="pa-6 blurp"
+    class="px-2 blurp"
     color="#fff"
   >
     <v-text-field

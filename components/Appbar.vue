@@ -1,6 +1,6 @@
 <template>
   <v-app-bar
-    v-if="!$vuetify.breakpoint.mdAndUp"
+    v-if="$vuetify.breakpoint.mdAndDown"
     class="appbar"
     color="#0b0b0b"
     app

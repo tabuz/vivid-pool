@@ -1,5 +1,5 @@
 <template>
-  <ol class="guide-sticky">
+  <ol class="guide-sticky pt-4">
     <li v-for="depth_1 in content_by_category" :key="depth_1.id">
       <p class="mb-0">{{ depth_1.text }}</p>
       <ul v-if="depth_1.toc" class="guide-tree mb-4">
@@ -27,13 +27,23 @@ export default {
   },
   computed: {
     content_by_category() {
-      const categories = [
-        { id: 'essentials', text: 'Essentials' },
-        { id: 'exchanges', text: 'Exchanges' },
-        { id: 'wallets', text: 'Digital Wallets' },
-        { id: 'stake', text: 'Stake With Vivid' },
-      ]
-      return categories.map((c) => ({
+      const locale = this.$i18n.locale
+
+      const categories_by_locale = {
+        en: [
+          { id: 'essentials', text: 'Essentials' },
+          { id: 'exchanges', text: 'Exchanges' },
+          { id: 'wallets', text: 'Digital Wallets' },
+          { id: 'stake', text: 'Stake With Vivid' },
+        ],
+        pl: [
+          { id: 'niezbednik', text: 'Niezbędnik' },
+          { id: 'gieldy', text: 'Giełdy' },
+          { id: 'portfele', text: 'Cyfrowe portfele' },
+          { id: 'stake', text: 'Stake z Vivid' },
+        ],
+      }
+      return categories_by_locale[locale].map((c) => ({
         ...c,
         toc: this.filter_content(c.id),
       }))

@@ -15,6 +15,9 @@ export default {
     get_started_front: 'Get Started',
     get_started_back: 'Now',
   },
+  video: {
+    title: 'Video Guides',
+  },
   contact: {
     title: 'Contact',
     subtitle: `If you have any questions please do not hesitate to contact 
@@ -40,12 +43,11 @@ export default {
       years of progress which have been made in block chain technologies.
     `,
     rafal: `
-      I'm a 29 years old software tester/developer with over 5 years of 
-      experience in a field. I used to study IT at Cracow University of 
-      Technology. My programming skills include languages like: Python, 
-      C#, bash and Solidity. In a Vivid Pool my role is to operate the 
-      pools and provide them security. In free time blockchain fanatic, 
-      martial artist and motorbike rider.
+      I'm software tester/developer with over 5 years of experience in a 
+      field. I used to study IT at Cracow University of Technology. My 
+      programming skills include languages like: Python, C#, bash and 
+      Solidity. In a Vivid Pool my role is to operate the pools and provide 
+      them security. In free time martial artist and motorbike rider.
     `,
     patryk: `
       If I would describe myself in a few words I would say I am a vivid 
@@ -57,7 +59,13 @@ export default {
       research. So if you have any questions you will most probably contact 
       me :)
     `,
-    hubert: `TBC`,
+    hubert: `
+      Hi, I'm Hubert, special tasks man. When something doesn't work right
+      that's what makes me excited most. Programming is my passion which
+      I dedicate my whole life to. Profesionally I'm CTO of "Foodiependent" start-up
+      where I'm responsible for integration of multiple systems. Website you looking
+      at now - hope you like it - we've put a lot of heart into it 🤘.
+    `,
   },
   guide: {
     title: `The Guide`,
@@ -66,6 +74,7 @@ export default {
       to participate to our staking pool. In few simple steps you should 
       obtain ADA, create your own digital wallet and stake with Vivid Pools.
     `,
+    on_this_page: 'On this page',
     questions: {
       0: {
         q: 'What is your level of knowledge about blockchain technology?',

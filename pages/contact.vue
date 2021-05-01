@@ -14,7 +14,9 @@
                 target="_blank"
                 class="icon twitter"
               >
-                <v-icon x-large color="#00acee">mdi-twitter</v-icon>
+                <v-icon :x-large="$vuetify.breakpoint.mdAndUp" color="#00acee"
+                  >mdi-twitter</v-icon
+                >
                 <span>Twitter</span>
               </a>
               <a
@@ -22,7 +24,9 @@
                 target="_blank"
                 class="icon discord"
               >
-                <v-icon x-large color="#7289da">mdi-discord</v-icon>
+                <v-icon :x-large="$vuetify.breakpoint.mdAndUp" color="#7289da"
+                  >mdi-discord</v-icon
+                >
                 <span>Discord</span>
               </a>
               <a
@@ -30,7 +34,9 @@
                 target="_blank"
                 class="icon telegram"
               >
-                <v-icon x-large color="#0088cc">mdi-telegram</v-icon>
+                <v-icon :x-large="$vuetify.breakpoint.mdAndUp" color="#0088cc"
+                  >mdi-telegram</v-icon
+                >
                 <span>Telegram</span>
               </a>
             </div>
@@ -68,10 +74,10 @@ export default {
     margin-right: 2rem;
 
     &:last-of-type {
-      margin-right: none;
+      margin-right: 0 !important;
     }
     i {
-      font-size: 4rem !important;
+      // font-size: 4rem !important;
     }
     span {
       color: white;

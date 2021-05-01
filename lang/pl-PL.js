@@ -6,7 +6,7 @@ export default {
     contact: 'Kontakt',
   },
   index: {
-    slogan: 'Przyszłość nadeszła.',
+    slogan: 'Technologia przyszłości.',
     blurp: `
       Jesteśmy międzynarodowym zespołem operatorów staking pools dla sieci 
       Cardano. Naszą misją jest dostarczanie niezawodnych rozwiązań 
@@ -15,6 +15,9 @@ export default {
     `,
     get_started_front: 'Dołącz',
     get_started_back: 'Teraz',
+  },
+  video: {
+    title: 'Poradniki Video',
   },
   contact: {
     title: 'Kontakt',
@@ -31,22 +34,21 @@ export default {
   },
   about: {
     title: 'Zespół',
-    subtitle: `We have been friends who know each other for over 10 years. 
-      The cutting edge technologies have always been our main point of 
-      interest. The concept of the block chain showed all of us new 
-      possibilities and solutions to problems created by the digital 
-      age. Inspired by that we decided to be a part of the decentralization 
-      movement. The two projects about which we are mostly excited are 
-      Cardano and Polkadot. They are the best example of the last 12 
-      years of progress which have been made in block chain technologies.
+    subtitle: `
+      Jesteśmy przyjaciółmi ktorzy znają się już ponad 10 lat. Zaawansowana
+      technologia zawsze była i będzie w centrum naszych zainteresowań.
+      Koncept blockchain'u uzmysłowił nam ogrom możliwości i rozwiązań 
+      jakie niesie ze sobą cyfrowa era. Zainspirowani zadecydowaliśmy
+      stać się częścią tego poruszenia. Dwa projekty o których myślimy 
+      najczęściej to Cardano i Polkadot - są one świetnym przykładem 
+      postępu jaki dokonał się w świecie krypto przez ostanie 12 lat.
     `,
     rafal: `
-      I'm a 29 years old software tester/developer with over 5 years of 
-      experience in a field. I used to study IT at Cracow University of 
-      Technology. My programming skills include languages like: Python, 
-      C#, bash and Solidity. In a Vivid Pool my role is to operate the 
-      pools and provide them security. In free time blockchain fanatic, 
-      martial artist and motorbike rider.
+      Jestem testerem i deweloperem oprogramowania z ponad 5-cioma lat 
+      doświadczenia. Studiowałem na Politechnice Krakowskiej na kierunku IT.
+      Zakres moich kompetencji obejmuje technologie takie jak: Python, C#, 
+      bash, Solidity. W Vivid Pool moja rola to zarządzanie i bezpieczeństwo 
+      node's. W wolnym czasie trenuję sztuk walki i jeżdżę na motocyklach.
     `,
     patryk: `
       Jeśli miałbym opisać siebie w kilku słowach to określiłbym się jako
@@ -58,7 +60,14 @@ export default {
       wyszukiwaniem informacji, więc jeśli będziesz mieć pytania to
       najprawdopodobniej będziesz kontaktować się właśnie ze mną.
     `,
-    hubert: `TBC`,
+    hubert: `
+      Cześć! Jestem Hubert, człowiek od zadań specjalnych. Kiedy coś nie działa
+      to wtedy ekscytuję się najbardziej. Programowanie to moja pasja której
+      poświęcam swoje życie. Zawodowo jestem dyrektorem technicznym start-up'u
+      "Foodiependent" w którym odpowiedam za integrację wielu systemów. Strona
+      na którą patrzysz - mam nadzieję że Ci się podoba - włożyliśmy w nią wiele
+      serca 🤘
+    `,
   },
   guide: {
     title: `Poradnik`,
@@ -68,6 +77,7 @@ export default {
       nauczysz się jak kupić ADA, stworzyć cyfrowy portfel i stakeować
       z Vivid Pools.
     `,
+    on_this_page: 'Spis treści',
     questions: {
       0: {
         q: 'Jak ocenisz swoją wiedzę na temat technologi blockchain?',

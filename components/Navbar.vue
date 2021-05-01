@@ -4,8 +4,12 @@
     app
     :mini-variant="true"
     mini-variant-width="96"
-    :class="`vivid-navbar ${$i18n.locale}`"
-    color="#030303"
+    color="black"
+    class="vivid-navbar"
+    :class="{
+      [$i18n.locale]: true,
+      cropped: $vuetify.breakpoint.mdAndUp,
+    }"
   >
     <v-list>
       <v-list-item class="pb-8 vivid-logo">
@@ -20,14 +24,14 @@
           :to="localePath(destination.page_name)"
           style="text-decoration: none"
         >
-          <v-list-item class="text-center px-0 py-4">
+          <v-list-item class="nav-item text-center px-0 py-4">
             <span>
               <v-icon :class="destination.icon" color="white">{{
                 destination.icon
               }}</v-icon>
               <v-subheader
                 style="height: 28px"
-                class="font-weight-bold white--text"
+                class="font-weight-thin white--text"
                 >{{ destination.text }}</v-subheader
               >
             </span>
@@ -93,11 +97,17 @@ export default {
 
 <style lang="scss">
 $logo-size: 80px;
+$yellow: #f2e600;
+$orange: #e64a03;
+$purple: #581c7b;
+$blue: #0084b1;
 
 .vivid-navbar {
-  height: auto !important;
-  border-bottom-right-radius: 8px;
   padding-bottom: 1rem;
+
+  &.cropped {
+    height: auto !important;
+  }
 }
 
 .vivid-logo {
@@ -113,21 +123,42 @@ $logo-size: 80px;
 }
 nav {
   .v-list-item:not(.vivid-logo) {
-    transition: all 0.25s ease;
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
-    background-color: rgba(128, 0, 128, 0);
+    transition: all 0.2s ease;
+    font-weight: thin;
     margin-bottom: 4px;
+    border-right: 1px solid transparent;
+    position: relative;
+    left: -1px;
 
     &:hover {
-      background-color: rgba(61, 61, 61, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.5);
     }
   }
   &.en {
     .nuxt-link-active:not([href='/']),
     .nuxt-link-active.nuxt-link-exact-active[href='/'] {
-      .v-list-item {
-        background-color: rgba(128, 0, 128, 0.5);
+      &:nth-of-type(4) {
+        .v-list-item {
+          border-right: 1px solid $blue;
+          &:before {
+            background-color: $blue;
+          }
+        }
+      }
+      &:nth-of-type(3) {
+        .v-list-item {
+          border-right: 1px solid $yellow;
+        }
+      }
+      &:nth-of-type(2) {
+        .v-list-item {
+          border-right: 1px solid $orange;
+        }
+      }
+      &:nth-of-type(1) {
+        .v-list-item {
+          border-right: 1px solid $purple;
+        }
       }
     }
   }
@@ -137,10 +168,33 @@ nav {
     }
     .nuxt-link-active:not([href='/pl']),
     .nuxt-link-active.nuxt-link-exact-active[href='/pl'] {
-      .v-list-item {
-        background-color: rgba(128, 0, 128, 0.5);
+      &:nth-of-type(4) {
+        .v-list-item {
+          border-right: 1px solid $blue;
+          &:before {
+            background-color: $blue;
+          }
+        }
+      }
+      &:nth-of-type(3) {
+        .v-list-item {
+          border-right: 1px solid $yellow;
+        }
+      }
+      &:nth-of-type(2) {
+        .v-list-item {
+          border-right: 1px solid $orange;
+        }
+      }
+      &:nth-of-type(1) {
+        .v-list-item {
+          border-right: 1px solid $purple;
+        }
       }
     }
   }
+}
+
+.nav-item {
 }
 </style>
