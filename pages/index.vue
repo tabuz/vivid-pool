@@ -122,7 +122,7 @@ export default {
               hid: 'description',
               name: 'description',
               content:
-                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+                'Jesteśmy międzynarodowym zespołem operatorów staking pools dla sieci Cardano. Naszą misją jest dostarczanie niezawodnych rozwiązań technologicznych dla teraźniejszych i przyszłych technologii blockchain. Weź udział razem z nami w tej niezwyłej przygodzie świata kryptowalut.',
             },
             {
               hid: 'og:title',
@@ -133,7 +133,7 @@ export default {
               hid: 'og:description',
               property: 'og:description',
               content:
-                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+                'Jesteśmy międzynarodowym zespołem operatorów staking pools dla sieci Cardano. Naszą misją jest dostarczanie niezawodnych rozwiązań technologicznych dla teraźniejszych i przyszłych technologii blockchain. Weź udział razem z nami w tej niezwyłej przygodzie świata kryptowalut.',
             },
             {
               hid: 'twitter:title',
@@ -144,7 +144,7 @@ export default {
               hid: 'twitter:description',
               property: 'twitter:description',
               content:
-                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
+                'Jesteśmy międzynarodowym zespołem operatorów staking pools dla sieci Cardano. Naszą misją jest dostarczanie niezawodnych rozwiązań technologicznych dla teraźniejszych i przyszłych technologii blockchain. Weź udział razem z nami w tej niezwyłej przygodzie świata kryptowalut.',
             },
           ],
         }
