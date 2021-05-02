@@ -1,5 +1,6 @@
 .choice-btn {
-  display: block;
+  cursor: pointer;
+  display: inline-block;
   outline: 0;
   min-width: 150px;
   padding: 0px 15px;
@@ -11,14 +12,24 @@
   text-align: center;
   letter-spacing: 1px;
   text-decoration: none !important;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   transition: font-weight 0.125s ease-in-out;
 
   @media #{map-get($display-breakpoints, 'md-and-up')} {
     width: auto;
   }
 
-  &:hover {
-    font-weight: bold;
+  &.--purple {
+    text-transform: unset;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+  
+  &:not([disabled]) {
+    &:hover {
+      font-weight: bold;    
+    }
   }
 }

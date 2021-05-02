@@ -7,6 +7,7 @@
   >
     <v-text-field
       v-model="name"
+      color="secondary"
       autocomplete="new-password"
       type="text"
       :label="`${$t('contact_form.name')}`"
@@ -18,6 +19,7 @@
       color="secondary"
       label="Email *"
       hint="So we could reach you back"
+      type="email"
       required
     ></v-text-field>
     <v-textarea
@@ -29,16 +31,17 @@
     ></v-textarea>
     <div class="text-right">
       <button
-        class="btn-flip"
+        class="choice-btn"
         :class="{
           success: success,
         }"
-        :data-front="`${$t('contact_form.send_front')}`"
         :data-back="`${$t('contact_form.send_back')}`"
         data-success="wysłano"
         :disabled="is_form_valid === false"
         @click.prevent.stop="send_message"
-      ></button>
+      >
+        {{ $t('contact_form.send_front') }}
+      </button>
     </div>
   </v-form>
 </template>

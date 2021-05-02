@@ -17,11 +17,8 @@
             {{ $t('index.blurp') }}
           </p>
           <div class="text-right mb-8">
-            <nuxt-link
-              :to="localePath('guide-category-article')"
-              class="button"
-            >
-              <button>
+            <nuxt-link :to="localePath('guide-category-article')">
+              <button class="choice-btn --purple">
                 {{ $t('index.get_started_front') }}
               </button>
             </nuxt-link>
@@ -229,10 +226,10 @@ $purple: #581c7b;
   color: var(--v-secondary-base) !important;
 
   thead {
-    border-bottom: 1px solid rgba(var(--v-secondary-base), 0.3);
+    border-bottom: 1px solid rgba(127, 127, 127, 0.3);
   }
   th {
-    padding: 0.3em 1em;
+    padding: 0.6em 1em;
   }
   td {
     padding: 0.6em 1em;
