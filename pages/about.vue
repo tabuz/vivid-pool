@@ -5,7 +5,7 @@
         <v-col cols="12" md="8" lg="6" style="max-width: 800px" class="about">
           <div class="hero-text">
             <PageTitle :title="$t('about.title')" />
-            <p class="text-body-1 text-body-1 pt-4">
+            <p class="text-body-1 text-body-1 pt-4 secondary--text">
               {{ $t('about.subtitle') }}
             </p>
             <div class="team blurp">
@@ -29,26 +29,18 @@
                     aspect-ratio="1/1"
                     class="mb-2"
                   />
-                  <p class="font-weight-bold mb-0">{{ person.name }}</p>
+                  <p class="font-weight-bold mb-0 secondary--text">
+                    {{ person.name }}
+                  </p>
                 </div>
                 <div class="text px-4">
-                  <p class="role mb-1">{{ person.role }}</p>
-                  <p class="text-body-1 text-body-1 mb-0">
+                  <p class="role mb-1 secondary--text">{{ person.role }}</p>
+                  <p class="text-body-1 secondary--text text-body-1 mb-0">
                     {{ $t(person.text) }}
                   </p>
                 </div>
               </div>
             </div>
-            <!-- <div
-              class="blurp"
-              :class="{
-                [`person-${person_idx}`]: true,
-              }"
-            >
-              <p class="text-body-1 text-body-1 mb-0">
-                {{ subtitle_text }}
-              </p>
-            </div> -->
           </div>
         </v-col>
       </v-row>
@@ -65,10 +57,14 @@ export default {
     PageTitle,
   },
   asyncData({ app }) {
+    const locale = app.i18n.locale
     const title = app.i18n.t('about._title')
     const description = app.i18n.t('about.subtitle').trim().replace(/\s+/g, ' ')
 
     const head = {
+      htmlAttrs: {
+        lang: locale,
+      },
       title,
       meta: [
         {

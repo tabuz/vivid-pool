@@ -3,13 +3,17 @@
     <v-container fluid>
       <v-row :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col cols="12" md="6" lg="5" style="max-width: 800px">
-          <h1 class="text-h4 text-md-h3 text-xl-h2 mb-1 font-weight-thin">
+          <h1
+            class="text-h4 text-md-h3 text-xl-h2 mb-1 font-weight-thin secondary--text"
+          >
             Vivid Stake Pool
           </h1>
           <h2 class="text-h5 text-md-h4 mb-2 mb-md-4 slogan purple--text">
             {{ $t('index.slogan') }}
           </h2>
-          <p class="text-body-1 pa-0 text-md-h6 mb-2 mb-md-6 blurp">
+          <p
+            class="text-body-1 pa-0 text-md-h6 mb-2 mb-md-6 blurp secondary--text"
+          >
             {{ $t('index.blurp') }}
           </p>
           <div class="text-right mb-8">
@@ -49,7 +53,7 @@
                       height="25"
                       :value="pool.saturated * 100"
                     >
-                      <span class="white--text">{{
+                      <span class="secondary--text">{{
                         format_percent(pool.saturated)
                       }}</span>
                     </v-progress-linear>
@@ -59,12 +63,16 @@
                       v-clipboard="() => pool.pool_id"
                       small
                       tile
+                      elevation="0"
                       color="transparent"
                       @click="feedback_copied(pool.pool_id)"
-                      ><span v-if="!copied" class="white--text">Copy</span
+                      ><span
+                        v-if="!copied"
+                        class="secondary--text font-weight-bold"
+                        >Copy</span
                       ><v-icon
                         v-else-if="copied === pool.pool_id"
-                        color="white"
+                        color="secondary"
                         class="mx-2"
                         >mdi-check</v-icon
                       ></v-btn
@@ -82,7 +90,6 @@
 </template>
 
 <script>
-// import CryptoPool from '@/components/CryptoPool'
 import Videos from '@/components/Videos'
 import Vue from 'vue'
 import Clipboard from 'v-clipboard'
@@ -91,14 +98,22 @@ Vue.use(Clipboard)
 
 export default {
   components: {
-    // CryptoPool,
     Videos,
   },
   async asyncData({ $content, app }) {
     const locale = app.i18n.locale
     const pools = []
     const videos = await $content(locale, 'videos')
-      .only(['name', 'order', 'thumbnail', 'url'])
+      .only([
+        'name',
+        'order',
+        'thumbnail',
+        'url',
+        'date',
+        'author',
+        'author_url',
+      ])
+      .sortBy('date', 'desc')
       .fetch()
     try {
       const response = await fetch(
@@ -114,6 +129,9 @@ export default {
     const description = app.i18n.t('index.blurp').trim().replace(/\s+/g, ' ')
 
     const head = {
+      htmlAttrs: {
+        lang: locale,
+      },
       title,
       meta: [
         {
@@ -184,7 +202,7 @@ $purple: #581c7b;
   border: 0px solid $purple;
   border-left-width: 5px;
   border-right-width: 5px;
-  color: white;
+  color: var(--v-secondary-base);
   font-weight: 700;
   transition: all 0.125s ease;
 
@@ -204,14 +222,14 @@ $purple: #581c7b;
   overflow-x: auto;
 }
 .pool-table {
-  background-color: rgba(0, 0, 0, 0.795);
+  background-color: var(--v-primary-base);
   backdrop-filter: blur(8px);
   width: 100%;
   border-collapse: collapse;
-  color: white !important;
+  color: var(--v-secondary-base) !important;
 
   thead {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(var(--v-secondary-base), 0.3);
   }
   th {
     padding: 0.3em 1em;
@@ -228,7 +246,7 @@ $purple: #581c7b;
 }
 
 .hero-text {
-  color: white;
+  color: var(--v-secondary-base);
   border-radius: 16px;
 }
 

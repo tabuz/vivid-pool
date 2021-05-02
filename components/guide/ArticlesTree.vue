@@ -68,13 +68,13 @@ ol {
   position: sticky;
   top: 45px;
   padding: 0;
-  color: white;
+  color: var(--v-secondary-base) !important;
 }
 p {
   font-weight: 700;
 }
 a {
-  color: white;
+  color: var(--v-secondary-base) !important;
   text-decoration: none;
   cursor: pointer;
   margin-bottom: 10px;

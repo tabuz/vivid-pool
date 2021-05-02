@@ -11,6 +11,12 @@
           <v-col cols="12" md="6" lg="5">
             <div class="hero-text">
               <PageTitle :title="$t('guide.title')" />
+              <p
+                v-if="question_step === 0"
+                class="text-body-1 text-body-1 pt-4 secondary--text"
+              >
+                {{ $t('guide.subtitle') }}
+              </p>
             </div>
           </v-col>
           <v-col cols="12" class="guide-container pb-0 mb-0">
@@ -37,7 +43,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import PageTitle from '@/components/PageTitle'
 import ArticlesTree from '@/components/guide/ArticlesTree'
 import ArticlesTreeDrawer from '@/components/guide/ArticlesTreeDrawer'
@@ -50,9 +56,11 @@ export default {
     ArticlesTreeDrawer,
   },
   async asyncData({ app, payload }) {
+    const locale = app.i18n.locale
+
     if (!payload || !Object.keys(payload).length) {
       payload = await app
-        .$content(app.i18n.locale, 'guide')
+        .$content(locale, 'guide')
         .only(['name', 'order', 'slug', 'category', 'toc'])
         .fetch()
     }
@@ -68,6 +76,9 @@ export default {
     const description = app.i18n.t('guide.subtitle').trim().replace(/\s+/g, ' ')
 
     const head = {
+      htmlAttrs: {
+        lang: locale,
+      },
       title,
       meta: [
         {
@@ -111,6 +122,9 @@ export default {
   },
   head() {
     return this.head
+  },
+  computed: {
+    ...mapState('Guide', ['question_step']),
   },
   beforeDestroy() {
     this.set_question_step({ question_step: 0 })

@@ -117,8 +117,14 @@ export default {
         langDir: 'lang/',
       },
     ],
+    '@nuxtjs/dayjs',
     '@nuxtjs/sitemap',
   ],
+  dayjs: {
+    locales: ['en', 'pl'],
+    defaultLocale: 'en',
+    plugins: ['relativeTime'],
+  },
   sitemap: {
     hostname: 'https://vivid-pool.info',
   },
@@ -165,9 +171,7 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    options: {
-      customProperties: true,
-    },
+    optionsPath: './plugins/vuetify.options.js',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

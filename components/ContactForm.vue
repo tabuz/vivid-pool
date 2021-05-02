@@ -3,12 +3,11 @@
     ref="contact_form"
     v-model="is_form_valid"
     class="px-2 blurp"
-    color="#fff"
+    color="secondary"
   >
     <v-text-field
       v-model="name"
       autocomplete="new-password"
-      dark
       type="text"
       :label="`${$t('contact_form.name')}`"
     ></v-text-field>
@@ -16,8 +15,7 @@
       v-model="email"
       autocomplete="new-password"
       :rules="[(v) => !!v || 'This field is required']"
-      dark
-      color="white"
+      color="secondary"
       label="Email *"
       hint="So we could reach you back"
       required
@@ -25,8 +23,7 @@
     <v-textarea
       v-model="message"
       autocomplete="new-password"
-      dark
-      color="white"
+      color="secondary"
       :label="`${$t('contact_form.message')}*`"
       required
     ></v-textarea>

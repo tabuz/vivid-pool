@@ -1,22 +1,29 @@
 <template>
   <v-container class="blurp pt-0">
-    <p class="text-h5 mt-0 d-block font-weight-bold">{{ $t('video.title') }}</p>
+    <p class="text-h5 mt-0 d-block font-weight-bold secondary--text">
+      {{ $t('video.title') }}
+    </p>
     <v-row>
-      <v-col v-for="(video, idx) in videos" :key="idx" cols="12" md="6">
-        <a :href="video.url" class="video-link" target="_blank">
-          <v-img
-            :src="video.thumbnail"
-            :alt="video.name"
-            aspect-ratio="1.7"
-            contain
-            max-height="200"
-            class="mb-6"
-            content-class="video-img"
-          />
+      <v-col v-for="(video, idx) in videos" :key="idx" cols="12" class="video">
+        <a
+          :href="video.url"
+          class="video-img video-link mr-4"
+          target="_blank"
+          :style="`background-image: url('${video.thumbnail}')`"
+        >
         </a>
-        <a :href="video.url" class="video-link" target="_blank"
-          ><p class="text-body-1 font-weight-bold mb-0">{{ video.name }}</p>
-        </a>
+        <div>
+          <a :href="video.url" class="video-link" target="_blank">
+            <p class="text-body-1 font-weight-bold">{{ video.name }}</p>
+          </a>
+
+          <a :href="video.author_url" class="video-link" target="_blank">
+            <p class="text-body-1 mb-0">{{ video.author }}</p>
+          </a>
+          <p class="text-body-1 mb-0 secondary--text">
+            {{ $dayjs(video.date).locale($i18n.locale).fromNow() }}
+          </p>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -32,20 +39,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.video-link {
-  cursor: pointer;
-  color: white;
+.video {
+  color: var(--v-primary-base);
+  display: flex;
+  flex-direction: row;
 }
-::v-deep .video-img {
+.video-link {
+  display: block;
+  cursor: pointer;
+  color: var(--v-secondary-base);
+}
+.video-img {
+  height: 60px;
+  min-width: 120px;
+
+  @media (min-width: 920px) {
+    height: 94px;
+    width: 183px;
+  }
+
   position: relative;
+  background-size: cover;
+
   &:hover {
-    &:after {
+    &:before {
       opacity: 1;
     }
   }
-  &:after {
+
+  &:before {
     opacity: 0;
-    color: white;
+    color: var(--v-primary-base);
     font-size: 3em;
     content: '⏵';
     height: 100%;

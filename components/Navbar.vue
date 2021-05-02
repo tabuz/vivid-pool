@@ -2,9 +2,10 @@
   <v-navigation-drawer
     v-model="drawer"
     app
+    floating
     :mini-variant="true"
     mini-variant-width="96"
-    color="black"
+    color="primary"
     class="vivid-navbar"
     :class="{
       [$i18n.locale]: true,
@@ -26,19 +27,27 @@
         >
           <v-list-item class="nav-item text-center px-0 py-4">
             <span>
-              <v-icon :class="destination.icon" color="white">{{
+              <v-icon :class="destination.icon" color="secondary">{{
                 destination.icon
               }}</v-icon>
               <v-subheader
                 style="height: 28px"
-                class="font-weight-thin white--text"
+                class="font-weight-thin secondary--text"
                 >{{ destination.text }}</v-subheader
               >
             </span>
           </v-list-item>
         </nuxt-link>
       </div>
-      <div class="d-flex justify-center align-center">
+      <div class="d-flex flex-column justify-center align-center mb-2">
+        <v-btn
+          color="secondary"
+          icon
+          @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+          ><v-icon color="secondary">mdi-theme-light-dark</v-icon></v-btn
+        >
+      </div>
+      <div class="d-flex flex-column justify-center align-center">
         <LocalesDropdown />
       </div>
     </v-list>

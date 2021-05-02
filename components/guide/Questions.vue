@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="text-h6">
+    <p class="text-h6 secondary--text">
       {{ question.q }}
     </p>
     <template v-for="(answer, i) in question.answers">

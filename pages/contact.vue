@@ -59,6 +59,7 @@ export default {
     PageTitle,
   },
   asyncData({ app }) {
+    const locale = app.i18n.locale
     const title = app.i18n.t('contact.title')
     const description = app.i18n
       .t('contact.subtitle')
@@ -66,6 +67,9 @@ export default {
       .replace(/\s+/g, ' ')
 
     const head = {
+      htmlAttrs: {
+        lang: locale,
+      },
       title,
       meta: [
         {
@@ -125,7 +129,7 @@ export default {
       margin-right: 0 !important;
     }
     span {
-      color: white;
+      color: var(--v-secondary-base);
       font-weight: normal;
     }
   }

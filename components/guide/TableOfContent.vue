@@ -4,8 +4,8 @@
       v-if="$vuetify.breakpoint.mdAndUp"
       :to="localePath('guide-category-article')"
     >
-      <v-btn icon color="white" class="mb-4">
-        <v-icon color="white">mdi-close</v-icon>
+      <v-btn icon color="secondary" class="mb-4">
+        <v-icon color="secondary">mdi-close</v-icon>
       </v-btn>
     </nuxt-link>
     <ul v-if="toc.length">
@@ -41,13 +41,13 @@ export default {
 ul {
   list-style-type: none;
   padding: 0;
-  color: white;
+  color: var(--v-secondary-base) !important;
 }
 p {
   font-weight: 700;
 }
 a {
-  color: white;
+  color: var(--v-secondary-base) !important;
   text-decoration: none;
   cursor: pointer;
   margin-bottom: 10px;

@@ -2,25 +2,25 @@
   <v-app-bar
     v-if="$vuetify.breakpoint.mdAndDown"
     class="appbar"
-    color="#0b0b0b"
+    color="primary"
     app
     bottom
     hide-on-scroll
   >
-    <v-icon color="white" @click="() => set_is_drawer_open(!is_drawer_open)"
+    <v-icon color="secondary" @click="() => set_is_drawer_open(!is_drawer_open)"
       >mdi-menu</v-icon
     >
     <div v-if="$route.path.includes('/guide')" class="controls">
       <v-btn
         icon
-        color="white"
+        color="secondary"
         @click="set_is_article_tree_drawer_open(!is_article_tree_drawer_open)"
       >
-        <v-icon color="white">mdi-chevron-left</v-icon>
+        <v-icon color="secondary">mdi-chevron-left</v-icon>
       </v-btn>
       <nuxt-link :to="localePath('guide-category-article')">
-        <v-btn icon color="white">
-          <v-icon color="white">mdi-close</v-icon>
+        <v-btn icon color="secondary">
+          <v-icon color="secondary">mdi-close</v-icon>
         </v-btn>
       </nuxt-link>
     </div>

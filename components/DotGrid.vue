@@ -145,7 +145,7 @@ export default {
       // Renderer
       const renderer = new WebGLRenderer({
         canvas,
-        alpha: false,
+        alpha: true,
         antialias: true,
       })
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))

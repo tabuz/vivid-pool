@@ -1,93 +1,24 @@
 .choice-btn {
-  opacity: 1;
+  display: block;
   outline: 0;
   min-width: 150px;
+  padding: 0px 15px;
   width: 100%;
-  color: #fff;
-  background: #79797a;
+  color: var(--v-secondary-base);
+  border: 1px solid var(--v-secondary-base);
   line-height: 40px;
   position: relative;
   text-align: center;
   letter-spacing: 1px;
   text-decoration: none !important;
   text-transform: uppercase;
+  transition: font-weight 0.125s ease-in-out;
 
   @media #{map-get($display-breakpoints, 'md-and-up')} {
     width: auto;
   }
-}
 
-.btn-flip {
-  opacity: 1;
-  outline: 0;
-  color: #fff;
-  line-height: 40px;
-  position: relative;
-  text-align: center;
-  letter-spacing: 1px;
-  display: inline-block;
-  text-decoration: none;
-  // font-family: 'Open Sans';
-  text-transform: uppercase;
-
-  &:disabled {
-    cursor: not-allowed;
-  }
-
-  &:hover:not(:disabled), &.active {
-    &:after {
-      opacity: 1;
-      transform: translateY(0) rotateX(0);
-    }
-
-    &:before {
-      opacity: 0;
-      transform: translateY(50%) rotateX(90deg);
-    }
-  }
-
-  &:after {
-    will-change: transform;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    width: 100%;
-    color: #323237;
-    display: block;
-    transition: 0.5s;
-    position: absolute;
-    background: #adadaf;
-    content: attr(data-back);
-    transform: translateY(-50%) rotateX(90deg);
-  }
-
-  &:before {
-    will-change: transform;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    color: #f7f7f7;
-    display: block;
-    padding: 0 30px;
-    line-height: 40px;
-    transition: 0.5s;
-    position: relative;
-    background: #868686;
-    content: attr(data-front);
-    transform: translateY(0) rotateX(0);
-  }
-
-  &.success {
-    &:after, &:before {
-      background: green;
-      content: attr(data-success);
-
-    }
-  }
-
-  &.subtle {
-    &:before {
-      background: transparent;
-    }
+  &:hover {
+    font-weight: bold;
   }
 }
