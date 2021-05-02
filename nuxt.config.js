@@ -37,24 +37,24 @@ export default {
         property: 'og:image',
         content: 'https://vivid-pool.info/images/vivid-splash.png',
       },
-      {
-        hid: 'og:image:type',
-        name: 'og:image:type',
-        property: 'og:image:type',
-        content: 'image/png',
-      },
-      {
-        hid: 'og:image:width',
-        name: 'og:image:width',
-        property: 'og:image:width',
-        content: '1280',
-      },
-      {
-        hid: 'og:image:height',
-        name: 'og:image:height',
-        property: 'og:image:height',
-        content: '720',
-      },
+      // {
+      //   hid: 'og:image:type',
+      //   name: 'og:image:type',
+      //   property: 'og:image:type',
+      //   content: 'image/png',
+      // },
+      // {
+      //   hid: 'og:image:width',
+      //   name: 'og:image:width',
+      //   property: 'og:image:width',
+      //   content: '1280',
+      // },
+      // {
+      //   hid: 'og:image:height',
+      //   name: 'og:image:height',
+      //   property: 'og:image:height',
+      //   content: '720',
+      // },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -103,7 +103,11 @@ export default {
         langDir: 'lang/',
       },
     ],
+    '@nuxtjs/sitemap',
   ],
+  sitemap: {
+    hostname: 'https://vivid-pool.info',
+  },
   generate: {
     routes() {
       const { $content } = require('@nuxt/content')
