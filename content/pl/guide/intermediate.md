@@ -1,4 +1,5 @@
 ---
+title: 'Poradnik średnio zaawansowany'
 name: Średnio zaawansowany
 category: niezbednik
 order: 1

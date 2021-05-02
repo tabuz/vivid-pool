@@ -1,4 +1,5 @@
 ---
+title: 'Stake Daedalus'
 name: Daedalus
 category: stake
 order: 1

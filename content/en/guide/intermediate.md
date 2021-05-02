@@ -1,4 +1,5 @@
 ---
+title: 'Intermediate Start Guide'
 name: Intermediate Start
 category: essentials
 order: 1

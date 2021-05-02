@@ -51,7 +51,10 @@ export default {
               text: this.$t('guide.questions[0].a_1'),
               url: this.localePath({
                 name: 'guide-category-article',
-                params: { category: 'essentials', article: 'beginner' },
+                params: {
+                  category: this.$t('guide.questions[0].a_1_category'),
+                  article: this.$t('guide.questions[0].a_1_article'),
+                },
               }),
               next_step: 1,
             },
@@ -60,7 +63,10 @@ export default {
               text: this.$t('guide.questions[0].a_2'),
               url: this.localePath({
                 name: 'guide-category-article',
-                params: { category: 'essentials', article: 'intermediate' },
+                params: {
+                  category: this.$t('guide.questions[0].a_2_category'),
+                  article: this.$t('guide.questions[0].a_2_article'),
+                },
               }),
               next_step: 1,
             },
@@ -83,7 +89,10 @@ export default {
               text: this.$t('guide.questions[1].a_2'),
               url: this.localePath({
                 name: 'guide-category-article',
-                params: { category: 'exchanges', article: 'about_exchanges' },
+                params: {
+                  category: this.$t('guide.questions[1].a_2_category'),
+                  article: this.$t('guide.questions[1].a_2_article'),
+                },
               }),
               next_step: 2,
             },
@@ -108,7 +117,10 @@ export default {
               text: this.$t('guide.questions[3].a_1'),
               url: this.localePath({
                 name: 'guide-category-article',
-                params: { category: 'stake', article: 'stake_with_yoroi' },
+                params: {
+                  category: this.$t('guide.questions[3].a_1_category'),
+                  article: this.$t('guide.questions[3].a_1_article'),
+                },
               }),
             },
             // No
@@ -117,8 +129,8 @@ export default {
               url: this.localePath({
                 name: 'guide-category-article',
                 params: {
-                  category: 'wallets',
-                  article: 'about_wallets',
+                  category: this.$t('guide.questions[3].a_2_category'),
+                  article: this.$t('guide.questions[3].a_2_article'),
                 },
                 hash: '#yoroi',
               }),
@@ -132,21 +144,30 @@ export default {
               text: this.$t('guide.questions[4].a_1'),
               url: this.localePath({
                 name: 'guide-category-article',
-                params: { category: 'stake', article: 'stake_with_yoroi' },
+                params: {
+                  category: this.$t('guide.questions[4].a_1_category'),
+                  article: this.$t('guide.questions[4].a_1_article'),
+                },
               }),
             },
             {
               text: this.$t('guide.questions[4].a_2'),
               url: this.localePath({
                 name: 'guide-category-article',
-                params: { category: 'wallets', article: 'stake_with_daedalus' },
+                params: {
+                  category: this.$t('guide.questions[4].a_2_category'),
+                  article: this.$t('guide.questions[4].a_2_article'),
+                },
               }),
             },
             {
               text: this.$t('guide.questions[4].a_3'),
               url: this.localePath({
                 name: 'guide-category-article',
-                params: { category: 'wallets', article: 'about_wallets' },
+                params: {
+                  category: this.$t('guide.questions[4].a_3_category'),
+                  article: this.$t('guide.questions[4].a_3_article'),
+                },
               }),
             },
           ],

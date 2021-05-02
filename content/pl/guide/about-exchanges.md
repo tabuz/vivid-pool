@@ -1,4 +1,5 @@
 ---
+title: 'Giełdy kompendium'
 name: Kompendium
 category: gieldy
 order: 0

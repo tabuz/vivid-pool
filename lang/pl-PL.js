@@ -6,6 +6,7 @@ export default {
     contact: 'Kontakt',
   },
   index: {
+    _title: 'Strona Główna',
     slogan: 'Technologia przyszłości.',
     blurp: `
       Jesteśmy międzynarodowym zespołem operatorów staking pools dla sieci 
@@ -33,6 +34,7 @@ export default {
     send_back: 'Teraz',
   },
   about: {
+    _title: 'Zespół',
     title: 'Zespół',
     subtitle: `
       Jesteśmy przyjaciółmi ktorzy znają się już ponad 10 lat. Zaawansowana
@@ -73,8 +75,8 @@ export default {
     title: `Poradnik`,
     subtitle: `
       Zapoznaj się z poniższymi instrukcjami które wytłumaczą Ci krok po 
-      kroku jak dołączyć do naszego stake pool. W kilu prostych krokach 
-      nauczysz się jak kupić ADA, stworzyć cyfrowy portfel i stakeować
+      kroku jak dołączyć do naszego stake pool. W kilku prostych krokach 
+      nauczysz się jak kupić ADA, stworzyć cyfrowy portfel i stake'ować
       z Vivid Pools.
     `,
     on_this_page: 'Spis treści',
@@ -82,13 +84,19 @@ export default {
       0: {
         q: 'Jak ocenisz swoją wiedzę na temat technologi blockchain?',
         a_1: 'Początkujący',
+        a_1_category: 'niezbednik',
+        a_1_article: 'beginner',
         a_2: 'Średnio zaawansowany',
+        a_2_category: 'niezbednik',
+        a_2_article: 'intermediate',
         a_3: 'Zaawansowany',
       },
       1: {
         q: 'Czy posiadasz już kryptowalutę ADA?',
         a_1: 'Tak',
         a_2: 'Nie',
+        a_2_category: 'gieldy',
+        a_2_article: 'about-exchanges',
       },
       2: {
         q: 'Za pomocą czego preferujesz kontrolować swoje kryptowaluty?',
@@ -98,13 +106,23 @@ export default {
       3: {
         q: 'Czy posiadasz portfel Yoroi?',
         a_1: 'Tak',
+        a_1_category: 'stake',
+        a_1_article: 'stake-with-yoroi',
         a_2: 'Nie',
+        a_2_category: 'portfele',
+        a_2_article: 'about-wallets',
       },
       4: {
         q: 'Czy posiadasz portfel Yoroi lub Daedalus?',
         a_1: 'Yoroi',
+        a_1_category: 'stake',
+        a_1_article: 'stake-with-yoroi',
         a_2: 'Daedalus',
+        a_2_category: 'stake',
+        a_2_article: 'stake-with-daedalus',
         a_3: 'Nie posiadam',
+        a_3_category: 'portfele',
+        a_3_article: 'about-wallets',
       },
     },
   },

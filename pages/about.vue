@@ -65,82 +65,38 @@ export default {
     PageTitle,
   },
   asyncData({ app }) {
-    const locale = app.i18n.locale
+    const title = app.i18n.t('about._title')
+    const description = app.i18n.t('about.subtitle')
 
-    let head
-
-    switch (locale) {
-      case 'pl':
-        head = {
-          title: 'Zespół',
-          meta: [
-            {
-              hid: 'description',
-              name: 'description',
-              content:
-                "Jesteśmy przyjaciółmi ktorzy znają się już ponad 10 lat. Zaawansowana technologia zawsze była i będzie w centrum naszych zainteresowań. Koncept blockchain'u uzmysłowił nam ogrom możliwości i rozwiązań jakie niesie ze sobą cyfrowa era. Zainspirowani zadecydowaliśmy stać się częścią tego poruszenia. Dwa projekty o których myślimy najczęściej to Cardano i Polkadot - są one świetnym przykładem postępu jaki dokonał się w świecie krypto przez ostanie 12 lat.",
-            },
-            {
-              hid: 'og:title',
-              property: 'og:title',
-              content: 'Zespół - Vivid Stake Pool',
-            },
-            {
-              hid: 'og:description',
-              property: 'og:description',
-              content:
-                "Jesteśmy przyjaciółmi ktorzy znają się już ponad 10 lat. Zaawansowana technologia zawsze była i będzie w centrum naszych zainteresowań. Koncept blockchain'u uzmysłowił nam ogrom możliwości i rozwiązań jakie niesie ze sobą cyfrowa era. Zainspirowani zadecydowaliśmy stać się częścią tego poruszenia. Dwa projekty o których myślimy najczęściej to Cardano i Polkadot - są one świetnym przykładem postępu jaki dokonał się w świecie krypto przez ostanie 12 lat.",
-            },
-            {
-              hid: 'twitter:title',
-              property: 'twitter:title',
-              content: 'Zespół - Vivid Stake Pool',
-            },
-            {
-              hid: 'twitter:description',
-              property: 'twitter:description',
-              content:
-                "Jesteśmy przyjaciółmi ktorzy znają się już ponad 10 lat. Zaawansowana technologia zawsze była i będzie w centrum naszych zainteresowań. Koncept blockchain'u uzmysłowił nam ogrom możliwości i rozwiązań jakie niesie ze sobą cyfrowa era. Zainspirowani zadecydowaliśmy stać się częścią tego poruszenia. Dwa projekty o których myślimy najczęściej to Cardano i Polkadot - są one świetnym przykładem postępu jaki dokonał się w świecie krypto przez ostanie 12 lat.",
-            },
-          ],
-        }
-        break
-
-      default:
-        head = {
-          title: 'Team',
-          meta: [
-            {
-              hid: 'description',
-              name: 'description',
-              content:
-                'We have been friends who know each other for over 10 years. The cutting edge technologies have always been our main point of interest. The concept of the block chain showed all of us new possibilities and solutions to problems created by the digital age. Inspired by that we decided to be a part of the decentralization movement. The two projects about which we are mostly excited are Cardano and Polkadot. ',
-            },
-            {
-              hid: 'og:title',
-              property: 'og:title',
-              content: 'Team - Vivid Stake Pool',
-            },
-            {
-              hid: 'og:description',
-              property: 'og:description',
-              content:
-                'We have been friends who know each other for over 10 years. The cutting edge technologies have always been our main point of interest. The concept of the block chain showed all of us new possibilities and solutions to problems created by the digital age. Inspired by that we decided to be a part of the decentralization movement. The two projects about which we are mostly excited are Cardano and Polkadot. ',
-            },
-            {
-              hid: 'twitter:title',
-              property: 'twitter:title',
-              content: 'Team - Vivid Stake Pool',
-            },
-            {
-              hid: 'twitter:description',
-              property: 'twitter:description',
-              content:
-                'We have been friends who know each other for over 10 years. The cutting edge technologies have always been our main point of interest. The concept of the block chain showed all of us new possibilities and solutions to problems created by the digital age. Inspired by that we decided to be a part of the decentralization movement. The two projects about which we are mostly excited are Cardano and Polkadot. ',
-            },
-          ],
-        }
-        break
+    const head = {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${title}- Vivid Stake Pool`,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: `${title}- Vivid Stake Pool`,
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: description,
+        },
+      ],
     }
 
     return { head }

@@ -1,4 +1,5 @@
 ---
+title: 'Poradnik początkujący'
 name: Początkujący
 category: niezbednik
 order: 0

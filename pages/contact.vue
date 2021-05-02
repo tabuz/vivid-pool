@@ -59,82 +59,38 @@ export default {
     PageTitle,
   },
   asyncData({ app }) {
-    const locale = app.i18n.locale
+    const title = app.i18n.t('contact.title')
+    const description = app.i18n.t('contact.subtitle')
 
-    let head
-
-    switch (locale) {
-      case 'pl':
-        head = {
-          title: 'Kontakt',
-          meta: [
-            {
-              hid: 'description',
-              name: 'description',
-              content:
-                'Jeżeli masz jakieś pytania, skontaktuj się z nami przez portal społecznościowy lub użyj formularza kontaktowego, a my postaramy się odpowiedzieć tak szybko jak to możliwe.',
-            },
-            {
-              hid: 'og:title',
-              property: 'og:title',
-              content: 'Kontakt - Vivid Stake Pool',
-            },
-            {
-              hid: 'og:description',
-              property: 'og:description',
-              content:
-                'Jeżeli masz jakieś pytania, skontaktuj się z nami przez portal społecznościowy lub użyj formularza kontaktowego, a my postaramy się odpowiedzieć tak szybko jak to możliwe.',
-            },
-            {
-              hid: 'twitter:title',
-              property: 'twitter:title',
-              content: 'Kontakt - Vivid Stake Pool',
-            },
-            {
-              hid: 'twitter:description',
-              property: 'twitter:description',
-              content:
-                'Jeżeli masz jakieś pytania, skontaktuj się z nami przez portal społecznościowy lub użyj formularza kontaktowego, a my postaramy się odpowiedzieć tak szybko jak to możliwe.',
-            },
-          ],
-        }
-        break
-
-      default:
-        head = {
-          title: 'Contact',
-          meta: [
-            {
-              hid: 'description',
-              name: 'description',
-              content:
-                'If you have any questions please do not hesitate to contact us on socials or via contact form message. We will try to anwser you questions you as soon as possible.',
-            },
-            {
-              hid: 'og:title',
-              property: 'og:title',
-              content: 'Contact - Vivid Stake Pool',
-            },
-            {
-              hid: 'og:description',
-              property: 'og:description',
-              content:
-                'If you have any questions please do not hesitate to contact us on socials or via contact form message. We will try to anwser you questions you as soon as possible.',
-            },
-            {
-              hid: 'twitter:title',
-              property: 'twitter:title',
-              content: 'Contact - Vivid Stake Pool',
-            },
-            {
-              hid: 'twitter:description',
-              property: 'twitter:description',
-              content:
-                'If you have any questions please do not hesitate to contact us on socials or via contact form message. We will try to anwser you questions you as soon as possible.',
-            },
-          ],
-        }
-        break
+    const head = {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${title}- Vivid Stake Pool`,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: `${title}- Vivid Stake Pool`,
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: description,
+        },
+      ],
     }
 
     return { head }

@@ -16,6 +16,45 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'keywords',
+        content:
+          'vivid, stake, pool, staking, cardano, crypto, bitcoin, ethereum, tutorial, guide, poradnik, ADA, BTC, stakowac, jak, kryptowaluty, polska',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Vivid Stake Pool',
+      },
+      {
+        hid: 'twitter:site',
+        property: 'twitter:site',
+        content: '@Cryptoguys4',
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        property: 'og:image',
+        content: 'https://vivid-pool.info/images/vivid-splash.png',
+      },
+      {
+        hid: 'og:image:type',
+        name: 'og:image:type',
+        property: 'og:image:type',
+        content: 'image/png',
+      },
+      {
+        hid: 'og:image:width',
+        name: 'og:image:width',
+        property: 'og:image:width',
+        content: '1280',
+      },
+      {
+        hid: 'og:image:height',
+        name: 'og:image:height',
+        property: 'og:image:height',
+        content: '720',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },

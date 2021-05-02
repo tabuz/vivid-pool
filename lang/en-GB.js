@@ -6,6 +6,7 @@ export default {
     contact: 'Contact',
   },
   index: {
+    _title: 'Home Page',
     slogan: 'The future is here.',
     blurp: `
       Meet international staking pools validators for Cardano. 
@@ -32,8 +33,10 @@ export default {
     send_back: 'Now',
   },
   about: {
-    title: 'Meet the team',
-    subtitle: `We have been friends who know each other for over 10 years. 
+    title: 'Team',
+    _title: 'Meet the team',
+    subtitle: `
+      We have been friends who know each other for over 10 years.
       The cutting edge technologies have always been our main point of 
       interest. The concept of the block chain showed all of us new 
       possibilities and solutions to problems created by the digital 
@@ -79,13 +82,19 @@ export default {
       0: {
         q: 'What is your level of knowledge about blockchain technology?',
         a_1: 'Beginner',
+        a_1_category: 'essentials',
+        a_1_article: 'beginner',
         a_2: 'Intermediate',
+        a_2_category: 'essentials',
+        a_2_article: 'intermediate',
         a_3: 'Advanced',
       },
       1: {
         q: 'Do you already have ADA cryptocurrency?',
         a_1: 'Yes',
         a_2: 'No',
+        a_2_category: 'exchanges',
+        a_2_article: 'about-exchanges',
       },
       2: {
         q: 'What is your preffered way of controling you digital wallet?',
@@ -95,13 +104,23 @@ export default {
       3: {
         q: 'Do you already have Yoroi wallet setup?',
         a_1: 'Yes',
+        a_1_category: 'stake',
+        a_1_article: 'stake-with-yoroi',
         a_2: 'No',
+        a_2_category: 'wallets',
+        a_2_article: 'about-wallets',
       },
       4: {
-        q: 'Do you already have have Yoroi or Daedalus wallet?',
+        q: 'Do you already have Yoroi or Daedalus wallet?',
         a_1: 'Yoroi',
+        a_1_category: 'stake',
+        a_1_article: 'stake-with-yoroi',
         a_2: 'Daedalus',
+        a_2_category: 'stake',
+        a_2_article: 'stake-with-daedalus',
         a_3: 'None',
+        a_3_category: 'wallets',
+        a_3_article: 'about-wallets',
       },
     },
   },

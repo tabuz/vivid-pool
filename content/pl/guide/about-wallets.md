@@ -1,5 +1,6 @@
 ---
-name: Kompendium
+title: 'Portfele walutowe kompendium'
+name: Portfele
 category: portfele
 order: 0
 ---

@@ -64,14 +64,53 @@ export default {
       toc: _.toc.map((__) => ({ ...__, category: _.category })),
     }))
 
+    const title = app.i18n.t('guide.title')
+    const description = app.i18n.t('guide.subtitle')
+
+    const head = {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${title}- Vivid Stake Pool`,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: `${title}- Vivid Stake Pool`,
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: description,
+        },
+      ],
+    }
+
     return {
       content: payload,
+      head,
     }
   },
   data() {
     return {
+      head: {},
       content: [],
     }
+  },
+  head() {
+    return this.head
   },
   beforeDestroy() {
     this.set_question_step({ question_step: 0 })

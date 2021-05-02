@@ -111,80 +111,38 @@ export default {
       console.error('Failed fetching rom adapools.org')
     }
 
-    let head
+    const title = app.i18n.t('index._title')
+    const description = app.i18n.t('index.blurp')
 
-    switch (locale) {
-      case 'pl':
-        head = {
-          title: 'Strona Główna',
-          meta: [
-            {
-              hid: 'description',
-              name: 'description',
-              content:
-                'Jesteśmy międzynarodowym zespołem operatorów staking pools dla sieci Cardano. Naszą misją jest dostarczanie niezawodnych rozwiązań technologicznych dla teraźniejszych i przyszłych technologii blockchain. Weź udział razem z nami w tej niezwyłej przygodzie świata kryptowalut.',
-            },
-            {
-              hid: 'og:title',
-              property: 'og:title',
-              content: 'Strona Główna - Vivid Stake Pool',
-            },
-            {
-              hid: 'og:description',
-              property: 'og:description',
-              content:
-                'Jesteśmy międzynarodowym zespołem operatorów staking pools dla sieci Cardano. Naszą misją jest dostarczanie niezawodnych rozwiązań technologicznych dla teraźniejszych i przyszłych technologii blockchain. Weź udział razem z nami w tej niezwyłej przygodzie świata kryptowalut.',
-            },
-            {
-              hid: 'twitter:title',
-              property: 'twitter:title',
-              content: 'Strona Główna - Vivid Stake Pool',
-            },
-            {
-              hid: 'twitter:description',
-              property: 'twitter:description',
-              content:
-                'Jesteśmy międzynarodowym zespołem operatorów staking pools dla sieci Cardano. Naszą misją jest dostarczanie niezawodnych rozwiązań technologicznych dla teraźniejszych i przyszłych technologii blockchain. Weź udział razem z nami w tej niezwyłej przygodzie świata kryptowalut.',
-            },
-          ],
-        }
-        break
-
-      default:
-        head = {
-          title: 'Home Page',
-          meta: [
-            {
-              hid: 'description',
-              name: 'description',
-              content:
-                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
-            },
-            {
-              hid: 'og:title',
-              property: 'og:title',
-              content: 'Home Page - Vivid Stake Pool',
-            },
-            {
-              hid: 'og:description',
-              property: 'og:description',
-              content:
-                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
-            },
-            {
-              hid: 'twitter:title',
-              property: 'twitter:title',
-              content: 'Home Page - Vivid Stake Pool',
-            },
-            {
-              hid: 'twitter:description',
-              property: 'twitter:description',
-              content:
-                "Meet international staking pools validators for Cardano. We're offering cutting edge cryptocurrency technology of today and tomorrow. Join us today on this exciting journey!",
-            },
-          ],
-        }
-        break
+    const head = {
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${title}- Vivid Stake Pool`,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: `${title}- Vivid Stake Pool`,
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: description,
+        },
+      ],
     }
 
     return { videos, pools, head }

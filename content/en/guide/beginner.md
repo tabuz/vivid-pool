@@ -1,4 +1,5 @@
 ---
+title: 'Beginner Start Guide'
 name: Beginner Start
 category: essentials
 order: 0

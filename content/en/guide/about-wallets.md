@@ -1,4 +1,5 @@
 ---
+title: 'About Wallets'
 name: About
 category: wallets
 order: 0

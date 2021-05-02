@@ -1,4 +1,5 @@
 ---
+title: 'Stake Yoroi'
 name: Yoroi
 category: stake
 order: 1

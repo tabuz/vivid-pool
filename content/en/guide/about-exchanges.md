@@ -1,4 +1,5 @@
 ---
+title: 'About Exchanges'
 name: About
 category: exchanges
 order: 0

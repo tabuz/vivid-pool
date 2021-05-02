@@ -60,6 +60,11 @@ export default {
       docs_content: [],
     }
   },
+  head() {
+    return {
+      title: this.content?.title || this.$t('guide.title'),
+    }
+  },
   computed: {
     ...mapState('Guide', ['question_step']),
   },
