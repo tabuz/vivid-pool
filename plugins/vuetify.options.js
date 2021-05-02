@@ -3,7 +3,7 @@ export default {
     options: {
       customProperties: true,
     },
-    dark: false,
+    dark: true,
     themes: {
       light: {
         primary: '#fff',
