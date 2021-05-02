@@ -76,7 +76,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${title}- Vivid Stake Pool`,
+          content: `${title} - Vivid Stake Pool`,
         },
         {
           hid: 'og:description',
@@ -86,7 +86,7 @@ export default {
         {
           hid: 'twitter:title',
           property: 'twitter:title',
-          content: `${title}- Vivid Stake Pool`,
+          content: `${title} - Vivid Stake Pool`,
         },
         {
           hid: 'twitter:description',
