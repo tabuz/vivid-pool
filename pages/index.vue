@@ -100,7 +100,6 @@ export default {
     const videos = await $content(locale, 'videos')
       .only(['name', 'order', 'thumbnail', 'url'])
       .fetch()
-
     try {
       const response = await fetch(
         'https://js.adapools.org/pools/194430bee1245b2d7e19a33e52635e5328ef24431874a0cb191c0195/summary.json'
@@ -112,7 +111,7 @@ export default {
     }
 
     const title = app.i18n.t('index._title')
-    const description = app.i18n.t('index.blurp')
+    const description = app.i18n.t('index.blurp').trim().replace(/\s+/g, ' ')
 
     const head = {
       title,

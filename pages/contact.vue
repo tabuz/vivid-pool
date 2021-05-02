@@ -60,7 +60,10 @@ export default {
   },
   asyncData({ app }) {
     const title = app.i18n.t('contact.title')
-    const description = app.i18n.t('contact.subtitle')
+    const description = app.i18n
+      .t('contact.subtitle')
+      .trim()
+      .replace(/\s+/g, ' ')
 
     const head = {
       title,

@@ -66,7 +66,7 @@ export default {
   },
   asyncData({ app }) {
     const title = app.i18n.t('about._title')
-    const description = app.i18n.t('about.subtitle')
+    const description = app.i18n.t('about.subtitle').trim().replace(/\s+/g, ' ')
 
     const head = {
       title,

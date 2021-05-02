@@ -65,7 +65,7 @@ export default {
     }))
 
     const title = app.i18n.t('guide.title')
-    const description = app.i18n.t('guide.subtitle')
+    const description = app.i18n.t('guide.subtitle').trim().replace(/\s+/g, ' ')
 
     const head = {
       title,

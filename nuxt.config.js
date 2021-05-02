@@ -21,15 +21,22 @@ export default {
         content:
           'vivid, stake, pool, staking, cardano, crypto, bitcoin, ethereum, tutorial, guide, poradnik, ADA, BTC, stakowac, jak, kryptowaluty, polska',
       },
+
+      // Open Graph
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://vivid-pool.info',
+      },
       {
         hid: 'og:site_name',
         property: 'og:site_name',
         content: 'Vivid Stake Pool',
       },
       {
-        hid: 'twitter:site',
-        property: 'twitter:site',
-        content: '@Cryptoguys4',
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
       },
       {
         hid: 'og:image',
@@ -37,24 +44,31 @@ export default {
         property: 'og:image',
         content: 'https://vivid-pool.info/images/vivid-splash.png',
       },
-      // {
-      //   hid: 'og:image:type',
-      //   name: 'og:image:type',
-      //   property: 'og:image:type',
-      //   content: 'image/png',
-      // },
-      // {
-      //   hid: 'og:image:width',
-      //   name: 'og:image:width',
-      //   property: 'og:image:width',
-      //   content: '1280',
-      // },
-      // {
-      //   hid: 'og:image:height',
-      //   name: 'og:image:height',
-      //   property: 'og:image:height',
-      //   content: '720',
-      // },
+
+      // Twitter
+      {
+        hid: 'twitter:site',
+        property: 'twitter:site',
+        content: '@Cryptoguys4',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        property: 'twitter:image',
+        content: 'https://vivid-pool.info/images/vivid-splash.png',
+      },
+      {
+        hid: 'twitter:domain',
+        name: 'twitter:domain',
+        property: 'twitter:domain',
+        content: 'vivid-pool.info',
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
