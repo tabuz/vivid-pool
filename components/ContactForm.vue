@@ -2,44 +2,46 @@
   <v-form
     ref="contact_form"
     v-model="is_form_valid"
-    class="pa-6 blurp"
-    color="#fff"
+    class="px-2 blurp"
+    color="secondary"
   >
     <v-text-field
       v-model="name"
-      dark
+      color="secondary"
+      autocomplete="new-password"
       type="text"
       :label="`${$t('contact_form.name')}`"
     ></v-text-field>
     <v-text-field
       v-model="email"
-      type="email"
+      autocomplete="new-password"
       :rules="[(v) => !!v || 'This field is required']"
-      dark
-      color="white"
+      color="secondary"
       label="Email *"
       hint="So we could reach you back"
+      type="email"
       required
     ></v-text-field>
     <v-textarea
       v-model="message"
-      dark
-      color="white"
+      autocomplete="new-password"
+      color="secondary"
       :label="`${$t('contact_form.message')}*`"
       required
     ></v-textarea>
     <div class="text-right">
       <button
-        class="btn-flip"
+        class="choice-btn"
         :class="{
           success: success,
         }"
-        :data-front="`${$t('contact_form.send_front')}`"
         :data-back="`${$t('contact_form.send_back')}`"
         data-success="wysłano"
         :disabled="is_form_valid === false"
         @click.prevent.stop="send_message"
-      ></button>
+      >
+        {{ $t('contact_form.send_front') }}
+      </button>
     </div>
   </v-form>
 </template>

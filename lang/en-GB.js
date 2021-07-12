@@ -1,19 +1,23 @@
 export default {
   nav: {
     home: 'Home',
-    docs: 'Docs',
+    guide: 'Guide',
     about_us: 'About Us',
     contact: 'Contact',
   },
   index: {
+    _title: 'Home Page',
     slogan: 'The future is here.',
     blurp: `
-      Meet international staking pools validators for Cardano and Polkadot. 
+      Meet international staking pools validators for Cardano. 
       We're offering cutting edge cryptocurrency technology of today and 
       tomorrow. Join us today on this exciting journey!
     `,
     get_started_front: 'Get Started',
     get_started_back: 'Now',
+  },
+  video: {
+    title: 'Video Guides',
   },
   contact: {
     title: 'Contact',
@@ -29,8 +33,10 @@ export default {
     send_back: 'Now',
   },
   about: {
-    title: 'Meet the team',
-    subtitle: `We have been friends who know each other for over 10 years. 
+    title: 'Team',
+    _title: 'Meet the team',
+    subtitle: `
+      We have been friends who know each other for over 10 years.
       The cutting edge technologies have always been our main point of 
       interest. The concept of the block chain showed all of us new 
       possibilities and solutions to problems created by the digital 
@@ -40,12 +46,11 @@ export default {
       years of progress which have been made in block chain technologies.
     `,
     rafal: `
-      I'm a 29 years old software tester/developer with over 5 years of 
-      experience in a field. I used to study IT at Cracow University of 
-      Technology. My programming skills include languages like: Python, 
-      C#, bash and Solidity. In a Vivid Pool my role is to operate the 
-      pools and provide them security. In free time blockchain fanatic, 
-      martial artist and motorbike rider.
+      I'm software tester/developer with over 5 years of experience in a 
+      field. I used to study IT at Cracow University of Technology. My 
+      programming skills include languages like: Python, C#, bash and 
+      Solidity. In a Vivid Pool my role is to operate the pools and provide 
+      them security. In free time martial artist and motorbike rider.
     `,
     patryk: `
       If I would describe myself in a few words I would say I am a vivid 
@@ -57,14 +62,66 @@ export default {
       research. So if you have any questions you will most probably contact 
       me :)
     `,
-    hubert: `Profesionall idiot`,
+    hubert: `
+      Hi, I'm Hubert, special tasks man. When something doesn't work right
+      that's what makes me excited most. Programming is my passion which
+      I dedicate my whole life to. Profesionally I'm CTO of "Foodiependent" start-up
+      where I'm responsible for integration of multiple systems. Website you looking
+      at now - hope you like it - we've put a lot of heart into it 🤘.
+    `,
   },
-  docs: {
-    title: `Get Started`,
+  guide: {
+    title: `The Guide`,
     subtitle: `
       Please follow tutorial below which will show you step-by-step how
       to participate to our staking pool. In few simple steps you should 
       obtain ADA, create your own digital wallet and stake with Vivid Pools.
     `,
+    on_this_page: 'On this page',
+    questions: {
+      0: {
+        q: 'What is your level of knowledge about blockchain technology?',
+        a_1: 'Beginner',
+        a_1_category: 'essentials',
+        a_1_article: 'beginner',
+        a_2: 'Intermediate',
+        a_2_category: 'essentials',
+        a_2_article: 'intermediate',
+        a_3: 'Advanced',
+      },
+      1: {
+        q: 'Do you already have ADA cryptocurrency?',
+        a_1: 'Yes',
+        a_2: 'No',
+        a_2_category: 'exchanges',
+        a_2_article: 'about-exchanges',
+      },
+      2: {
+        q: 'What is your preffered way of controling you digital wallet?',
+        a_1: 'Mobile',
+        a_2: 'Desktop',
+      },
+      3: {
+        q: 'Do you already have Yoroi wallet setup?',
+        a_1: 'Yes',
+        a_1_category: 'stake',
+        a_1_article: 'stake-with-yoroi',
+        a_2: 'No',
+        a_2_category: 'wallets',
+        a_2_article: 'about-wallets',
+      },
+      4: {
+        q: 'Do you already have Yoroi or Daedalus wallet?',
+        a_1: 'Yoroi',
+        a_1_category: 'stake',
+        a_1_article: 'stake-with-yoroi',
+        a_2: 'Daedalus',
+        a_2_category: 'stake',
+        a_2_article: 'stake-with-daedalus',
+        a_3: 'None',
+        a_3_category: 'wallets',
+        a_3_article: 'about-wallets',
+      },
+    },
   },
 }

@@ -1,28 +1,42 @@
 <template>
-  <v-main>
-    <v-container fluid class="contact pa-2 pa-md-4">
-      <v-row class="fill-height">
-        <v-col cols="12" md="6" lg="5">
-          <div class="hero-text white-elevation">
-            <h1
-              class="text-h3 text-md-h2 text-xl-h2 mb-1 mb-md-4 font-weight-thin"
-            >
-              <span class="vivid-decoration">{{ $t('contact.title') }}</span>
-            </h1>
-            <p class="text-body-1 text-md-h6 mb-2 mb-md-6 blurp">
-              {{ $t('contact.subtitle') }}
-            </p>
+  <v-main class="pt-4">
+    <v-container fluid>
+      <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
+        <v-col cols="12" md="6" lg="5" style="max-width: 800px">
+          <div class="hero-text">
+            <PageTitle
+              :title="$t('contact.title')"
+              :subtitle="$t('contact.subtitle')"
+            />
             <div class="socials blurp">
-              <a href="https://twtter.com" target="_blank" class="icon twitter">
-                <v-icon x-large color="#00acee">mdi-twitter</v-icon>
+              <a
+                href="https://twitter.com/Cryptoguys4"
+                target="_blank"
+                class="icon twitter"
+              >
+                <v-icon :x-large="$vuetify.breakpoint.mdAndUp" color="#00acee"
+                  >mdi-twitter</v-icon
+                >
                 <span>Twitter</span>
               </a>
               <a
-                href="https://telegram.com"
+                href="https://discord.gg/8Dw8s6Fm"
+                target="_blank"
+                class="icon discord"
+              >
+                <v-icon :x-large="$vuetify.breakpoint.mdAndUp" color="#7289da"
+                  >mdi-discord</v-icon
+                >
+                <span>Discord</span>
+              </a>
+              <a
+                href="https://t.me/vivid_pool"
                 target="_blank"
                 class="icon telegram"
               >
-                <v-icon x-large color="#0088cc">mdi-telegram</v-icon>
+                <v-icon :x-large="$vuetify.breakpoint.mdAndUp" color="#0088cc"
+                  >mdi-telegram</v-icon
+                >
                 <span>Telegram</span>
               </a>
             </div>
@@ -36,37 +50,87 @@
 
 <script>
 import ContactForm from '@/components/ContactForm'
+import PageTitle from '@/components/PageTitle'
 
 export default {
   name: 'Contact',
   components: {
     ContactForm,
+    PageTitle,
+  },
+  asyncData({ app }) {
+    const locale = app.i18n.locale
+    const title = app.i18n.t('contact.title')
+    const description = app.i18n
+      .t('contact.subtitle')
+      .trim()
+      .replace(/\s+/g, ' ')
+
+    const head = {
+      htmlAttrs: {
+        lang: locale,
+      },
+      title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${title} - Vivid Stake Pool`,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description,
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: `${title} - Vivid Stake Pool`,
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: description,
+        },
+      ],
+    }
+
+    return { head }
+  },
+  data() {
+    return {
+      head: {},
+    }
+  },
+  head() {
+    return this.head
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.contact {
-  height: 100%;
+.socials {
+  display: flex;
+  justify-content: center;
 
-  .socials {
+  .icon {
     display: flex;
-    justify-content: center;
-    .icon {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      align-items: center;
-      &:first-of-type {
-        margin-right: 2rem;
-      }
-      i {
-        font-size: 4rem !important;
-      }
-      span {
-        color: white;
-        font-weight: normal;
-      }
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    margin-right: 2rem;
+
+    &:last-of-type {
+      margin-right: 0 !important;
+    }
+    span {
+      color: var(--v-secondary-base);
+      font-weight: normal;
     }
   }
 }

@@ -1,0 +1,80 @@
+.nuxt-content {
+  color: var(--v-secondary-base);
+  font-weight: 500;
+
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--v-secondary-base) !important;
+  }
+
+  iframe {
+    max-width: 90vw;
+  }
+
+  .img {
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    img {
+      border-radius: 12px;
+      max-width: 100%;
+
+      &.small {
+        max-width: 50%;
+      }
+
+      @media #{map-get($display-breakpoints, 'md-and-up')} {
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  p {
+    text-align: left;
+  }
+  h2, h3 {
+    text-align: left;
+    cursor: pointer;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(126, 126, 126, 0.5);
+    
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &:before {
+      content: '#';
+      margin-right: 1rem;
+      color: purple;
+    }
+  }
+  h2 > ul, h2 > ol {
+    margin-bottom: 2rem !important;
+  }
+  ul, ol {
+    padding-bottom: 1rem !important;
+  }
+
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    p {
+      padding-left: 2rem;
+    }
+    ul, ol {
+      padding-left: 3rem !important;
+    }
+  }
+}
+
+.nuxt-content-editor {
+  color: var(--v-secondary-base);
+}
