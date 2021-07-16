@@ -7,7 +7,7 @@
     </h1>
     <p
       v-if="subtitle"
-      class="text-body-1 text-md-h6 mb-2 mb-md-4 blurp secondary--text"
+      class="text-body-1 text-md-h6 mb-2 mb-md-4 blurp secondary--text pl-0"
     >
       {{ subtitle }}
     </p>

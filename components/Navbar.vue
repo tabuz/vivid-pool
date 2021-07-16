@@ -6,7 +6,7 @@
     :mini-variant="true"
     mini-variant-width="96"
     color="primary"
-    class="vivid-navbar"
+    class="vivid-navbar elevation-2"
     :class="{
       [$i18n.locale]: true,
       cropped: $vuetify.breakpoint.mdAndUp,
@@ -91,6 +91,11 @@ export default {
           icon: 'mdi-account-group-outline',
         },
         {
+          text: this.$t('nav.security'),
+          page_name: 'security',
+          icon: 'mdi-server-security',
+        },
+        {
           text: this.$t('nav.contact'),
           page_name: 'contact',
           icon: 'mdi-chat-question-outline',
@@ -115,7 +120,7 @@ $blue: #0084b1;
   padding-bottom: 1rem;
 
   &.cropped {
-    height: auto !important;
+    // height: auto !important;
   }
 }
 

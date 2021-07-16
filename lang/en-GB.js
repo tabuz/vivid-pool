@@ -4,6 +4,7 @@ export default {
     guide: 'Guide',
     about_us: 'About Us',
     contact: 'Contact',
+    security: 'Security',
   },
   index: {
     _title: 'Home Page',
@@ -69,6 +70,52 @@ export default {
       where I'm responsible for integration of multiple systems. Website you looking
       at now - hope you like it - we've put a lot of heart into it 🤘.
     `,
+  },
+  security: {
+    title: 'Security',
+    subtitle: `
+      The security of our pools is our main goal. Please see the list below to get 
+      familiar with some of our security procedures. Keep in mind that some of our 
+      security measurements can’t be listed here as it could help with potential 
+      attack.`,
+    measures: [
+      {
+        title: '1 block producer node, 2 relay nodes',
+        text: `
+          The block producer node communicates with the rest of the network through 
+          relay nodes. If the relay node is offline, then the block producer node 
+          can’t connect to the network. It’s good practise to have 2 relay nodes 
+          connected into the block producer node in case one of the relay nodes fail.
+        `,
+      },
+      {
+        title: 'Different VPS providers for each of our nodes',
+        text: `
+          The diversification of our nodes is one of the most important aspects of 
+          our security measurements. In situations when one of our VPS providers has 
+          a problem with his infrastructure, we are not complicit depending on his 
+          services. In the future we are planning to set up few nodes in house
+        `,
+      },
+      {
+        title: 'Servers for nodes located in three different countries',
+        text: `Poland, Belgium, Germany`,
+      },
+      {
+        title: '3 sets of pool keys exist',
+        text: `
+          located in two different countries (Poland, United Kingdom) in three 
+          different cities where each set of keys is encrypted
+        `,
+      },
+      {
+        title: 'Pool keys has not been exposed into internet',
+      },
+      {
+        title:
+          'Node monitoring in a case if intruder break through the firewalls',
+      },
+    ],
   },
   guide: {
     title: `The Guide`,
