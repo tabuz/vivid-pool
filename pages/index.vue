@@ -43,7 +43,7 @@
                   <td>{{ format_percent(pool.tax_ratio) }}</td>
                   <td>{{ format_ada(pool.pledge) }}</td>
                   <td>{{ format_ada(pool.active_stake) }}</td>
-                  <td>{{ format_percent(pool.blocks_lifetime) }}</td>
+                  <td>{{ format_percent(pool.roa_lifetime / 100) }}</td>
                   <td>
                     <v-progress-linear
                       color="purple"
