@@ -35,7 +35,9 @@
                 </div>
                 <div class="text px-4">
                   <p class="role mb-1 secondary--text">{{ person.role }}</p>
-                  <p class="text-body-1 secondary--text text-body-1 mb-0">
+                  <p
+                    class="text-body-1 secondary--text text-body-1 mb-0 text-left"
+                  >
                     {{ $t(person.text) }}
                   </p>
                 </div>

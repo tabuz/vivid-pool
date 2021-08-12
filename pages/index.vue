@@ -23,6 +23,28 @@
               </button>
             </nuxt-link>
           </div>
+          <div class="d-flex flex-row justify-space-around mb-8">
+            <div class="text-center px-2 mr-6">
+              <p class="secondary--text font-weight-bold text-h4">
+                #{{ pools[0].rank }}
+              </p>
+              <p class="secondary--text font-weight-bold mb-0">In Pools Rank</p>
+            </div>
+            <div class="text-center px-2 mr-6">
+              <p class="secondary--text font-weight-bold text-h4">
+                {{ blocks_lifetime }}
+              </p>
+              <p class="secondary--text font-weight-bold mb-0">
+                Verified Block{{ blocks_lifetime > 1 ? 's' : '' }}
+              </p>
+            </div>
+            <div class="text-center px-2 mr-6">
+              <p class="secondary--text font-weight-bold text-h4">
+                {{ delegators }}
+              </p>
+              <p class="secondary--text font-weight-bold mb-0">Delegators</p>
+            </div>
+          </div>
 
           <div class="pool-table-container mb-8">
             <table class="pool-table">
@@ -79,6 +101,7 @@
               </tbody>
             </table>
           </div>
+
           <Videos :videos="videos" />
         </v-col>
       </v-row>
@@ -171,6 +194,20 @@ export default {
   },
   head() {
     return this.head
+  },
+  computed: {
+    blocks_lifetime() {
+      return this.pools.reduce(
+        (curr, pool) => curr + Number(pool.blocks_lifetime),
+        0
+      )
+    },
+    delegators() {
+      return this.pools.reduce(
+        (curr, pool) => curr + Number(pool.delegators),
+        0
+      )
+    },
   },
   methods: {
     format_percent(value) {

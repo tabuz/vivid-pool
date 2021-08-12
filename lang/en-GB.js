@@ -89,6 +89,15 @@ export default {
         `,
       },
       {
+        title: 'Nodes monitoring',
+        text: `
+          All our nodes have implemented industry standard monitoring tools to provide
+          us with realtime health checks and performance statistics. Automated notifications
+          allow us to act as soon the problem occurs. We monitor our nodes 24/7 and our team
+          can provide maintenance support from all over the world. 
+        `,
+      },
+      {
         title: 'Different VPS providers for each of our nodes',
         text: `
           The diversification of our nodes is one of the most important aspects of 
@@ -110,10 +119,11 @@ export default {
       },
       {
         title: 'Pool keys has not been exposed into internet',
-      },
-      {
-        title:
-          'Node monitoring in a case if intruder break through the firewalls',
+        text: `
+          Master keys to manage pool have never seen an internet. We generated 
+        them in isolated enviroment and kept outside of the internet. Backups are 
+        also located in secure and isolated place.
+        `,
       },
     ],
   },
