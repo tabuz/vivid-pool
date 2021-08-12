@@ -20,7 +20,7 @@
                 <span>Twitter</span>
               </a>
               <a
-                href="https://discord.gg/rGFPJfu87A"
+                href="https://discord.gg/p7gWpQwKQR"
                 target="_blank"
                 class="icon discord"
               >
