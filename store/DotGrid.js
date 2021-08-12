@@ -6,6 +6,7 @@ const page_name__config = {
   guide: { x: -600, y: -700, sinx: 0.6, siny: 0 },
   null: { x: -600, y: -700, sinx: 0.6, siny: 0 },
   contact: { x: -400, y: -600, sinx: 0.1, siny: 0.15 },
+  partners: { x: -400, y: -600, sinx: 0.1, siny: 0.15 },
 }
 export const state = () => ({
   x: 85,

@@ -3,6 +3,7 @@ export default {
     home: 'Home',
     guide: 'Guide',
     about_us: 'About Us',
+    partners: 'Partners',
     contact: 'Contact',
   },
   index: {
@@ -18,6 +19,11 @@ export default {
   },
   video: {
     title: 'Video Guides',
+  },
+  partners: {
+    title: 'Our partners',
+    subtitle: `Together we can change world for better.
+    `,
   },
   contact: {
     title: 'Contact',

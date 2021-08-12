@@ -3,6 +3,7 @@ export default {
     home: 'Strona Głowna',
     guide: 'Poradnik',
     about_us: 'O nas',
+    partners: 'Partnerzy',
     contact: 'Kontakt',
   },
   index: {
@@ -19,6 +20,11 @@ export default {
   },
   video: {
     title: 'Poradniki Video',
+  },
+  partners: {
+    title: 'Nasi partnerzy',
+    subtitle: `Razem mozemy zmienic swiat na lepsze.
+    `,
   },
   contact: {
     title: 'Kontakt',
