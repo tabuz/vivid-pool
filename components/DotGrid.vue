@@ -73,7 +73,7 @@ export default {
       const component = this
       const width = window.innerWidth
       const height = window.innerHeight
-
+      const dotSize = updateDotSize(this.SCALE)
       let mouseX = 0
       let mouseY = 0
       // const rotate = 0
@@ -128,7 +128,7 @@ export default {
           positions[i + 1] = 0 // y
           positions[i + 2] =
             iy * this.SEPARATION - (this.AMOUNTY * this.SEPARATION) / 2 // z
-          scales[j] = this.SCALE
+          scales[j] = dotSize
           i += 3
           j++
         }
@@ -209,7 +209,7 @@ export default {
             scales[j] =
               ((Math.sin((ix + elapsedTime) * 0.3) + 1) * 20 +
                 (Math.sin((iy + elapsedTime) * 0.5) + 1) * 20) *
-              component.SCALE
+              updateDotSize(component.SCALE)
 
             i += 3
             j++
@@ -232,6 +232,15 @@ export default {
         mouseX = -(event.clientX - sizes.width / 2) / 2
         mouseY = -(event.clientY - sizes.height / 2) / 6
         // console.log(mouseY)
+      }
+
+      function updateDotSize(size) {
+        if (navigator.userAgent.includes('Win')) {
+          if (window.screen.width * window.devicePixelRatio <= 1920) {
+            return size / 2
+          }
+        }
+        return size
       }
 
       this.tick = tick
