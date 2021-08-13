@@ -29,7 +29,7 @@ Każda z wymienionych giełd zawiera na swojej stronie internetowej szczegółow
 
 
 <p style="text-align: center;">
-     <a href="https://accounts.binance.com/en/register?ref=G7RA9QA6">Register here</a> 
+     <a href="https://accounts.binance.com/en/register?ref=G7RA9QA6">Stwórz Konto</a> 
 </p>
 
 
@@ -44,7 +44,7 @@ Każda z wymienionych giełd zawiera na swojej stronie internetowej szczegółow
 </p>
 
 <p style="text-align: center;">
-     <a href="https://crypto.com/exch/pj4tdsq6ym">Register Here</a> 
+     <a href="https://crypto.com/exch/pj4tdsq6ym">Stwórz Konto</a> 
 </p>
 
 
@@ -59,5 +59,5 @@ Każda z wymienionych giełd zawiera na swojej stronie internetowej szczegółow
 </p>
 
 <p style="text-align: center;">
-     <a href="https://www.kucoin.com/ucenter/signup?rcode=rJUY8TL">Register Here</a> 
+     <a href="https://www.kucoin.com/ucenter/signup?rcode=rJUY8TL">Stwórz Konto</a> 
 </p>
