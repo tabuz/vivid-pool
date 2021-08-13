@@ -9,7 +9,7 @@
         >
           <div class="mask"></div>
           <v-col cols="12" md="6" lg="5">
-            <div class="hero-text">
+            <div class="hero-text px-md-6 pb-md-6">
               <PageTitle :title="$t('guide.title')" />
               <p
                 v-if="question_step === 0"

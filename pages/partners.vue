@@ -2,13 +2,64 @@
   <v-main class="pt-4">
     <v-container fluid>
       <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
-        <v-col cols="12" md="6" lg="5" style="max-width: 800px">
-          <div class="hero-text">
+        <v-col cols="12" md="6" lg="5" class="blurp" style="max-width: 800px">
+          <div class="hero-text px-md-6 pb-md-6">
             <PageTitle
               :title="$t('partners.title')"
               :subtitle="$t('partners.subtitle')"
             />
-            <PartnersComp />
+            <Partner>
+              <template #header>
+                <div class="d-flex align-center mb-8">
+                  <img
+                    :src="require('@/assets/images/open-chia.png')"
+                    alt="Open Chia Logo"
+                    width="64px"
+                    class="mr-4"
+                  />
+
+                  <p class="mb-0 text-h5 secondary--text">
+                    {{ $t('partners.chia.title') }}
+                  </p>
+                </div>
+              </template>
+              <template #main>
+                <p class="secondary--text">
+                  {{ $t('partners.chia.main_1') }}
+                  <a
+                    href="https://openchia.io"
+                    target="_blank"
+                    style="color: #129b00"
+                    >openchia.io</a
+                  >
+                  {{ $t('partners.chia.main_2') }}
+                </p>
+                <ul class="ml-8 mb-8 secondary--text">
+                  <li
+                    v-for="(point, idx) in $t('partners.chia.points')"
+                    :key="`chia_${idx}`"
+                  >
+                    {{ point }}
+                  </li>
+                </ul>
+                <div class="text-center mb-8">
+                  <a href="https://openchia.io" target="_blank">
+                    <img
+                      :src="require('@/assets/images/chia-website.png')"
+                      alt="Open Chia Logo"
+                      :style="{
+                        'max-width': $vuetify.breakpoint.mdAndUp
+                          ? '600px'
+                          : '300px',
+                      }"
+                      class="mr-4"
+                  /></a>
+                </div>
+                <p class="secondary--text px-2">
+                  {{ $t('partners.chia.main_3') }}
+                </p>
+              </template>
+            </Partner>
           </div>
         </v-col>
       </v-row>
@@ -17,13 +68,13 @@
 </template>
 
 <script>
-import PartnersComp from '@/components/PartnersComp'
+import Partner from '@/components/Partner'
 import PageTitle from '@/components/PageTitle'
 
 export default {
   name: 'Partners',
   components: {
-    PartnersComp,
+    Partner,
     PageTitle,
   },
   asyncData({ app }) {
