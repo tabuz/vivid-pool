@@ -1,7 +1,7 @@
 ---
-title: 'About Exchanges'
-name: About
-category: exchanges
+title: 'O giełdach'
+name: Giełdy
+category: gieldy
 order: 0
 ---
 
