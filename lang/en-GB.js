@@ -23,7 +23,7 @@ export default {
   },
   partners: {
     title: 'Our partners',
-    subtitle: `Together we can change world for better.`,
+    subtitle: `Together we can change world for the better.`,
     chia: {
       title: `Open Chia.io - Official Chia Pool Protocol`,
       main_1: `The OpenChia.io is an official Chia Network pool protocol. It
