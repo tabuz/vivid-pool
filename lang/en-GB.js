@@ -5,6 +5,7 @@ export default {
     about_us: 'About Us',
     partners: 'Partners',
     contact: 'Contact',
+    security: 'Security',
   },
   index: {
     _title: 'Home Page',
@@ -74,8 +75,8 @@ export default {
     rafal: `
       I'm software tester/developer with over 5 years of experience in a 
       field. I used to study IT at Cracow University of Technology. My 
-      programming skills include languages like: Python, C#, bash and 
-      Solidity. In a Vivid Pool my role is to operate the pools and provide 
+      programming skills include languages like: Python, C#, bash.
+      In a Vivid Pool my role is to operate the pools and provide 
       them security. In free time martial artist and motorbike rider.
     `,
     patryk: `
@@ -95,6 +96,62 @@ export default {
       where I'm responsible for integration of multiple systems. Website you looking
       at now - hope you like it - we've put a lot of heart into it 🤘.
     `,
+  },
+  security: {
+    title: 'Security',
+    subtitle: `
+      The security of our pools is our main goal. Please see the list below to get 
+      familiar with some of our security procedures. Keep in mind that some of our 
+      security measurements can’t be listed here as it could help with potential 
+      attack.`,
+    measures: [
+      {
+        title: '1 block producer node, 2 relay nodes',
+        text: `
+          The block producer node communicates with the rest of the network through 
+          relay nodes. If the relay node is offline, then the block producer node 
+          can’t connect to the network. It’s good practise to have 2 relay nodes 
+          connected into the block producer node in case one of the relay nodes fail.
+        `,
+      },
+      {
+        title: 'Nodes monitoring',
+        text: `
+          All our nodes have implemented industry standard monitoring tools to provide
+          us with realtime health checks and performance statistics. Automated notifications
+          allow us to act as soon the problem occurs. We monitor our nodes 24/7 and our team
+          can provide maintenance support from all over the world. 
+        `,
+      },
+      {
+        title: 'Different VPS providers for each of our nodes',
+        text: `
+          The diversification of our nodes is one of the most important aspects of 
+          our security measurements. In situations when one of our VPS providers has 
+          a problem with his infrastructure, we are not complicit depending on his 
+          services. In the future we are planning to set up few nodes in house.
+        `,
+      },
+      {
+        title: 'Servers for nodes located in three different countries',
+        text: `Poland, Belgium, Germany`,
+      },
+      {
+        title: '3 sets of pool keys exist',
+        text: `
+          They are located in two different countries (Poland, United Kingdom) in three 
+          different cities where each set of keys is encrypted
+        `,
+      },
+      {
+        title: 'Pool keys has not been exposed into internet',
+        text: `
+          Master keys to manage pool have never seen an internet. We generated 
+          them in isolated enviroment and kept outside of the internet. Backups are 
+          also located in secure and isolated place.
+        `,
+      },
+    ],
   },
   guide: {
     title: `The Guide`,

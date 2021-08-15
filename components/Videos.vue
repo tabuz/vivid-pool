@@ -1,5 +1,5 @@
 <template>
-  <v-container class="blurp pt-0">
+  <v-container class="blurp pb-4 pt-4">
     <p class="text-h5 mt-0 d-block font-weight-bold secondary--text">
       {{ $t('video.title') }}
     </p>
@@ -52,6 +52,7 @@ export default {
 .video-img {
   height: 60px;
   min-width: 120px;
+  border-radius: 4px;
 
   @media (min-width: 920px) {
     height: 94px;
@@ -68,8 +69,9 @@ export default {
   }
 
   &:before {
+    border-radius: 4px;
     opacity: 0;
-    color: var(--v-primary-base);
+    color: var(--v-secondary-base);
     font-size: 3em;
     content: '⏵';
     height: 100%;
