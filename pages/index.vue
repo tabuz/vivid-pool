@@ -2,7 +2,13 @@
   <v-main class="pt-4">
     <v-container fluid>
       <v-row :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
-        <v-col cols="12" md="6" lg="5" style="max-width: 800px">
+        <v-col
+          cols="12"
+          md="6"
+          lg="5"
+          style="max-width: 800px"
+          class="px-md-6 pb-md-6"
+        >
           <h1
             class="text-h4 text-md-h3 text-xl-h2 mb-1 font-weight-thin secondary--text"
           >

@@ -3,7 +3,7 @@
     <v-container fluid>
       <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col cols="12" md="6" lg="5" style="max-width: 800px">
-          <div class="hero-text">
+          <div class="hero-text px-md-6 pb-md-6">
             <PageTitle
               :title="$t('contact.title')"
               :subtitle="$t('contact.subtitle')"

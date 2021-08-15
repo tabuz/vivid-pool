@@ -3,12 +3,12 @@
     <v-container fluid>
       <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col cols="12" md="8" lg="6" style="max-width: 800px" class="about">
-          <div class="hero-text">
+          <div class="hero-text px-md-6 pb-md-6">
             <PageTitle :title="$t('about.title')" />
             <p class="text-body-1 text-body-1 pt-4 secondary--text">
               {{ $t('about.subtitle') }}
             </p>
-            <div class="team blurp">
+            <div class="team blurp px-6 pb-6">
               <div
                 v-for="(person, idx) in team"
                 :key="person.name"

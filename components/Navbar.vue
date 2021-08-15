@@ -91,6 +91,11 @@ export default {
           icon: 'mdi-account-group-outline',
         },
         {
+          text: this.$t('nav.partners'),
+          page_name: 'partners',
+          icon: 'mdi-handshake-outline',
+        },
+        {
           text: this.$t('nav.security'),
           page_name: 'security',
           icon: 'mdi-server-security',
@@ -151,12 +156,17 @@ nav {
   &.en {
     .nuxt-link-active:not([href='/']),
     .nuxt-link-active.nuxt-link-exact-active[href='/'] {
+      &:nth-of-type(5) {
+        .v-list-item {
+          border-right: 1px solid $purple;
+          &:before {
+            background-color: $purple;
+          }
+        }
+      }
       &:nth-of-type(4) {
         .v-list-item {
           border-right: 1px solid $blue;
-          &:before {
-            background-color: $blue;
-          }
         }
       }
       &:nth-of-type(3) {
@@ -182,12 +192,17 @@ nav {
     }
     .nuxt-link-active:not([href='/pl']),
     .nuxt-link-active.nuxt-link-exact-active[href='/pl'] {
+      &:nth-of-type(5) {
+        .v-list-item {
+          border-right: 1px solid $purple;
+          &:before {
+            background-color: $purple;
+          }
+        }
+      }
       &:nth-of-type(4) {
         .v-list-item {
           border-right: 1px solid $blue;
-          &:before {
-            background-color: $blue;
-          }
         }
       }
       &:nth-of-type(3) {

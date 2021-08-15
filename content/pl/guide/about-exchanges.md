@@ -1,39 +1,63 @@
 ---
-title: 'Giełdy kompendium'
-name: Kompendium
+title: 'O giełdach'
+name: Giełdy
 category: gieldy
 order: 0
 ---
 
-## Cryptocurrency Exchanges
+## Giełdy kryptowalut
 
-Create an account on one of cryptocurrency exchange platform, you can also compare different platforms on [cryptoradar](https://cryptoradar.co/buy-cardano).
+Aby skorzystać z giełdy, najpierw musisz się zarejestrować na jednej z nich. Poniżej znajduje się lista trzech większych giełdy, które polecamy na start. Większości dostępnych giełd możesz znaleźć na [coinpaprika](https://coinpaprika.com/gieldy/).
 
-- [Cryptocurrency Exchanges](#cryptocurrency-exchanges)
-- [Binance](#binance)
-- [Etoro](#etoro)
-- [Coinmama](#coinmama)
-  
+- [Binance](https://accounts.binance.com/en/register?ref=G7RA9QA6)
+- [Crypto.com](https://crypto.com/exch/pj4tdsq6ym)
+- [KuCoin](https://www.kucoin.com/ucenter/signup?rcode=rJUY8TL)
+
 <br>
 
-For each mentioned platforms you can find detailed instruction how to create account (you will need to provide information like: full name, current address, an email and phone number, a copy form of your ID or passport)
+Każda z wymienionych giełd zawiera na swojej stronie internetowej szczegółowe informacje jak stworzyć konto. Do stworzenia konta potrzebne Ci będą: dane osobowe, aktualny adres, adres email oraz kopia dokumentu tożsamości (dowód osobisty lub paszport)
 
-## Binance
+##  Binance
 
-Binance is a cryptocurrency exchange that provides a platform for trading various cryptocurrencies. As of January 2018, Binance was the largest cryptocurrency exchange in the world in terms of trading volume.
+<p align="center">
+  <img style="float: left;" width="128" height="128" src="/binance-128-128.png">
+</p>
 
-Binance was founded by Changpeng Zhao, a developer who had previously created high frequency trading software. Binance was initially based in China, but later moved out of China due to China's increasing regulation of cryptocurrency.
+<p style="margin-left:10em;margin-top:2.2em;">
+    Binance to giełda kryptowalut, innymi słowy jest to platforma do handlu różnymi kryptowalutami. Binance jest największą giełdą kryptowalut na świecie pod względem wolumenu (wielkości handlu). Binance została założona przez Changpeng Zhao, dewelopera, który już wcześniej tworzył oprogramowanie do handlu. W marcu 2018 roku Binance stanął w obliczu potężnego ataku hakerskiego, który nie zakończył się sukcesem.
+</p>
 
-Register here
 
-## Etoro
+<p style="text-align: center;">
+     <a href="https://accounts.binance.com/en/register?ref=G7RA9QA6">Stwórz Konto</a> 
+</p>
 
-Trade and invest in cryptocurrencies, stocks, ETFs, currencies, indices and commodities or copy leading investors on eToro's disruptive trading platform.
 
-Register Here
+## Crypto.com 
 
-## Coinmama
+<p align="center">
+  <img style="float: left;" width="128" height="128" src="/cryptoCom-128-128.png">
+</p>
 
-Coinmama is the leading cryptocurrency exchange platform to buy & sell crypto with credit card, debit card or bank transfer. Join the millions of users worldwide trusting Coinmama since 2013.
+<p style="margin-left:10em;margin-top:2.2em;">
+    Crypto.com jest pionierską firmą zajmującą się płatnościami i kryptowalutami, której celem jest przyspieszenie adopcji kryptowalut na świecie. Firma została założona jako Monaco Technologies GmbH w czerwcu 2016 roku z Krisem Marszalkiem na stanowisku dyrektora generalnego. Firma ogłosiła swoją rebranding na Crypto.com 6 lipca 2018 roku. 22 października Crypto.com rozpoczęła wysyłkę karty MCO Visa Card w Singapurze, a następnie 16 listopada ogłosiła swój plan wdrożenia programu MCO Visa Card w Stanach Zjednoczonych we współpracy z "Metropolitan Commercial Bank".
+</p>
 
-Register here
+<p style="text-align: center;">
+     <a href="https://crypto.com/exch/pj4tdsq6ym">Stwórz Konto</a> 
+</p>
+
+
+## KuCoin
+
+<p align="center">
+  <img style="float: left;" width="128" height="128" src="/kucoin-128-128.png">
+</p>
+
+<p style="margin-left:10em;margin-top:2.2em;">
+    KuCoin to giełda kryptowalut z siedzibą w Hongkongu. Firma została założona przez Michaela Gana, który rozpoczął badania nad technologią blockchain już w 2011 roku. Zdobyta wiedza pozwoliła mu w 2013 roku na zbudowanie architektury technicznej dla KuCoin. Giełda ta daje użytkownikom dostęp do jednego z największych wachlarzy par handlowych wśród z centralizowanych giełd. Ponadto giełda udostępnia użytkownikom zaawansowany API, które może być przydatne dla bardziej zaawansowanych graczy giełdowych.
+</p>
+
+<p style="text-align: center;">
+     <a href="https://www.kucoin.com/ucenter/signup?rcode=rJUY8TL">Stwórz Konto</a> 
+</p>
