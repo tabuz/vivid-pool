@@ -101,9 +101,9 @@ export default {
     title: 'Security',
     subtitle: `
       The security of our pools is our main goal. Please see the list below to get 
-      familiar with some of our security procedures. Keep in mind that some of our 
-      security measurements can’t be listed here as it could help with potential 
-      attack.`,
+      familiar with some of our security procedures. They have been implemented in
+      order to prevent us from potential attack as well as provide high reliability.
+      `,
     measures: [
       {
         title: '1 block producer node, 2 relay nodes',
@@ -118,7 +118,7 @@ export default {
         title: 'Nodes monitoring',
         text: `
           All our nodes have implemented industry standard monitoring tools to provide
-          us with realtime health checks and performance statistics. Automated notifications
+          us with real time health checks and performance statistics. Automated notifications
           allow us to act as soon the problem occurs. We monitor our nodes 24/7 and our team
           can provide maintenance support from all over the world. 
         `,
