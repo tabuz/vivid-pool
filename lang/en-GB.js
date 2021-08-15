@@ -49,8 +49,8 @@ export default {
     rafal: `
       I'm software tester/developer with over 5 years of experience in a 
       field. I used to study IT at Cracow University of Technology. My 
-      programming skills include languages like: Python, C#, bash and 
-      Solidity. In a Vivid Pool my role is to operate the pools and provide 
+      programming skills include languages like: Python, C#, bash.
+      In a Vivid Pool my role is to operate the pools and provide 
       them security. In free time martial artist and motorbike rider.
     `,
     patryk: `
@@ -103,7 +103,7 @@ export default {
           The diversification of our nodes is one of the most important aspects of 
           our security measurements. In situations when one of our VPS providers has 
           a problem with his infrastructure, we are not complicit depending on his 
-          services. In the future we are planning to set up few nodes in house
+          services. In the future we are planning to set up few nodes in house.
         `,
       },
       {
@@ -113,7 +113,7 @@ export default {
       {
         title: '3 sets of pool keys exist',
         text: `
-          located in two different countries (Poland, United Kingdom) in three 
+          They are located in two different countries (Poland, United Kingdom) in three 
           different cities where each set of keys is encrypted
         `,
       },
@@ -121,8 +121,8 @@ export default {
         title: 'Pool keys has not been exposed into internet',
         text: `
           Master keys to manage pool have never seen an internet. We generated 
-        them in isolated enviroment and kept outside of the internet. Backups are 
-        also located in secure and isolated place.
+          them in isolated enviroment and kept outside of the internet. Backups are 
+          also located in secure and isolated place.
         `,
       },
     ],
