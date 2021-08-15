@@ -3,6 +3,7 @@ export default {
     home: 'Home',
     guide: 'Guide',
     about_us: 'About Us',
+    partners: 'Partners',
     contact: 'Contact',
   },
   index: {
@@ -18,6 +19,31 @@ export default {
   },
   video: {
     title: 'Video Guides',
+  },
+  partners: {
+    title: 'Our partners',
+    subtitle: `Together we can change world for better.`,
+    chia: {
+      title: `Open Chia.io - Official Chia Pool Protocol`,
+      main_1: `The OpenChia.io is an official Chia Network pool protocol. It
+                  has been founded by team which has over 20 years of
+                  experienced in the software development industry. Visit`,
+      main_2: `to find how to join pool.`,
+      main_3: `The Chia Network is an eco-friendly blockchain where everyone
+                  can mine chia tokens by using their free disk space. It was
+                  founded in 2017 by American computer programmer Bram Cohen,
+                  the author of the BitTorrent protocol. The Chia blockchain is
+                  using consensus algorythm called Proof of Space and Time.
+                  Because of that, the block validation in chia network require
+                  only faction of energy in comparison to Bitcoin. To learn more
+                  about chia network visit https://www.chia.net/.`,
+      points: [
+        '0 % Fee',
+        'No minimum payout',
+        'Instant payout',
+        'Transparent Full blown explorer and live logs.',
+      ],
+    },
   },
   contact: {
     title: 'Contact',

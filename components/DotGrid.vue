@@ -235,11 +235,10 @@ export default {
       }
 
       function updateDotSize(size) {
-        if (navigator.userAgent.includes('Win')) {
-          if (window.screen.width * window.devicePixelRatio <= 1920) {
-            return size / 2
-          }
+        if (window.screen.width * window.devicePixelRatio <= 1920) {
+          return size / 2
         }
+
         return size
       }
 

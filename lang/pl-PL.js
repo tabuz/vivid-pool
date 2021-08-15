@@ -3,6 +3,7 @@ export default {
     home: 'Strona Głowna',
     guide: 'Poradnik',
     about_us: 'O nas',
+    partners: 'Partnerzy',
     contact: 'Kontakt',
   },
   index: {
@@ -19,6 +20,30 @@ export default {
   },
   video: {
     title: 'Poradniki Video',
+  },
+  partners: {
+    title: 'Nasi partnerzy',
+    subtitle: `Razem mozemy zmienic swiat na lepsze.`,
+    chia: {
+      title: `Open Chia.io - Oficjalny Protokół Chia Pool`,
+      main_1: `OpenChia.io zrzesza osoby zainteresowane siecią Chia.
+      Projekt prowadzony jest przez profesjonalistów z ponad 20-letnim doświadczeniem w tworzeniu
+      oprogramowania. Odwiedź`,
+      main_2: `aby dowiedzieć się jak czerpać zyski ze swojej wolnej przestrzeni dyskowej.`,
+      main_3: `Sieć Chia jest to skupiony na ekologii projekt blockchain gdzie każdy
+      może wyhodować token Chia korzystając z wolnej przestrzeni dyskowej komputera. 
+      Protokół został stworzony w 2017 roku przez programistę Bram Cohen'a, autora 
+      protokołu BitTorrent. Chia bazuje na algorytmie konsensusu 'Dowód czasoprzestrzeni
+       (eng. Proof of Space and Time)' co przekłada się na bardzo niski współczynnik 
+       wykorzystanej energii elektrycznej w porówananiu do np. Bitcoin'a. Aby dowiedzieć
+      się więcej odwiedź oficjalną stronę projektu https://www.chia.net/.`,
+      points: [
+        '0 % Opłat',
+        'Brak minimalnej wartości wypłaty',
+        'Natychmiastowa wypłata',
+        'Transparentny system logów i metryk',
+      ],
+    },
   },
   contact: {
     title: 'Kontakt',
