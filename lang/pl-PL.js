@@ -152,51 +152,51 @@ export default {
       },
     },
   },
-  security: {
+    security: {
     title: 'Ochrona',
     subtitle: `
-      Zapewnienie wysokich standardów bezpieczeństwa naszego poola to dla nas priorytet.
-      Poniżej znajduje się lista wprowadzonych działań która pozwala chronić nasz pool
-      przez atakami. Nie są to wszystkie działania jakie przeprowadziliśmy jako że
-      ujawnienie ich mogło by pomóc w potencjalnym ataku.`,
+      Zapewnienie wysokich standardów bezpieczeństwa naszego stake pool jest dla nas priorytetem.
+      Poniżej znajduje się lista podjętych przez nas działań, które mają na celu zabezpieczyć
+      pool przed atakami, jak i zapewnić jego niezawodność.
+      `,
     measures: [
       {
         title: '1 węzeł produkujący, 2 węzły przekazujące',
         text: `
-          Węzeł produkujący komunikuje się z resztą sieci wyłącznie przez węzły przekazujące.
-          Jeżeli aktywny węzeł przestanie działać z jakiegoś powodu cała komunikacja jest
-          automatycznie przekazywana na czekający w gotowości węzeł zapasowy. Taka architektura
-          zapewnia najwyższy wskaźnik czasu pracy.
+          Węzeł produkujący bloki komunikuje się z resztą sieci Cardano wyłącznie przez węzły przekazujące.
+          Jeżeli z jakiegoś powodu jeden z węzłów przekazujących przestanie działać, cała komunikacja jest
+          automatycznie przekazywana na drugi węzeł przekazujące. Taka architektura zapewnia minimalizacje
+          przerw w działaniu pool'a.
         `,
       },
       {
         title: 'Monitorowanie węzłów',
         text: `
-          Wszystkie węzły w naszym pool'u są aktywnie monitorowane za pomocą profesjonalnego
-          oprogramowania monitorującego. Zapewnia to ciągły wgląd w metryki urządzeń co 
+          Wszystkie węzły należące do Vivid Pool są aktywnie monitorowane za pomocą profesjonalnego
+          oprogramowania monitorującego. Zapewnia to ciągły wgląd w metryki urządzeń, co
           pozwala na szybkie reagowanie w razie problemu. W przypadku wystąpienia awarii nasz
-          zespół otrzyma powiadomienie i jest w stanie rozwiązać problem z każdego miejsa na świecie.
+          zespół otrzyma powiadomienie i jest w stanie rozwiązać problem z każdego miejsca na świecie.
         `,
       },
       {
         title: 'Różnorodność wśród usługodawców',
         text: `
-          Węzły tworzące nasz pool są częścią globalych sieci dostępu w różnych krajach - 
+          Węzły tworzące nasz pool, działają na prywatnych serverach w trzech różnych krajach - 
           Polsce, Belgii i Niemczech.
           Dzięki zapewnieniu różnorodnośći jesteśmy pewni iż w przypadku problemów
-          u jednego usługodawcy nasz pool nie jest narażony na przerwy w działaniu.
-          W przyszłości planujemy również budowę wyizolowanej infraktruktury w naszych domach.
+          u jednego usługodawcy, nasz pool jest w znacznym stopniu mniej narażony
+          na przerwy w działaniu.
         `,
       },
       {
         title: '3 komplety kluczy dostępu',
         text: `
-          Klucze dostępu do naszego pool'a istnieją w trzech kopiach i znajdują się w dwóch 
-          róznych krajach - Polsce i Wielkie Brytanii.
+          Klucze dostępu do naszego pool'a istnieją w trzech kopiach i znajdują się w dwóch
+          różnych krajach — Polsce i Wielkie Brytanii.
         `,
       },
       {
-        title: 'Izolacja',
+        title: 'Izolacja kluczy',
         text: `
           Klucze dostępu do poola nigdy nie były i nie będą przesyłane w postaci cyfrowej
           przez internet. Proces ich tworzenia odbył się w bezpiecznym i wyizolowanym środowisku.
