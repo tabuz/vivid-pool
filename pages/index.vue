@@ -107,7 +107,7 @@
               </tbody>
             </table>
           </div>
-
+          <News :news="news" />
           <Videos :videos="videos" />
         </v-col>
       </v-row>
@@ -117,6 +117,7 @@
 
 <script>
 import Videos from '@/components/Videos'
+import News from '@/components/News'
 import Vue from 'vue'
 import Clipboard from 'v-clipboard'
 
@@ -124,6 +125,7 @@ Vue.use(Clipboard)
 
 export default {
   components: {
+    News,
     Videos,
   },
   async asyncData({ $content, app }) {
@@ -140,6 +142,10 @@ export default {
         'author_url',
       ])
       .sortBy('date', 'desc')
+      .fetch()
+    const news = await $content(locale, 'news')
+      .only(['title', 'slug', 'thumbnail', 'date', 'author'])
+      .sortBy('date')
       .fetch()
     try {
       const response = await fetch(
@@ -188,7 +194,7 @@ export default {
       ],
     }
 
-    return { videos, pools, head }
+    return { videos, pools, head, news }
   },
   data() {
     return {

@@ -207,4 +207,7 @@ export default {
       },
     },
   },
+  news: {
+    title: 'News',
+  },
 }
