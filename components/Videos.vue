@@ -1,5 +1,5 @@
 <template>
-  <v-container class="blurp pb-4 pt-4">
+  <v-container class="pb-4 pt-4">
     <p class="text-h5 mt-0 d-block font-weight-bold secondary--text">
       {{ $t('video.title') }}
     </p>

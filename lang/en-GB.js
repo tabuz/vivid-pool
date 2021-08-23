@@ -209,5 +209,6 @@ export default {
   },
   news: {
     title: 'News',
+    other_news: 'Other News',
   },
 }

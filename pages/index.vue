@@ -7,7 +7,7 @@
           md="6"
           lg="5"
           style="max-width: 800px"
-          class="px-md-6 pb-md-6"
+          class="px-md-6 pb-md-6 blurp"
         >
           <h1
             class="text-h4 text-md-h3 text-xl-h2 mb-1 font-weight-thin secondary--text"
@@ -52,8 +52,8 @@
             </div>
           </div>
 
-          <div class="pool-table-container mb-8">
-            <table class="pool-table">
+          <div class="pool-table-container">
+            <table class="pool-table mb-2">
               <thead>
                 <tr>
                   <th class="text-left">Ticker</th>
@@ -68,7 +68,7 @@
               <tbody>
                 <tr v-for="pool in pools" :key="pool.pool_id">
                   <td>{{ pool.ticker_orig }}</td>
-                  <td>{{ format_percent(pool.tax_ratio) }}</td>
+                  <td>{{ format_percent(pool.tax_ratio) }}*</td>
                   <td>{{ format_ada(pool.pledge) }}</td>
                   <td>{{ format_ada(pool.active_stake) }}</td>
                   <td>{{ format_percent(pool.roa_lifetime / 100) }}</td>
@@ -106,6 +106,14 @@
                 </tr>
               </tbody>
             </table>
+            <div class="d-flex justify-space-between secondary--text">
+              <p class="text-body-2 text-right mb-0 ml-4">
+                * 0% fee until end of 2021, then 2.9%
+              </p>
+              <p class="text-body-2 text-right mb-0 mr-4">
+                Last Updated {{ $dayjs().format('DD/MM/YYYY HH:mm') }}
+              </p>
+            </div>
           </div>
           <News :news="news" />
           <Videos :videos="videos" />
@@ -145,7 +153,7 @@ export default {
       .fetch()
     const news = await $content(locale, 'news')
       .only(['title', 'slug', 'thumbnail', 'date', 'author'])
-      .sortBy('date')
+      .sortBy('date', 'desc')
       .fetch()
     try {
       const response = await fetch(

@@ -4,7 +4,6 @@ slug: partnership-with-openchia-io
 author: Vivid Team
 date: 2021-08-10
 thumbnail: /open-chia-logo.png
-related: ['first-block-on-cardano-network']
 ---
 
 <div class="d-flex align-center mb-4">

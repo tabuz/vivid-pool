@@ -1,12 +1,12 @@
 <template>
-  <v-container class="blurp pb-4 pt-4">
+  <v-container class="pb-4 pt-4">
     <p class="text-h5 mt-0 d-block font-weight-bold secondary--text">
-      {{ $t('news.title') }}
+      {{ _title }}
     </p>
     <v-row>
       <v-col v-for="(n, idx) in news" :key="idx" cols="12" class="news">
         <nuxt-link
-          :to="`/news/${n.slug}`"
+          :to="{ path: localePath(`/news/${n.slug}`) }"
           class="news-img news-link mr-4"
           :style="`background-image: url('${n.thumbnail}')`"
         >
@@ -33,6 +33,13 @@ export default {
   name: 'Videos',
   props: {
     news: { type: Array, default: () => [] },
+    title: { type: String, default: null },
+  },
+  computed: {
+    _title() {
+      if (this.title) return this.title
+      return this.$t('news.title')
+    },
   },
 }
 </script>

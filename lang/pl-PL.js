@@ -1,6 +1,6 @@
 export default {
   nav: {
-    home: 'Strona Głowna',
+    home: 'Strona Główna',
     guide: 'Poradnik',
     about_us: 'O nas',
     partners: 'Partnerzy',
@@ -204,5 +204,9 @@ export default {
         `,
       },
     ],
+  },
+  news: {
+    title: 'Aktualności',
+    other_news: 'Wcześniejsze aktualności',
   },
 }

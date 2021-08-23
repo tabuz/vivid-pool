@@ -10,7 +10,7 @@
             />
             <div class="socials blurp">
               <a
-                href="https://twitter.com/Cryptoguys4"
+                href="https://twitter.com/VividPool"
                 target="_blank"
                 class="icon twitter"
               >
