@@ -14,12 +14,12 @@ related: ['partnership-with-openchia-io']
 
 <i class="mb-4">08/06/2021 by Hubert</i>
 
-After almost 4 months of waiting we are happy to announce that we successfully verified
-our first block on Cardano network. This is very important step on our journey. Although 
-confirmed block contained only 3 transactions with total value of 45k ₳ it feels rewarding
-to be able to finally add our tiny piece into decentralisation.
+After almost 4 months of waiting, we are happy to announce that we successfully verified
+our first block on Cardano network. This is a very important step on our journey. Although
+the confirmed block contained only three transactions with total value of 45k ₳ it feels
+rewardingto be able to finally add our tiny piece into decentralisation.
 
-To check more details about verified block click [here](https://adapools.org/blocks/db49069597973dac9fc2920add703278ceb0a3a9607d51b1d2b724102ea02c61)
+To check more details about verified block click [here](https://cardanoscan.io/transactions?blockHeight=5823813)
 
 We hope that very soon we will verify our second block. Stay tuned for more updates.
 
