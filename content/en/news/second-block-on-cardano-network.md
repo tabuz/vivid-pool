@@ -20,11 +20,11 @@ It feels almost like yesterday when we were celebrating our first block and yet 
 comes another one. 
 
 As our pool grows in delegated value of Cardano we are able to verify blocks which contain
-more valuable transactions. This block had 11 of them with an estimated total value of 206k ₳.
+more valuable transactions. This block had 11 of them with an estimated total value of 71,5k ₳.
 We would like to say thank you to all of our delegators who made this one possible. With
 growing stake we should see more blocks being assigned for validation in upcoming epochs.
 
-To check more details about verified block click [here](https://adapools.org/blocks/b98161dcae0a8e47c503e184f63ea422b45e3c827afb888ff1b6d24acb8e2f22)
+To check more details about verified block click [here](https://cardanoscan.io/transactions?blockHeight=6143638)
 
 Stay tuned for more updates.
 
