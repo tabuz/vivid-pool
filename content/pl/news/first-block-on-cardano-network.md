@@ -1,6 +1,6 @@
 ---
 title: '#1 blok na sieci Cardno'
-slug: pierwszy-blok-na-cardano-network
+slug: first-block-on-cardano-network
 author: Vivid Team
 date: 2021-06-08
 thumbnail: /one.png

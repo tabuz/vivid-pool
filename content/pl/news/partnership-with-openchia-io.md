@@ -1,6 +1,6 @@
 ---
 title: Kooperacja z Openchia.io
-slug: kooperacja-z-openchia-io
+slug: partnership-with-openchia-io
 author: Vivid Team
 date: 2021-08-10
 thumbnail: /open-chia-logo.png

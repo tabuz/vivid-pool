@@ -43,5 +43,10 @@ export default {
     }
     return { content, related }
   },
+  head() {
+    return {
+      title: this.content.title,
+    }
+  },
 }
 </script>

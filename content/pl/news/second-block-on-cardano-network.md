@@ -1,10 +1,10 @@
 ---
 title: '#2 block na sieci Cardno'
-slug: drugi-blok-na-sieci-cardano
+slug: second-block-on-cardano-network
 author: Vivid Team
 date: 2021-08-23
 thumbnail: /two.svg
-related: ['kooperacja-z-openchia-io', 'kooperacja-z-openchia-io']
+related: ['pierwszy-blok-na-cardano-network', 'kooperacja-z-openchia-io']
 ---
 
 <div class="d-flex align-center">
