@@ -1,5 +1,5 @@
 ---
-title: '#1 blok na sieci Cardno'
+title: '#1 blok na sieci Cardano'
 slug: first-block-on-cardano-network
 author: Vivid Team
 date: 2021-06-08

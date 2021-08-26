@@ -1,5 +1,5 @@
 ---
-title: '#2 block na sieci Cardno'
+title: '#2 block na sieci Cardano'
 slug: second-block-on-cardano-network
 author: Vivid Team
 date: 2021-08-23

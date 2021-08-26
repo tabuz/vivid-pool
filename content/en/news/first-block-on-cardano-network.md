@@ -1,5 +1,5 @@
 ---
-title: '#1 block on Cardno Network'
+title: '#1 block on Cardano Network'
 slug: first-block-on-cardano-network
 author: Vivid Team
 date: 2021-06-08
