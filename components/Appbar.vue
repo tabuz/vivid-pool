@@ -4,11 +4,13 @@
     class="appbar"
     color="primary"
     app
-    bottom
-    hide-on-scroll
   >
-    <v-icon color="secondary" @click="() => set_is_drawer_open(!is_drawer_open)"
-      >mdi-menu</v-icon
+    <v-btn
+      icon
+      color="secondary"
+      @click="() => set_is_drawer_open(!is_drawer_open)"
+    >
+      <v-icon color="secondary">mdi-menu</v-icon></v-btn
     >
     <div v-if="$route.path.includes('/guide')" class="controls">
       <v-btn
@@ -45,8 +47,6 @@ export default {
 
 <style lang="scss">
 .appbar {
-  backdrop-filter: blur(8px);
-
   .controls {
     width: 100%;
     text-align: right;

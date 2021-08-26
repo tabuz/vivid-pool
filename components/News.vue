@@ -79,7 +79,7 @@ export default {
   &:before {
     border-radius: 4px;
     opacity: 0;
-    color: var(--v-secondary-base);
+    color: white;
     font-size: 1.5em;
     content: 'Open';
     height: 100%;

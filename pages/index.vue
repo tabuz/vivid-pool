@@ -1,5 +1,5 @@
 <template>
-  <v-main class="pt-4">
+  <v-main class="pt-md-4">
     <v-container fluid>
       <v-row :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col
@@ -108,10 +108,11 @@
             </table>
             <div class="d-flex justify-space-between secondary--text">
               <p class="text-body-2 text-right mb-0 ml-4">
-                * 0% fee until end of 2021, then 2.9%
+                {{ $t('index.fee_info') }}
               </p>
               <p class="text-body-2 text-right mb-0 mr-4">
-                Last Updated {{ $dayjs().format('DD/MM/YYYY HH:mm') }}
+                {{ $t('index.updated') }}
+                {{ $dayjs().format('DD/MM/YYYY HH:mm') }}
               </p>
             </div>
           </div>
@@ -276,8 +277,7 @@ $purple: #581c7b;
   overflow-x: auto;
 }
 .pool-table {
-  background-color: var(--v-primary-base);
-  backdrop-filter: blur(8px);
+  background-color: transparent;
   width: 100%;
   border-collapse: collapse;
   color: var(--v-secondary-base) !important;

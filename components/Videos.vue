@@ -71,7 +71,7 @@ export default {
   &:before {
     border-radius: 4px;
     opacity: 0;
-    color: var(--v-secondary-base);
+    color: white;
     font-size: 3em;
     content: '⏵';
     height: 100%;

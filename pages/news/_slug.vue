@@ -1,5 +1,5 @@
 <template>
-  <v-main class="pt-4">
+  <v-main class="pt-md-4">
     <v-container fluid>
       <v-row no-gutters :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col cols="12" md="6" lg="5" class="blurp" style="max-width: 800px">
@@ -9,9 +9,9 @@
             </div>
 
             <nuxt-content :document="content" class="news mb-4" />
-            <nuxt-link to="/" class="secondary--text mb-4"
-              >Back to Home</nuxt-link
-            >
+            <nuxt-link :to="localePath('index')" class="secondary--text mb-4">{{
+              $t('news.back_home')
+            }}</nuxt-link>
             <News
               v-if="related.length"
               :news="related"
@@ -38,6 +38,7 @@ export default {
     if (content.related) {
       related = await $content(locale, 'news')
         .where({ slug: { $in: content.related } })
+        .sortBy('date', 'desc')
         .fetch()
     }
     return { content, related }

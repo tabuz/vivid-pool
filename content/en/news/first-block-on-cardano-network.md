@@ -4,7 +4,7 @@ slug: first-block-on-cardano-network
 author: Vivid Team
 date: 2021-06-08
 thumbnail: /one.png
-related: ['partnership-with-openchia-io']
+related: ['partnership-with-openchia-io',]
 ---
 
 <div class="d-flex align-center mb-4">
@@ -12,7 +12,7 @@ related: ['partnership-with-openchia-io']
   <h1 class="d-inline-block mb-0 text-left">First block on Cardano Network</h1>
 </div>
 
-<i class="mb-4">08/06/2021 by Hubert</i>
+<i class="mb-4">08/06/2021, Vivid Team</i>
 
 After almost 4 months of waiting, we are happy to announce that we successfully verified
 our first block on Cardano network. This is a very important step on our journey. Although

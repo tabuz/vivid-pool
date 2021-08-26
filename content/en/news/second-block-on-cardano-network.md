@@ -12,7 +12,7 @@ related: ['partnership-with-openchia-io', 'first-block-on-cardano-network',]
   <h1 class="d-inline-block mb-0 text-left">Second block on Cardano Network</h1>
 </div>
 
-<i class="mb-4">23/08/2021 by Hubert</i>
+<i class="mb-4">23/08/2021, Vivid Team</i>
 
 <br />
 

@@ -4,14 +4,14 @@ slug: partnership-with-openchia-io
 author: Vivid Team
 date: 2021-08-10
 thumbnail: /open-chia-logo.png
-related: ['first-block-on-cardano-network']
+related: ['first-block-on-cardano-network', 'second-block-on-cardano-network',]
 ---
 
 <div class="d-flex align-center mb-4">
   <img width="100" height="100" src="/open-chia-logo.png" class="mr-4">
   <h1 class="d-inline-block text-left">Partnership with <br />Openchia.io</h1>
 </div>
-<i class="mb-4">10/08/2021 by Hubert</i>
+<i class="mb-4">10/08/2021, Vivid Team</i>
 
 <br />
 <br />
@@ -34,6 +34,5 @@ three times! From now on we are going to support each others in areas like promo
 and pool development.
 
 To find our more about our partners click link below
-
 
 <nuxt-link to="/partners">Partners</nuxt-link>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-main class="pt-4">
+    <v-main class="pt-md-4">
       <v-container fluid>
         <v-row
           no-gutters

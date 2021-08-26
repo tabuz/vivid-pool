@@ -1,31 +1,31 @@
 ---
-title: '#2 block on Cardno Network'
-slug: second-block-on-cardano-network
+title: '#2 block na sieci Cardno'
+slug: drugi-blok-na-sieci-cardano
 author: Vivid Team
 date: 2021-08-23
 thumbnail: /two.svg
-related: ['partnership-with-openchia-io', 'first-block-on-cardano-network',]
+related: ['kooperacja-z-openchia-io', 'kooperacja-z-openchia-io']
 ---
 
 <div class="d-flex align-center">
   <img width="100" height="100" src="/two.svg" class="mr-4">
-  <h1 class="d-inline-block mb-0 text-left">Second block on Cardano Network</h1>
+  <h1 class="d-inline-block mb-0 text-left">Drugi blok na sieci Cardano</h1>
 </div>
 
-<i class="mb-4">23/08/2021 by Hubert</i>
+<i class="mb-4">23/08/2021, Vivid Team</i>
 
 <br />
 
-It feels almost like yesterday when we were celebrating our first block and yet here
-comes another one. 
+Jakby to było wczoraj, kiedy świętowaliśmy nasz pierwszy blok, a już zdobyliśmy drugi.  
 
-As our pool grows in delegated value of Cardano we are able to verify blocks which contain
-more valuable transactions. This block had 11 of them with an estimated total value of 206k ₳.
-We would like to say thank you to all of our delegators who made this one possible. With
-growing stake we should see more blocks being assigned for validation in upcoming epochs.
+W miarę powiększania się naszej puli w delegowaną wartość Cardano, jesteśmy w stanie zweryfikować
+bloki zawierające bardziej wartościowe transakcje. W tym bloku było ich jedenaście, o szacunkowej 
+wartości 71,5 tys. ₳.
+Chcieliśmy podziękować wszystkim delegującym, którzy to umożliwili. Z rosnącą stawką powinniśmy 
+odkrywać więcej bloków przeznaczonych do walidacji w nadchodzących epokach. 
 
-To check more details about verified block click [here](https://adapools.org/blocks/b98161dcae0a8e47c503e184f63ea422b45e3c827afb888ff1b6d24acb8e2f22)
+Aby sprawdzić więcej szczegółów na temat zweryfikowanego bloku, kliknij [tutaj](https://cardanoscan.io/transactions?blockHeight=6143638)
 
-Stay tuned for more updates.
+Śledź nowości na bieżąco!
 
 ~Vivid Team

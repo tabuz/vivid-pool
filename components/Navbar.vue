@@ -4,7 +4,7 @@
     app
     floating
     :mini-variant="true"
-    mini-variant-width="96"
+    :mini-variant-width="$vuetify.breakpoint.mdAndUp ? '96' : '100%'"
     color="primary"
     class="vivid-navbar elevation-2"
     :class="{
@@ -18,7 +18,7 @@
           <img :src="require('@/static/vivid-pool-logo.png')" />
         </v-list-item-avatar>
       </v-list-item>
-      <div class="mb-4">
+      <div class="mb-4 navigation">
         <nuxt-link
           v-for="(destination, i) in destinations"
           :key="`nav_${i}`"
@@ -115,6 +115,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~vuetify/src/styles/settings/_variables';
+
 $logo-size: 80px;
 $yellow: #f2e600;
 $orange: #e64a03;
@@ -123,12 +125,19 @@ $blue: #0084b1;
 
 .vivid-navbar {
   padding-bottom: 1rem;
-
-  &.cropped {
-    // height: auto !important;
-  }
 }
 
+.navigation {
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    a {
+      min-width: 45%;
+    }
+  }
+}
 .vivid-logo {
   .img {
     min-height: $logo-size;
@@ -222,8 +231,5 @@ nav {
       }
     }
   }
-}
-
-.nav-item {
 }
 </style>

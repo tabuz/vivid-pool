@@ -5,5 +5,14 @@
 @import './content.scss';
 
 html {
-    overflow-y: auto !important;
+  overflow-y: auto !important;
+}
+
+.v-main__wrap {
+  max-height: calc(100vh - 65px - 56px);
+  overflow-y: auto;
+
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    max-height: calc(100vh - 85px);
+  }
 }
