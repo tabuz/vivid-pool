@@ -4,7 +4,7 @@ slug: second-block-on-cardano-network
 author: Vivid Team
 date: 2021-08-23
 thumbnail: /two.svg
-related: ['pierwszy-blok-na-cardano-network', 'kooperacja-z-openchia-io']
+related: ['first-block-on-cardano-network', 'partnership-with-openchia-io']
 ---
 
 <div class="d-flex align-center">

@@ -4,7 +4,7 @@ slug: first-block-on-cardano-network
 author: Vivid Team
 date: 2021-06-08
 thumbnail: /one.png
-related: ['kooperacja-z-openchia-io']
+related: ['partnership-with-openchia-io']
 ---
 
 <div class="d-flex align-center mb-4">

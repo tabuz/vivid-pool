@@ -4,7 +4,7 @@ slug: partnership-with-openchia-io
 author: Vivid Team
 date: 2021-08-10
 thumbnail: /open-chia-logo.png
-realted: ['pierwszy-blok-na-cardano-network', 'drugi-blok-na-sieci-cardano',]
+realted: ['first-block-on-cardano-network', 'second-block-on-cardano-network',]
 ---
 
 <div class="d-flex align-center mb-4">
