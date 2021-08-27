@@ -1,6 +1,6 @@
 export default {
   nav: {
-    home: 'Strona Głowna',
+    home: 'Strona Główna',
     guide: 'Poradnik',
     about_us: 'O nas',
     partners: 'Partnerzy',
@@ -18,6 +18,8 @@ export default {
     `,
     get_started_front: 'Dołącz',
     get_started_back: 'Teraz',
+    fee_info: '* 0% fee do końca 2021, potem 2.9%',
+    updated: 'Zaktualizowano',
   },
   video: {
     title: 'Poradniki Video',
@@ -204,5 +206,10 @@ export default {
         `,
       },
     ],
+  },
+  news: {
+    title: 'Aktualności',
+    other_news: 'Wcześniejsze aktualności',
+    back_home: 'Powrót do Strony Głównej',
   },
 }

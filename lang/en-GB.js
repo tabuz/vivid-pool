@@ -17,6 +17,8 @@ export default {
     `,
     get_started_front: 'Get Started',
     get_started_back: 'Now',
+    fee_info: '* 0% fee until end of 2021, then 2.9%',
+    updated: 'Last Updated',
   },
   video: {
     title: 'Video Guides',
@@ -206,5 +208,10 @@ export default {
         a_3_article: 'about-wallets',
       },
     },
+  },
+  news: {
+    title: 'News',
+    other_news: 'Other News',
+    back_home: 'Back to Home',
   },
 }

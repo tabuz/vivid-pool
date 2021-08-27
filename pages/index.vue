@@ -1,5 +1,5 @@
 <template>
-  <v-main class="pt-4">
+  <v-main class="pt-md-4">
     <v-container fluid>
       <v-row :class="{ 'pl-5': $vuetify.breakpoint.mdAndUp }">
         <v-col
@@ -7,7 +7,7 @@
           md="6"
           lg="5"
           style="max-width: 800px"
-          class="px-md-6 pb-md-6"
+          class="px-md-6 pb-md-6 blurp"
         >
           <h1
             class="text-h4 text-md-h3 text-xl-h2 mb-1 font-weight-thin secondary--text"
@@ -52,8 +52,8 @@
             </div>
           </div>
 
-          <div class="pool-table-container mb-8">
-            <table class="pool-table">
+          <div class="pool-table-container">
+            <table class="pool-table mb-2">
               <thead>
                 <tr>
                   <th class="text-left">Ticker</th>
@@ -68,7 +68,7 @@
               <tbody>
                 <tr v-for="pool in pools" :key="pool.pool_id">
                   <td>{{ pool.ticker_orig }}</td>
-                  <td>{{ format_percent(pool.tax_ratio) }}</td>
+                  <td>{{ format_percent(pool.tax_ratio) }}*</td>
                   <td>{{ format_ada(pool.pledge) }}</td>
                   <td>{{ format_ada(pool.active_stake) }}</td>
                   <td>{{ format_percent(pool.roa_lifetime / 100) }}</td>
@@ -106,8 +106,17 @@
                 </tr>
               </tbody>
             </table>
+            <div class="d-flex justify-space-between secondary--text">
+              <p class="text-body-2 text-right mb-0 ml-4">
+                {{ $t('index.fee_info') }}
+              </p>
+              <p class="text-body-2 text-right mb-0 mr-4">
+                {{ $t('index.updated') }}
+                {{ $dayjs().format('DD/MM/YYYY HH:mm') }}
+              </p>
+            </div>
           </div>
-
+          <News :news="news" />
           <Videos :videos="videos" />
         </v-col>
       </v-row>
@@ -117,6 +126,7 @@
 
 <script>
 import Videos from '@/components/Videos'
+import News from '@/components/News'
 import Vue from 'vue'
 import Clipboard from 'v-clipboard'
 
@@ -124,6 +134,7 @@ Vue.use(Clipboard)
 
 export default {
   components: {
+    News,
     Videos,
   },
   async asyncData({ $content, app }) {
@@ -139,6 +150,10 @@ export default {
         'author',
         'author_url',
       ])
+      .sortBy('date', 'desc')
+      .fetch()
+    const news = await $content(locale, 'news')
+      .only(['title', 'slug', 'thumbnail', 'date', 'author'])
       .sortBy('date', 'desc')
       .fetch()
     try {
@@ -188,7 +203,7 @@ export default {
       ],
     }
 
-    return { videos, pools, head }
+    return { videos, pools, head, news }
   },
   data() {
     return {
@@ -262,8 +277,7 @@ $purple: #581c7b;
   overflow-x: auto;
 }
 .pool-table {
-  background-color: var(--v-primary-base);
-  backdrop-filter: blur(8px);
+  background-color: transparent;
   width: 100%;
   border-collapse: collapse;
   color: var(--v-secondary-base) !important;

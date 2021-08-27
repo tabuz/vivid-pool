@@ -16,7 +16,7 @@
     text-align: center;
     width: 100%;
     max-width: 100%;
-    
+
     margin: 0 auto;
 
     display: flex;
@@ -41,13 +41,13 @@
   p {
     text-align: left;
   }
-  h2, h3 {
+  h2,
+  h3 {
     text-align: left;
     cursor: pointer;
     padding-bottom: 0.3rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid rgba(126, 126, 126, 0.5);
-    
 
     &:hover {
       text-decoration: underline;
@@ -58,10 +58,12 @@
       color: purple;
     }
   }
-  h2 > ul, h2 > ol {
+  h2 > ul,
+  h2 > ol {
     margin-bottom: 2rem !important;
   }
-  ul, ol {
+  ul,
+  ol {
     padding-bottom: 1rem !important;
   }
 
@@ -69,8 +71,21 @@
     p {
       padding-left: 2rem;
     }
-    ul, ol {
+    ul,
+    ol {
       padding-left: 3rem !important;
+    }
+  }
+
+  &.news {
+    @media #{map-get($display-breakpoints, 'md-and-up')} {
+      p {
+        padding-left: 0rem;
+      }
+      ul,
+      ol {
+        padding-left: 0rem !important;
+      }
     }
   }
 }

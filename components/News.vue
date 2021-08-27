@@ -1,27 +1,26 @@
 <template>
   <v-container class="pb-4 pt-4">
     <p class="text-h5 mt-0 d-block font-weight-bold secondary--text">
-      {{ $t('video.title') }}
+      {{ _title }}
     </p>
     <v-row>
-      <v-col v-for="(video, idx) in videos" :key="idx" cols="12" class="video">
-        <a
-          :href="video.url"
-          class="video-img video-link mr-4"
-          target="_blank"
-          :style="`background-image: url('${video.thumbnail}')`"
+      <v-col v-for="(n, idx) in news" :key="idx" cols="12" class="news">
+        <nuxt-link
+          :to="{ path: localePath(`/news/${n.slug}`) }"
+          class="news-img news-link mr-4"
+          :style="`background-image: url('${n.thumbnail}')`"
         >
-        </a>
+        </nuxt-link>
         <div>
-          <a :href="video.url" class="video-link" target="_blank">
-            <p class="text-body-1 font-weight-bold">{{ video.name }}</p>
-          </a>
+          <nuxt-link :to="`/news/${n.slug}`" class="news-link">
+            <p class="text-body-1 font-weight-bold">{{ n.title }}</p>
+          </nuxt-link>
 
-          <a :href="video.author_url" class="video-link" target="_blank">
-            <p class="text-body-1 mb-0">{{ video.author }}</p>
-          </a>
+          <nuxt-link :to="`/news/${n.slug}`" class="news-link">
+            <p class="text-body-1 mb-0">{{ n.author }}</p>
+          </nuxt-link>
           <p class="text-body-1 mb-0 secondary--text">
-            {{ $dayjs(video.date).locale($i18n.locale).fromNow() }}
+            {{ $dayjs(n.date).locale($i18n.locale).fromNow() }}
           </p>
         </div>
       </v-col>
@@ -33,26 +32,34 @@
 export default {
   name: 'Videos',
   props: {
-    videos: { type: Array, default: () => [] },
+    news: { type: Array, default: () => [] },
+    title: { type: String, default: null },
+  },
+  computed: {
+    _title() {
+      if (this.title) return this.title
+      return this.$t('news.title')
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.video {
+.news {
   color: var(--v-primary-base);
   display: flex;
   flex-direction: row;
 }
-.video-link {
+.news-link {
   display: block;
   cursor: pointer;
   color: var(--v-secondary-base);
 }
-.video-img {
+.news-img {
   height: 60px;
   min-width: 120px;
   border-radius: 4px;
+  background-size: contain;
 
   @media (min-width: 920px) {
     height: 94px;
@@ -60,7 +67,8 @@ export default {
   }
 
   position: relative;
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
 
   &:hover {
     &:before {
@@ -72,8 +80,8 @@ export default {
     border-radius: 4px;
     opacity: 0;
     color: white;
-    font-size: 3em;
-    content: '⏵';
+    font-size: 1.5em;
+    content: 'Open';
     height: 100%;
     display: flex;
     justify-content: center;

@@ -3,6 +3,7 @@ const page_name__config = {
   mission: { x: -400, y: -250, sinx: 0.3, siny: 0.2 },
   about: { x: -800, y: -550, sinx: 0.6, siny: 0 },
   'guide-category-article': { x: -600, y: -700, sinx: 0.6, siny: 0 },
+  'news-slug': { x: -600, y: -700, sinx: 0.6, siny: 0 },
   guide: { x: -600, y: -700, sinx: 0.6, siny: 0 },
   security: { x: -600, y: -700, sinx: 0.6, siny: 0 },
   null: { x: -600, y: -700, sinx: 0.6, siny: 0 },
