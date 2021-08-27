@@ -154,7 +154,7 @@ export default {
       },
     },
   },
-    security: {
+  security: {
     title: 'Ochrona',
     subtitle: `
       Zapewnienie wysokich standardów bezpieczeństwa naszego stake pool jest dla nas priorytetem.
