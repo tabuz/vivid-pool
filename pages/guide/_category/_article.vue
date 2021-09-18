@@ -7,6 +7,14 @@
         </div>
         <div v-else>
           <nuxt-content :document="content" />
+          <div class="text-right py-4">
+            <nuxt-link
+              v-if="question_step !== 0 && $route.params.category !== 'stake'"
+              :to="localePath('guide-category-article')"
+              class="choice-btn mr-2 mb-2 d-block d-md-inline-block secondary--text"
+              >{{ $t('guide.next') }}</nuxt-link
+            >
+          </div>
         </div>
       </v-scroll-y-transition>
     </v-col>

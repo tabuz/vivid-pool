@@ -108,6 +108,7 @@ export default {
       z Vivid Pools.
     `,
     on_this_page: 'Spis treści',
+    next: 'Dalej',
     questions: {
       0: {
         q: 'Jak ocenisz swoją wiedzę na temat technologi blockchain?',

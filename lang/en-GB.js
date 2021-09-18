@@ -162,6 +162,7 @@ export default {
       to participate to our staking pool. In few simple steps you should 
       obtain ADA, create your own digital wallet and stake with Vivid Pools.
     `,
+    next: 'Next',
     on_this_page: 'On this page',
     questions: {
       0: {
