@@ -51,7 +51,7 @@ export default {
   contact: {
     title: 'Contact',
     subtitle: `If you have any questions please do not hesitate to contact 
-      us on socials or via contact form message. We will try to anwser you 
+      us on socials or via contact form message. We will try to answer you 
       questions you as soon as possible.
     `,
   },
